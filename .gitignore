@@ -1,0 +1,56 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production & Build Output
+dist/
+.dist/
+build/
+
+# Local Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+*.env
+
+# EdgeOne Deployment Caches & Generated Assets
+.edgeone/
+.edgeone-assets-config.json
+
+# AI Assistants, Skills & Agent Configurations
+.agents/
+.claude/
+.gemini/
+.cursor/
+
+# Internal Reference Materials & Planning Documents
+.reference/
+.docs/
+
+# IDE & Editor Specific Files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
