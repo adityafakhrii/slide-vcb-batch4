@@ -1,64 +1,91 @@
-# open-slide workspace
+# Vibe Coding Bootcamp — Batch 4
 
-Slides as React components. Each slide lives under `slides/<id>/index.tsx` and default-exports an array of page components. The `@open-slide/core` runtime handles layout, scaling, navigation, thumbnails, and fullscreen play mode — you just write the pages.
+Repository ini berisi seluruh materi presentasi interaktif untuk program **[Vibe Coding Bootcamp Batch 4](https://www.codepolitan.com/p/page-vibecoding)** oleh **[CODEPOLITAN](https://www.codepolitan.com/)**.
 
-## Getting started
+Presentasi dibangun menggunakan arsitektur **OpenSlide** berbasis React 19 dan TypeScript, dengan visual storytelling bergaya *Swiss-Japanese Minimalism* yang responsif dan interaktif.
 
-```bash
-pnpm install
-pnpm dev
-```
+---
 
-Then open the dev server and edit `slides/getting-started/index.tsx`, or create a new slide at `slides/<your-slide>/index.tsx`.
+## 🌐 Live Presentation
 
-## Scripts
+Seluruh materi slide telah dideploy dan dapat diakses langsung secara online:
 
-| Command | Description |
-| --- | --- |
-| `pnpm dev` | Start the dev server with hot reload. |
-| `pnpm build` | Build a static bundle you can deploy. |
-| `pnpm preview` | Preview the built bundle locally. |
+👉 **[https://vibe-coding-batch-4.edgeone.cool](https://vibe-coding-batch-4.edgeone.cool)**
 
-## Authoring a slide
+### Akses Cepat per Modul:
+| Sesi | Topik Materi | Link Presentasi |
+| :--- | :--- | :--- |
+| **Sesi 1 — Part 1** | *Intro to Vibe Coding, Prompt Engineering & AI Workflow* | [Buka Slide →](https://vibe-coding-batch-4.edgeone.cool/s/vibe-coding-sesi-1-part-1) |
+| **Sesi 1 — Part 2** | *Studi Kasus Prompt Engineering UrbanStore* | [Buka Slide →](https://vibe-coding-batch-4.edgeone.cool/s/vibe-coding-sesi-1-part-2) |
+| **Sesi 2 — Part 1** | *Product Planning: Dari Ide Menjadi Blueprint Produk* | [Buka Slide →](https://vibe-coding-batch-4.edgeone.cool/s/vibe-coding-sesi-2-part-1) |
+| **Sesi 2 — Part 2** | *Product Requirement Document (PRD) for AI-Ready Specs* | [Buka Slide →](https://vibe-coding-batch-4.edgeone.cool/s/vibe-coding-sesi-2-part-2) |
 
-```tsx
-// slides/my-slide/index.tsx
-import type { Page, SlideMeta } from '@open-slide/core';
+---
 
-const Cover: Page = () => (
-  <div style={{ width: '100%', height: '100%' }}>Hello</div>
-);
+## 📚 Struktur & Cakupan Materi
 
-export const meta: SlideMeta = { title: 'My slide' };
-export default [Cover] satisfies Page[];
-```
+Presentasi dirancang membimbing peserta memahami alur pengembangan software modern berbasis AI (*Vibe Coding*) dari hulu ke hilir:
 
-Every page renders into a fixed **1920 × 1080** canvas — design with absolute pixel values. Put images, videos, and fonts under `slides/<id>/assets/` and import them directly.
+1. **Foundations & Mindset:** Memahami paradigma Vibe Coding dan peran manusia sebagai *Product Manager* & *System Architect*, bukan sekadar juru ketik kode.
+2. **Product Planning (Canvas):** Menentukan Target Persona, Problem Statement, Value Proposition, Product Goals, dan Scope MVP yang terukur.
+3. **Product Requirement Document (PRD):** Menerjemahkan keputusan produk makro ke dokumen spesifikasi teknis berbasis Markdown (`.md`) yang mencakup User Stories, Functional Requirements (FR), Business Rules, dan Acceptance Criteria (BDD).
+4. **AI Agent Orchestration:** Mempersiapkan handoff spesifikasi bersih ke AI coding tool (Claude Code / Antigravity / Cursor) untuk eksekusi tanpa celah asumsi (*zero guessing*).
 
-See [`CLAUDE.md`](./CLAUDE.md) for the full authoring guide.
+---
 
-## Navigation
+## 🛠️ Tech Stack & Desain
 
-- Arrow keys / PageUp / PageDown move between pages.
-- `F` enters fullscreen play mode; Esc exits.
-- In play mode: Space / → next, ← prev.
+- **Runtime & Presentation Engine:** [`@open-slide/core`](https://github.com/open-slide/open-slide) (Vite + React 19 + TypeScript)
+- **Design System:** Swiss-Japanese Minimalism (Clean typography Inter, Newsreader italic serif, JetBrains Mono code elements, hand-drawn vector doodle engine)
+- **Canvas Resolution:** Fixed 1920 × 1080px (Crisp presentation ratio)
+- **Deployment Platform:** Tencent EdgeOne (EdgeOne Makers Global Static CDN dengan SPA fallback routing)
 
-## Claude Code integration
+---
 
-This workspace ships with Claude Code skills preconfigured under `.claude/skills/` and `.agents/skills/`. Ask Claude Code to "make slides about X" and the `create-slide` skill takes over. Use `apply-comments` to iterate via inspector-style markers inside your source.
+## 🚀 Menjalankan Project Secara Lokal
 
-## Config
+### Prasyarat
+- [Node.js](https://nodejs.org/) versi 18 ke atas
+- npm atau pnpm
 
-Optional `open-slide.config.ts` at the workspace root:
+### Langkah Instalasi
+1. **Clone repository:**
+   ```bash
+   git clone https://github.com/adityafakhrii/slide-vcb-batch4.git
+   cd slide-vcb-batch4
+   ```
 
-```ts
-import type { OpenSlideConfig } from '@open-slide/core';
+2. **Install dependensi:**
+   ```bash
+   npm install
+   ```
 
-const openSlideConfig: OpenSlideConfig = {
-  port: 5173,
-};
+3. **Jalankan development server:**
+   ```bash
+   npm run dev
+   ```
+   Akses `http://localhost:5173` di browser Anda.
 
-export default openSlideConfig;
-```
+4. **Build untuk produksi:**
+   ```bash
+   npm run build
+   ```
+   Hasil build static akan berada di direktori `dist/`.
 
-Supported fields: `slidesDir`, `port`.
+---
+
+## ⌨️ Kontrol Navigasi Presenter
+
+Saat membuka presentasi:
+- `→` / `Space` / `PageDown`: Pindah ke slide berikutnya
+- `←` / `PageUp`: Pindah ke slide sebelumnya
+- `F`: Masuk ke mode Fullscreen play mode
+- `Esc`: Keluar dari mode Fullscreen
+
+---
+
+## 🏢 Tentang Penyelenggara
+
+Materi ini disusun khusus untuk program edukasi teknologi intensif oleh:
+- **Penyelenggara:** [CODEPOLITAN](https://www.codepolitan.com/)
+- **Program:** [Vibe Coding Bootcamp](https://www.codepolitan.com/p/page-vibecoding)
