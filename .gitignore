@@ -19,8 +19,6 @@ build/
 .edgeone-assets-config.json
 
 # AI Assistants, Skills & Agent Configurations
-.agents/
-.claude/
 .gemini/
 .cursor/
 
