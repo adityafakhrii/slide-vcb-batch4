@@ -1,6 +1,5 @@
 import {
   type DesignSystem,
-  MorphElement,
   type Page,
   type SlideMeta,
   type SlideTransition,
@@ -84,7 +83,6 @@ const W = 1680;
 const EASE_OUT = 'cubic-bezier(0, 0, 0.2, 1)';
 const EASE_IN = 'cubic-bezier(0.4, 0, 1, 1)';
 const HOLD: Keyframe[] = [{ opacity: 1 }, { opacity: 1 }];
-const MORPH_MS = 760;
 
 export const transition: SlideTransition = {
   duration: 240,
@@ -97,13 +95,6 @@ export const transition: SlideTransition = {
       { opacity: 1, transform: 'translateY(0)' },
     ],
   },
-};
-
-const morphTransition: SlideTransition = {
-  duration: 280,
-  exit: { duration: 300, easing: EASE_IN, keyframes: HOLD },
-  enter: { duration: 300, easing: EASE_OUT, keyframes: [{ opacity: 0 }, { opacity: 1 }] },
-  morph: { duration: MORPH_MS, easing: 'cubic-bezier(0.4, 0, 0.2, 1)' },
 };
 
 const abs = (left: number, top: number, width?: number, height?: number): CSSProperties => ({
@@ -412,43 +403,43 @@ const Figure = ({ x, y, shirt }: { x: number; y: number; shirt: string }) => (
 );
 
 const CoverDualWebArt = ({ live }: { live: boolean }) => (
-  <Ink width={820} height={720} style={abs(980, 140)}>
-    <circle cx="430" cy="360" r="250" fill={TINT_TEAL} stroke="none" />
-    <circle cx="590" cy="210" r="108" fill={YELLOW} stroke="none" />
+  <Ink width={760} height={720} style={abs(1040, 130)}>
+    <circle cx="430" cy="360" r="240" fill={TINT_TEAL} stroke="none" />
+    <circle cx="580" cy="210" r="104" fill={YELLOW} stroke="none" />
 
-    <rect x="230" y="120" width="440" height="290" rx="18" fill="#FFFFFF" />
-    <path d="M230 166H670" />
+    <rect x="230" y="120" width="430" height="290" rx="18" fill="#FFFFFF" />
+    <path d="M230 166H660" />
     <circle cx="258" cy="143" r="6" fill={CORAL_HEX} stroke="none" />
     <circle cx="278" cy="143" r="6" fill={YELLOW} stroke="none" />
     <circle cx="298" cy="143" r="6" fill={GREEN} stroke="none" />
-    <rect x="258" y="190" width="384" height="86" rx="10" fill={INK_HEX} />
+    <rect x="258" y="190" width="374" height="86" rx="10" fill={INK_HEX} />
     <path d="M284 222h170M284 248h110" stroke="#FFFFFF" strokeWidth={3.2} />
-    <rect x="520" y="212" width="96" height="36" rx="8" fill={CORAL_HEX} stroke="none" />
-    <rect x="258" y="294" width="118" height="90" rx="10" fill={TINT_NEUTRAL} />
-    <rect x="391" y="294" width="118" height="90" rx="10" fill={TINT_YELLOW} />
-    <rect x="524" y="294" width="118" height="90" rx="10" fill={TINT_PINK} />
+    <rect x="512" y="212" width="96" height="36" rx="8" fill={CORAL_HEX} stroke="none" />
+    <rect x="258" y="294" width="114" height="90" rx="10" fill={TINT_NEUTRAL} />
+    <rect x="388" y="294" width="114" height="90" rx="10" fill={TINT_YELLOW} />
+    <rect x="518" y="294" width="114" height="90" rx="10" fill={TINT_PINK} />
 
-    <rect x="60" y="290" width="450" height="310" rx="18" fill="#FFFFFF" />
-    <path d="M60 336H510" />
-    <circle cx="88" cy="313" r="6" fill={CORAL_HEX} stroke="none" />
-    <circle cx="108" cy="313" r="6" fill={YELLOW} stroke="none" />
-    <circle cx="128" cy="313" r="6" fill={GREEN} stroke="none" />
-    <circle cx="138" cy="408" r="36" fill={TINT_TEAL} />
-    <circle cx="138" cy="398" r="12" fill={TEAL_HEX} stroke="none" />
-    <path d="M118 428Q138 412 158 428" stroke={TEAL_HEX} strokeWidth={3.2} />
-    <path d="M196 388h180M196 414h250M196 438h140" strokeWidth={3.2} />
-    <rect x="92" y="472" width="184" height="98" rx="10" fill={TINT_TEAL} />
-    <rect x="294" y="472" width="184" height="98" rx="10" fill={TINT_BLUE} />
-    <path d="M114 542h110M316 542h110" strokeWidth={2.8} />
+    <rect x="70" y="290" width="440" height="310" rx="18" fill="#FFFFFF" />
+    <path d="M70 336H510" />
+    <circle cx="98" cy="313" r="6" fill={CORAL_HEX} stroke="none" />
+    <circle cx="118" cy="313" r="6" fill={YELLOW} stroke="none" />
+    <circle cx="138" cy="313" r="6" fill={GREEN} stroke="none" />
+    <circle cx="148" cy="408" r="36" fill={TINT_TEAL} />
+    <circle cx="148" cy="398" r="12" fill={TEAL_HEX} stroke="none" />
+    <path d="M128 428Q148 412 168 428" stroke={TEAL_HEX} strokeWidth={3.2} />
+    <path d="M206 388h175M206 414h240M206 438h135" strokeWidth={3.2} />
+    <rect x="102" y="472" width="178" height="98" rx="10" fill={TINT_TEAL} />
+    <rect x="298" y="472" width="178" height="98" rx="10" fill={TINT_BLUE} />
+    <path d="M124 542h106M320 542h106" strokeWidth={2.8} />
 
-    <Sparkle x={150} y={210} s={0.95} fill={TEAL_HEX} />
-    <Sparkle x={710} y={130} s={1.1} fill={YELLOW} />
-    <Sparkle x={720} y={340} s={0.75} fill={PINK} />
+    <Sparkle x={155} y={210} s={0.95} fill={TEAL_HEX} />
+    <Sparkle x={695} y={130} s={1.1} fill={YELLOW} />
+    <Sparkle x={705} y={340} s={0.75} fill={PINK} />
 
-    <Figure x={660} y={640} shirt={TEAL_HEX} />
-    <path d="M20 642Q300 636 560 640T790 639" />
+    <Figure x={640} y={640} shirt={TEAL_HEX} />
+    <path d="M140 642Q380 636 560 640T740 639" />
     <Stroke
-      d="M170 250C140 195 180 150 220 165"
+      d="M175 250C145 195 185 150 220 165"
       color={TEAL_HEX}
       live={live}
       delay={0.45}
@@ -513,25 +504,25 @@ const Slide01Cover: Page = () => {
         dan Product Landing Page (<strong style={{ color: INK }}>UrbanStore</strong>).
       </p>
 
-      <div style={{ ...abs(X0, 760), ...row, gap: 14 }}>
+      <div style={{ ...abs(X0, 760), ...row, gap: 12 }}>
         <span
           style={{
-            padding: '10px 20px',
+            padding: '9px 18px',
             borderRadius: 99,
             background: TINT_TEAL,
-            fontSize: 20,
+            fontSize: 18,
             fontWeight: 720,
             color: TEAL_HEX,
           }}
         >
-          01 · Personal Portfolio Website
+          01 · Personal Portfolio
         </span>
         <span
           style={{
-            padding: '10px 20px',
+            padding: '9px 18px',
             borderRadius: 99,
             background: TINT_YELLOW,
-            fontSize: 20,
+            fontSize: 18,
             fontWeight: 720,
             color: '#946200',
           }}
@@ -540,10 +531,10 @@ const Slide01Cover: Page = () => {
         </span>
         <span
           style={{
-            padding: '10px 20px',
+            padding: '9px 18px',
             borderRadius: 99,
             background: TINT_PINK,
-            fontSize: 20,
+            fontSize: 18,
             fontWeight: 720,
             color: CORAL_HEX,
           }}
@@ -806,9 +797,9 @@ const QuestionRow = ({
       ...row,
       gap: 14,
       background: '#FFFFFF',
-      padding: '12px 18px',
+      padding: '13px 18px',
       borderRadius: 12,
-      fontSize: 22,
+      fontSize: 21,
       fontWeight: 640,
       color: INK,
     }}
@@ -827,80 +818,29 @@ const Slide03TwoWebsites: Page = () => {
   return (
     <Frame>
       <Eyebrow>Dua Website, Dua Tujuan Berbeda</Eyebrow>
-      <h2 style={{ ...abs(X0, 132, 1480), ...headline(66) }}>
+      <h2 style={{ ...abs(X0, 132, W), ...headline(48) }}>
         Website bukan hanya soal tampilan.{' '}
         <Highlight color={HIGHLIGHT_TEAL}>Setiap halaman harus punya tujuan.</Highlight>
       </h2>
-
-      <div style={{ ...abs(1380, 84), ...row, gap: 10 }}>
-        <button
-          type="button"
-          onClick={() => setFocusSide('both')}
-          className="s3-interactive"
-          style={{
-            padding: '8px 18px',
-            borderRadius: 99,
-            border: `1.5px solid ${focusSide === 'both' ? INK_HEX : RULE}`,
-            background: focusSide === 'both' ? INK_HEX : '#FFFFFF',
-            color: focusSide === 'both' ? '#FFFFFF' : BODY,
-            fontSize: 18,
-            fontWeight: 680,
-          }}
-        >
-          Bandingkan
-        </button>
-        <button
-          type="button"
-          onClick={() => setFocusSide('portfolio')}
-          className="s3-interactive"
-          style={{
-            padding: '8px 18px',
-            borderRadius: 99,
-            border: `1.5px solid ${focusSide === 'portfolio' ? INK_HEX : RULE}`,
-            background: focusSide === 'portfolio' ? INK_HEX : '#FFFFFF',
-            color: focusSide === 'portfolio' ? '#FFFFFF' : BODY,
-            fontSize: 18,
-            fontWeight: 680,
-          }}
-        >
-          01 · Portfolio
-        </button>
-        <button
-          type="button"
-          onClick={() => setFocusSide('landing')}
-          className="s3-interactive"
-          style={{
-            padding: '8px 18px',
-            borderRadius: 99,
-            border: `1.5px solid ${focusSide === 'landing' ? INK_HEX : RULE}`,
-            background: focusSide === 'landing' ? INK_HEX : '#FFFFFF',
-            color: focusSide === 'landing' ? '#FFFFFF' : BODY,
-            fontSize: 18,
-            fontWeight: 680,
-          }}
-        >
-          02 · Landing Page
-        </button>
-      </div>
 
       <div
         onClick={() => setFocusSide(focusSide === 'portfolio' ? 'both' : 'portfolio')}
         className="s3-interactive"
         style={{
-          ...abs(X0, 286, 816, 548),
+          ...abs(X0, 236, 816, 588),
           borderRadius: 26,
           background: TINT_TEAL,
           border: `2.5px solid ${focusSide === 'portfolio' ? INK_HEX : TEAL_HEX}`,
           opacity: focusSide === 'landing' ? 0.55 : 1,
-          padding: '28px 34px',
+          padding: '30px 34px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
         }}
       >
         <div>
-          <div style={{ ...row, justifyContent: 'space-between', marginBottom: 12 }}>
-            <span style={{ fontFamily: MONO, fontSize: 21, fontWeight: 780, color: TEAL_HEX }}>
+          <div style={{ ...row, justifyContent: 'space-between', marginBottom: 14, translate: '0px 19.95px' }}>
+            <span style={{ fontFamily: MONO, fontSize: 20, fontWeight: 780, color: TEAL_HEX }}>
               01 · PERSONAL PORTFOLIO WEBSITE
             </span>
             <span
@@ -909,7 +849,7 @@ const Slide03TwoWebsites: Page = () => {
                 borderRadius: 99,
                 background: '#FFFFFF',
                 fontFamily: MONO,
-                fontSize: 18,
+                fontSize: 17,
                 fontWeight: 700,
                 color: INK,
               }}
@@ -918,13 +858,13 @@ const Slide03TwoWebsites: Page = () => {
             </span>
           </div>
 
-          <h3 style={{ ...headline(40), marginBottom: 10 }}>Personal Portfolio Website</h3>
-          <p style={{ margin: '0 0 18px', fontSize: 22, lineHeight: 1.4, color: BODY }}>
+          <h3 style={{ ...headline(38), marginBottom: 12, translate: '0px 30.91px' }}>Personal Portfolio Website</h3>
+          <p style={{ margin: '0 0 22px', fontSize: 21, lineHeight: 1.42, color: BODY, translate: '0px 30.91px' }}>
             <strong style={{ color: INK }}>Tujuan:</strong> memperkenalkan siapa kita dan
             menunjukkan kredibilitas.
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12, translate: '0px 38.72px' }}>
             <QuestionRow code="Q1" text="Siapa kamu?" accentColor={TEAL_HEX} />
             <QuestionRow code="Q2" text="Apa keahlianmu?" accentColor={TEAL_HEX} />
             <QuestionRow
@@ -939,41 +879,26 @@ const Slide03TwoWebsites: Page = () => {
             />
           </div>
         </div>
-
-        <div
-          style={{
-            ...row,
-            justifyContent: 'space-between',
-            paddingTop: 12,
-            borderTop: `1.5px solid ${RULE}`,
-            fontSize: 19,
-            fontWeight: 700,
-            color: TEAL_HEX,
-          }}
-        >
-          <span>Fokus: Profil, Skill, Bukti Karya &amp; Kredibilitas</span>
-          <span>adityafakhri.id →</span>
-        </div>
       </div>
 
       <div
         onClick={() => setFocusSide(focusSide === 'landing' ? 'both' : 'landing')}
         className="s3-interactive"
         style={{
-          ...abs(984, 286, 816, 548),
+          ...abs(984, 236, 816, 588),
           borderRadius: 26,
           background: TINT_YELLOW,
           border: `2.5px solid ${focusSide === 'landing' ? INK_HEX : '#E2B93B'}`,
           opacity: focusSide === 'portfolio' ? 0.55 : 1,
-          padding: '28px 34px',
+          padding: '30px 34px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
         }}
       >
         <div>
-          <div style={{ ...row, justifyContent: 'space-between', marginBottom: 12 }}>
-            <span style={{ fontFamily: MONO, fontSize: 21, fontWeight: 780, color: '#946200' }}>
+          <div style={{ ...row, justifyContent: 'space-between', marginBottom: 14, translate: '0px 19.95px' }}>
+            <span style={{ fontFamily: MONO, fontSize: 20, fontWeight: 780, color: '#946200' }}>
               02 · PRODUCT LANDING PAGE
             </span>
             <span
@@ -982,7 +907,7 @@ const Slide03TwoWebsites: Page = () => {
                 borderRadius: 99,
                 background: INK_HEX,
                 fontFamily: MONO,
-                fontSize: 18,
+                fontSize: 17,
                 fontWeight: 700,
                 color: '#FFFFFF',
               }}
@@ -991,13 +916,13 @@ const Slide03TwoWebsites: Page = () => {
             </span>
           </div>
 
-          <h3 style={{ ...headline(40), marginBottom: 10 }}>Product Landing Page</h3>
-          <p style={{ margin: '0 0 18px', fontSize: 22, lineHeight: 1.4, color: BODY }}>
+          <h3 style={{ ...headline(38), marginBottom: 12, translate: '0px 30.91px' }}>Product Landing Page</h3>
+          <p style={{ margin: '0 0 22px', fontSize: 21, lineHeight: 1.42, color: BODY, translate: '0px 30.91px' }}>
             <strong style={{ color: INK }}>Tujuan:</strong> memperkenalkan produk dan mendorong
             pengunjung melakukan tindakan.
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12, translate: '0px 38.72px' }}>
             <QuestionRow code="Q1" text="Produk apa yang ditawarkan?" accentColor={CORAL_HEX} />
             <QuestionRow code="Q2" text="Masalah apa yang diselesaikan?" accentColor={CORAL_HEX} />
             <QuestionRow code="Q3" text="Apa manfaat utamanya?" accentColor={CORAL_HEX} />
@@ -1008,26 +933,11 @@ const Slide03TwoWebsites: Page = () => {
             />
           </div>
         </div>
-
-        <div
-          style={{
-            ...row,
-            justifyContent: 'space-between',
-            paddingTop: 12,
-            borderTop: `1.5px solid ${RULE}`,
-            fontSize: 19,
-            fontWeight: 700,
-            color: '#946200',
-          }}
-        >
-          <span>Fokus: Value Proposition, Koleksi &amp; Call to Action</span>
-          <span>UrbanStore →</span>
-        </div>
       </div>
 
       <div
         style={{
-          ...abs(X0, 858, W, 96),
+          ...abs(X0, 854, W, 96),
           borderRadius: 20,
           background: INK_HEX,
           color: '#FFFFFF',
@@ -1036,7 +946,7 @@ const Slide03TwoWebsites: Page = () => {
           justifyContent: 'space-between',
         }}
       >
-        <div style={{ ...row, gap: 18, fontSize: 28, fontWeight: 720 }}>
+        <div style={{ ...row, gap: 18, fontSize: 27, fontWeight: 720 }}>
           <span style={{ color: YELLOW }}>★</span>
           <span>
             Portfolio builds <span style={{ color: '#7CE8E4' }}>trust in you</span>. Landing page
@@ -1048,7 +958,7 @@ const Slide03TwoWebsites: Page = () => {
         </span>
       </div>
 
-      <UnderlineDoodle x={X0} y={252} w={520} color={TEAL_HEX} live={live} delay={0.4} />
+      <UnderlineDoodle x={X0} y={190} w={460} color={TEAL_HEX} live={live} delay={0.4} />
     </Frame>
   );
 };
@@ -1057,20 +967,20 @@ const PersonaItem = ({ index, label, even }: { index: string; label: string; eve
   <div
     style={{
       ...row,
-      gap: 16,
+      gap: 14,
       background: '#FFFFFF',
-      padding: '15px 20px',
+      padding: '12px 18px',
       borderRadius: 14,
       border: `1.5px solid ${RULE}`,
-      fontSize: 22,
+      fontSize: 20,
       fontWeight: 630,
       color: INK,
     }}
   >
     <span
       style={{
-        width: 32,
-        height: 32,
+        width: 30,
+        height: 30,
         borderRadius: 8,
         background: even ? TINT_TEAL : TINT_YELLOW,
         color: even ? TEAL_HEX : '#946200',
@@ -1078,8 +988,9 @@ const PersonaItem = ({ index, label, even }: { index: string; label: string; eve
         alignItems: 'center',
         justifyContent: 'center',
         fontFamily: MONO,
-        fontSize: 17,
+        fontSize: 16,
         fontWeight: 760,
+        flexShrink: 0,
       }}
     >
       {index}
@@ -1106,54 +1017,50 @@ const PortfolioStructCard = ({
     className="s3-interactive"
     style={{
       borderRadius: 16,
-      padding: '18px 20px',
+      padding: '20px 22px',
       background: selected ? TINT_TEAL : TINT_NEUTRAL,
       border: `2px solid ${selected ? TEAL_HEX : 'transparent'}`,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
     }}
   >
-    <div style={{ ...row, justifyContent: 'space-between', marginBottom: 6 }}>
+    <div style={{ ...row, justifyContent: 'space-between', marginBottom: 8 }}>
       <span
         style={{
           fontFamily: MONO,
-          fontSize: 20,
+          fontSize: 19,
           fontWeight: 780,
           color: selected ? TEAL_HEX : SOFT,
         }}
       >
         {num}
       </span>
-      {selected && <span style={{ fontSize: 17, fontWeight: 750, color: TEAL_HEX }}>AKTIF</span>}
+      {selected && <span style={{ fontSize: 15, fontWeight: 750, color: TEAL_HEX }}>AKTIF</span>}
     </div>
-    <div style={{ fontSize: 24, fontWeight: 740, color: INK, marginBottom: 6 }}>{title}</div>
-    <div style={{ fontSize: 19, lineHeight: 1.36, color: BODY }}>{desc}</div>
+    <div>
+      <div style={{ fontSize: 23, fontWeight: 740, color: INK, marginBottom: 4 }}>{title}</div>
+      <div style={{ fontSize: 18, lineHeight: 1.34, color: BODY }}>{desc}</div>
+    </div>
   </div>
 );
 
 const Slide04PortfolioOverview: Page = () => {
   const [activeStruct, setActiveStruct] = useState(0);
 
-  const previews = [
-    '01 · HERO: Nama lengkap, professional headline, dan tombol CTA utama.',
-    '02 · ABOUT ME: Ringkasan perjalanan karier, fokus bidang, dan nilai kerja.',
-    '03 · SKILLS & EXPERTISE: TypeScript · React · Tailwind CSS · UI/UX Design.',
-    '04 · PROJECTS: Karya nyata disertai masalah, peran, dan link demo.',
-    '05 · EXPERIENCE / EDUCATION: Riwayat kerja, organisasi, atau pendidikan.',
-    '06 · CONTACT & SOCIALS: Email profesional, LinkedIn, dan GitHub.',
-  ];
-
   return (
     <Frame>
       <Eyebrow>Project 1 · Personal Portfolio Website</Eyebrow>
-      <h2 style={{ ...abs(X0, 132, W), ...headline(56) }}>
+      <h2 style={{ ...abs(X0, 130, W), ...headline(52) }}>
         Jadikan kemampuan dan pengalamanmu{' '}
         <Highlight color={HIGHLIGHT_TEAL}>mudah ditemukan.</Highlight>
       </h2>
       <p
         style={{
-          ...abs(X0, 208, 1460),
+          ...abs(X0, 200, 1460),
           margin: 0,
-          fontSize: 24,
-          lineHeight: 1.45,
+          fontSize: 23,
+          lineHeight: 1.42,
           color: BODY,
         }}
       >
@@ -1163,7 +1070,7 @@ const Slide04PortfolioOverview: Page = () => {
 
       <div
         style={{
-          ...abs(X0, 300, 680, 646),
+          ...abs(X0, 268, 680, 678),
           borderRadius: 24,
           background: TINT_NEUTRAL,
           padding: '28px 32px',
@@ -1173,19 +1080,19 @@ const Slide04PortfolioOverview: Page = () => {
         }}
       >
         <div>
-          <div style={{ fontFamily: MONO, fontSize: 19, fontWeight: 760, color: TEAL_HEX }}>
+          <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 760, color: TEAL_HEX, translate: '0px 28.6px' }}>
             TARGET PENGGUNA
           </div>
-          <h3 style={{ ...headline(36), margin: '8px 0 20px' }}>
+          <h3 style={{ ...headline(34), margin: '8px 0 18px', translate: '0px 34.95px' }}>
             Siapa yang Membutuhkan Portfolio?
           </h3>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 11, translate: '0px 37.45px' }}>
             <PersonaItem index="1" label="Mahasiswa dan fresh graduate." even />
             <PersonaItem index="2" label="Programmer dan UI/UX designer." />
             <PersonaItem index="3" label="Freelancer dan consultant." even />
             <PersonaItem index="4" label="Mentor, speaker, dan content creator." />
-            <PersonaItem index="5" label="Profesional yang ingin membangun personal brand." even />
+            <PersonaItem index="5" label="Profesional yang membangun personal brand." even />
           </div>
         </div>
 
@@ -1195,8 +1102,8 @@ const Slide04PortfolioOverview: Page = () => {
             background: TINT_TEAL,
             border: `1.5px solid ${TEAL_HEX}`,
             padding: '16px 20px',
-            fontSize: 21,
-            lineHeight: 1.4,
+            fontSize: 20,
+            lineHeight: 1.38,
             color: INK,
           }}
         >
@@ -1207,89 +1114,88 @@ const Slide04PortfolioOverview: Page = () => {
 
       <div
         style={{
-          ...abs(836, 300, 964, 646),
+          ...abs(836, 268, 964, 678),
           borderRadius: 24,
           background: '#FFFFFF',
           border: `2px solid ${INK_HEX}`,
           padding: '28px 34px',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-between',
         }}
       >
-        <div>
-          <div style={{ ...row, justifyContent: 'space-between', marginBottom: 16 }}>
-            <div>
-              <div style={{ fontFamily: MONO, fontSize: 19, fontWeight: 760, color: CORAL_HEX }}>
-                ARSITEKTUR HALAMAN
-              </div>
-              <h3 style={{ ...headline(36), marginTop: 6 }}>Struktur Portfolio</h3>
+        <div style={{ ...row, justifyContent: 'space-between', marginBottom: 20 }}>
+          <div>
+            <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 760, color: CORAL_HEX }}>
+              ARSITEKTUR HALAMAN
             </div>
-            <span style={{ fontSize: 19, color: SOFT }}>Klik section untuk melihat fungsi</span>
+            <h3 style={{ ...headline(34), marginTop: 6 }}>Struktur Portfolio</h3>
           </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
-            <PortfolioStructCard
-              num="01"
-              title="Hero / Introduction"
-              desc="Nama lengkap, professional headline, dan tombol CTA utama."
-              selected={activeStruct === 0}
-              onClick={() => setActiveStruct(0)}
-            />
-            <PortfolioStructCard
-              num="02"
-              title="About Me"
-              desc="Ringkasan latar belakang, fokus keahlian, dan nilai profesional."
-              selected={activeStruct === 1}
-              onClick={() => setActiveStruct(1)}
-            />
-            <PortfolioStructCard
-              num="03"
-              title="Skills & Expertise"
-              desc="Daftar kemampuan utama, bahasa pemrograman, dan tools kerja."
-              selected={activeStruct === 2}
-              onClick={() => setActiveStruct(2)}
-            />
-            <PortfolioStructCard
-              num="04"
-              title="Projects / Portfolio"
-              desc="Karya pilihan lengkap dengan konteks masalah, peran, dan link demo."
-              selected={activeStruct === 3}
-              onClick={() => setActiveStruct(3)}
-            />
-            <PortfolioStructCard
-              num="05"
-              title="Experience / Education"
-              desc="Riwayat kerja, organisasi, pendidikan, atau sertifikasi relevan."
-              selected={activeStruct === 4}
-              onClick={() => setActiveStruct(4)}
-            />
-            <PortfolioStructCard
-              num="06"
-              title="Contact & Social Links"
-              desc="Jalur komunikasi langsung via email, LinkedIn, dan GitHub."
-              selected={activeStruct === 5}
-              onClick={() => setActiveStruct(5)}
-            />
-          </div>
+          <span
+            style={{
+              padding: '6px 16px',
+              borderRadius: 99,
+              background: TINT_NEUTRAL,
+              fontFamily: MONO,
+              fontSize: 17,
+              fontWeight: 700,
+              color: BODY,
+            }}
+          >
+            6 Section Utama
+          </span>
         </div>
 
         <div
           style={{
-            borderRadius: 16,
-            background: INK_HEX,
-            color: '#FFFFFF',
-            padding: '18px 24px',
-            ...row,
-            justifyContent: 'space-between',
+            flex: 1,
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gridTemplateRows: 'repeat(3, 1fr)',
+            gap: 16,
           }}
         >
-          <div style={{ fontSize: 21, fontWeight: 650, color: '#FFFFFF' }}>
-            {previews[activeStruct]}
-          </div>
-          <span style={{ fontFamily: MONO, fontSize: 18, color: YELLOW, whiteSpace: 'nowrap' }}>
-            Section {activeStruct + 1}/6
-          </span>
+          <PortfolioStructCard
+            num="01"
+            title="Hero / Introduction"
+            desc="Nama, professional headline, & CTA."
+            selected={activeStruct === 0}
+            onClick={() => setActiveStruct(0)}
+          />
+          <PortfolioStructCard
+            num="02"
+            title="About Me"
+            desc="Ringkasan profil & fokus keahlian."
+            selected={activeStruct === 1}
+            onClick={() => setActiveStruct(1)}
+          />
+          <PortfolioStructCard
+            num="03"
+            title="Skills & Expertise"
+            desc="Kemampuan utama, bahasa, & tools."
+            selected={activeStruct === 2}
+            onClick={() => setActiveStruct(2)}
+          />
+          <PortfolioStructCard
+            num="04"
+            title="Projects / Portfolio"
+            desc="Karya pilihan, konteks, & link demo."
+            selected={activeStruct === 3}
+            onClick={() => setActiveStruct(3)}
+          />
+          <PortfolioStructCard
+            num="05"
+            title="Experience / Education"
+            desc="Riwayat kerja, organisasi, & studi."
+            selected={activeStruct === 4}
+            onClick={() => setActiveStruct(4)}
+          />
+          <PortfolioStructCard
+            num="06"
+            title="Contact & Social Links"
+            desc="Email profesional, LinkedIn, & GitHub."
+            selected={activeStruct === 5}
+            onClick={() => setActiveStruct(5)}
+          />
         </div>
       </div>
     </Frame>
@@ -1314,13 +1220,13 @@ const RefElementTile = ({
     className="s3-interactive"
     style={{
       borderRadius: 16,
-      padding: '18px 20px',
+      padding: '16px 20px',
       background: active ? TINT_TEAL : TINT_NEUTRAL,
       border: `2px solid ${active ? TEAL_HEX : 'transparent'}`,
     }}
   >
-    <div style={{ ...row, justifyContent: 'space-between', marginBottom: 6 }}>
-      <span style={{ fontSize: 24, fontWeight: 760, color: INK }}>{name}</span>
+    <div style={{ ...row, justifyContent: 'space-between', marginBottom: 4 }}>
+      <span style={{ fontSize: 22, fontWeight: 760, color: INK }}>{name}</span>
       <span
         style={{
           fontFamily: MONO,
@@ -1332,7 +1238,7 @@ const RefElementTile = ({
         {code}
       </span>
     </div>
-    <div style={{ fontSize: 20, lineHeight: 1.36, color: BODY }}>{detail}</div>
+    <div style={{ fontSize: 19, lineHeight: 1.34, color: BODY }}>{detail}</div>
   </div>
 );
 
@@ -1342,15 +1248,15 @@ const DiscussionRow = ({ num, text }: { num: string; text: string }) => (
       ...row,
       gap: 14,
       background: '#FFFFFF',
-      padding: '15px 18px',
+      padding: '14px 18px',
       borderRadius: 14,
-      fontSize: 21,
+      fontSize: 20,
       fontWeight: 640,
       color: INK,
       lineHeight: 1.35,
     }}
   >
-    <span style={{ fontFamily: MONO, fontSize: 19, fontWeight: 780, color: '#946200', minWidth: 28 }}>
+    <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: '#946200', minWidth: 28 }}>
       {num}
     </span>
     <span>{text}</span>
@@ -1381,34 +1287,34 @@ const Slide05PortfolioReference: Page = () => {
   return (
     <Frame>
       <Eyebrow>Referensi Portfolio · Studi Kasus Nyata</Eyebrow>
-      <h2 style={{ ...abs(X0, 132, 1100), ...headline(66) }}>
+      <h2 style={{ ...abs(X0, 128, 1140), ...headline(48) }}>
         Contoh nyata <Highlight color={HIGHLIGHT_TEAL}>Personal Portfolio Website</Highlight>
       </h2>
 
       <div
         style={{
-          ...abs(1260, 136, 540, 62),
+          ...abs(1280, 124, 520, 58),
           borderRadius: 16,
           background: INK_HEX,
           color: '#FFFFFF',
-          padding: '0 24px',
+          padding: '0 22px',
           ...row,
           justifyContent: 'space-between',
         }}
       >
-        <span style={{ fontSize: 19, color: '#B8B7B4' }}>Website Referensi:</span>
-        <span style={{ fontFamily: MONO, fontSize: 22, fontWeight: 700, color: '#7CE8E4' }}>
+        <span style={{ fontSize: 18, color: '#B8B7B4' }}>Website Referensi:</span>
+        <span style={{ fontFamily: MONO, fontSize: 21, fontWeight: 700, color: '#7CE8E4' }}>
           https://adityafakhri.id
         </span>
       </div>
 
-      <p style={{ ...abs(X0, 220, 1200), margin: 0, fontSize: 24, color: BODY }}>
+      <p style={{ ...abs(X0, 198, 1200), margin: 0, fontSize: 23, color: BODY }}>
         Amati bagaimana informasi personal dan profesional disusun dalam satu website.
       </p>
 
       <div
         style={{
-          ...abs(X0, 282, 980, 670),
+          ...abs(X0, 262, 980, 684),
           borderRadius: 24,
           background: '#FFFFFF',
           border: `2.5px solid ${INK_HEX}`,
@@ -1419,7 +1325,7 @@ const Slide05PortfolioReference: Page = () => {
       >
         <div
           style={{
-            height: 54,
+            height: 52,
             background: TINT_NEUTRAL,
             borderBottom: `1.5px solid ${RULE}`,
             padding: '0 22px',
@@ -1452,14 +1358,14 @@ const Slide05PortfolioReference: Page = () => {
 
         <div
           style={{
-            padding: '24px 28px',
+            padding: '22px 26px',
             flex: 1,
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
           }}
         >
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, minWidth: '0px', minHeight: '0px', maxWidth: 'none', maxHeight: 'none', flexShrink: '0', flexGrow: '0', flexBasis: 'auto', width: '923.2px', height: '426px', translate: '0px 0px' }}>
             <RefElementTile
               code="01"
               name="Hero"
@@ -1509,50 +1415,45 @@ const Slide05PortfolioReference: Page = () => {
               borderRadius: 18,
               background: TINT_TEAL,
               border: `1.5px solid ${TEAL_HEX}`,
-              padding: '20px 24px',
+              padding: '18px 22px',
             }}
           >
             <div
               style={{
                 fontFamily: MONO,
-                fontSize: 18,
+                fontSize: 17,
                 fontWeight: 760,
                 color: TEAL_HEX,
-                marginBottom: 6,
+                marginBottom: 4,
               }}
             >
               CATATAN OBSERVASI · 0{selectedEl + 1}
             </div>
-            <div style={{ fontSize: 23, fontWeight: 700, color: INK, marginBottom: 4 }}>
+            <div style={{ fontSize: 22, fontWeight: 700, color: INK, marginBottom: 4 }}>
               {obsTitles[selectedEl]}
             </div>
-            <div style={{ fontSize: 20, color: BODY }}>{obsNotes[selectedEl]}</div>
+            <div style={{ fontSize: 19, color: BODY }}>{obsNotes[selectedEl]}</div>
           </div>
         </div>
       </div>
 
       <div
         style={{
-          ...abs(1132, 282, 668, 670),
+          ...abs(1132, 262, 668, 684),
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
         }}
       >
         <div
-          style={{
-            borderRadius: 24,
-            background: TINT_YELLOW,
-            border: `2px solid #E2B93B`,
-            padding: '28px 32px',
-          }}
+          style={{ borderRadius: 24, background: TINT_YELLOW, border: `2px solid #E2B93B`, padding: '26px 30px', minWidth: '0px', minHeight: '0px', maxWidth: 'none', maxHeight: 'none', flexShrink: '0', flexGrow: '0', flexBasis: 'auto', width: '668px', height: '502.73px', translate: '0px 0px' }}
         >
-          <div style={{ fontFamily: MONO, fontSize: 19, fontWeight: 760, color: '#946200' }}>
+          <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 760, color: '#946200', translate: '0px 21.8px' }}>
             ANALISIS REFERENSI
           </div>
-          <h3 style={{ ...headline(36), margin: '8px 0 20px' }}>Diskusikan</h3>
+          <h3 style={{ ...headline(34), margin: '6px 0 18px', translate: '0px 27.3px' }}>Diskusikan</h3>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12, translate: '0px 39.11px' }}>
             <DiscussionRow num="01" text="Informasi apa yang langsung terlihat?" />
             <DiscussionRow num="02" text="Bagian mana yang membangun kepercayaan?" />
             <DiscussionRow num="03" text="Bagaimana pengunjung diarahkan ke portfolio atau kontak?" />
@@ -1565,21 +1466,21 @@ const Slide05PortfolioReference: Page = () => {
             borderRadius: 22,
             background: TINT_PINK,
             border: `2px solid ${CORAL_HEX}`,
-            padding: '22px 28px',
+            padding: '20px 26px',
           }}
         >
           <div
             style={{
               fontFamily: MONO,
-              fontSize: 19,
+              fontSize: 18,
               fontWeight: 780,
               color: CORAL_HEX,
-              marginBottom: 6,
+              marginBottom: 4,
             }}
           >
             IMPORTANT
           </div>
-          <div style={{ fontSize: 22, lineHeight: 1.42, fontWeight: 640, color: INK }}>
+          <div style={{ fontSize: 20, lineHeight: 1.4, fontWeight: 640, color: INK }}>
             Gunakan sebagai referensi struktur dan penyajian informasi. Jangan menyalin identitas,
             konten, atau desainnya secara mentah.
           </div>
@@ -1682,14 +1583,14 @@ const Slide06PortfolioContent: Page = () => {
   return (
     <Frame>
       <Eyebrow>Menyiapkan Konten Portfolio · Portfolio Content Checklist</Eyebrow>
-      <h2 style={{ ...abs(X0, 132, W), ...headline(56) }}>
+      <h2 style={{ ...abs(X0, 130, W), ...headline(48), translate: '0px 10.48px' }}>
         Sebelum membuat desain,{' '}
         <Highlight color={HIGHLIGHT}>siapkan bahan yang akan ditampilkan.</Highlight>
       </h2>
 
       <div
         style={{
-          ...abs(X0, 260, W, 686),
+          ...abs(X0, 236, W, 710),
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
           gridTemplateRows: '1fr 1fr',
@@ -1815,8 +1716,8 @@ const StitchStepNode = ({
     className="s3-interactive"
     style={{
       flex: 1,
-      borderRadius: 16,
-      padding: '14px 18px',
+      borderRadius: 18,
+      padding: '16px 20px',
       background: active ? (highlight ? TEAL_HEX : INK_HEX) : '#FFFFFF',
       color: active ? '#FFFFFF' : INK,
       border: `2px solid ${highlight ? TEAL_HEX : RULE}`,
@@ -1862,31 +1763,20 @@ const Slide07GoogleStitch: Page = () => {
   return (
     <Frame>
       <Eyebrow>Google Stitch · Visualisasikan Portfolio</Eyebrow>
-      <h2 style={{ ...abs(X0, 132, W), ...headline(56) }}>
+      <h2 style={{ ...abs(X0, 130, W), ...headline(48) }}>
         Buat <Highlight color={HIGHLIGHT_TEAL}>konsep UI</Highlight> sebelum masuk ke proses
         development.
       </h2>
-      <p style={{ ...abs(X0, 208, 1380), margin: 0, fontSize: 24, color: BODY }}>
+      <p style={{ ...abs(X0, 198, 1380), margin: 0, fontSize: 23, color: BODY }}>
         Google Stitch membantu mengeksplorasi konsep antarmuka dari deskripsi dan arahan visual.
       </p>
 
-      <MorphElement id="portfolio-workflow-bar">
-        <div
-          style={{
-            ...abs(X0, 278, W, 128),
-            borderRadius: 22,
-            background: TINT_NEUTRAL,
-            border: `1.5px solid ${RULE}`,
-          }}
-        />
-      </MorphElement>
       <div
         style={{
-          ...abs(X0, 278, W, 128),
-          padding: '0 24px',
+          ...abs(X0, 264, W, 118),
           ...row,
           justifyContent: 'space-between',
-          gap: 12,
+          gap: 14,
         }}
       >
         <StitchStepNode
@@ -1933,7 +1823,7 @@ const Slide07GoogleStitch: Page = () => {
 
       <div
         style={{
-          ...abs(X0, 432, 816, 514),
+          ...abs(X0, 412, 816, 534),
           borderRadius: 24,
           background: TINT_TEAL,
           border: `2px solid ${TEAL_HEX}`,
@@ -1961,7 +1851,7 @@ const Slide07GoogleStitch: Page = () => {
 
       <div
         style={{
-          ...abs(984, 432, 816, 514),
+          ...abs(984, 412, 816, 534),
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -2045,7 +1935,7 @@ const PrepInputRow = ({
     style={{
       ...row,
       justifyContent: 'space-between',
-      padding: '12px 18px',
+      padding: '13px 20px',
       borderRadius: 12,
       background: active ? TINT_TEAL : TINT_NEUTRAL,
       border: `1.5px solid ${active ? TEAL_HEX : 'transparent'}`,
@@ -2062,9 +1952,13 @@ const PrepInputRow = ({
       >
         {num}
       </span>
-      <span style={{ fontSize: 22, fontWeight: 680, color: INK }}>{title}</span>
+      <span style={{ fontSize: 21, fontWeight: 660, color: INK }}>{title}</span>
     </div>
-    <span style={{ fontSize: 18, color: active ? TEAL_HEX : SOFT }}>→</span>
+    {active && (
+      <span style={{ fontFamily: MONO, fontSize: 16, fontWeight: 750, color: TEAL_HEX }}>
+        ✓ Siap
+      </span>
+    )}
   </div>
 );
 
@@ -2082,7 +1976,7 @@ const StudioWorkflowTile = ({
   <div
     style={{
       borderRadius: 16,
-      padding: '18px 20px',
+      padding: '16px 20px',
       background: final ? INK_HEX : '#FFFFFF',
       color: final ? '#FFFFFF' : INK,
       border: `1.5px solid ${accent ? TEAL_HEX : RULE}`,
@@ -2091,147 +1985,113 @@ const StudioWorkflowTile = ({
     <div
       style={{
         fontFamily: MONO,
-        fontSize: 17,
+        fontSize: 16,
         fontWeight: 760,
         color: final ? YELLOW : TEAL_HEX,
-        marginBottom: 6,
+        marginBottom: 4,
       }}
     >
       {stage}
     </div>
-    <div style={{ fontSize: 22, fontWeight: 740, lineHeight: 1.3 }}>{title}</div>
+    <div style={{ fontSize: 21, fontWeight: 740, lineHeight: 1.3 }}>{title}</div>
   </div>
 );
 
 const Slide08BuildPortfolioAIStudio: Page = () => {
   const [selectedInput, setSelectedInput] = useState(0);
 
-  const inputDetails = [
-    'Tujuan website: memperkenalkan profil profesional dan menampilkan karya nyata.',
-    'Konten portfolio: bio singkat, daftar skill, project pilihan, pengalaman, dan kontak.',
-    'Referensi desain: inspirasi tata letak dan alur informasi (seperti adityafakhri.id).',
-    'Konsep UI dari Google Stitch: arahan layout dan komposisi visual hasil eksplorasi.',
-    'Struktur section: urutan Hero, About, Skills, Projects, Experience, hingga Contact.',
-    'Warna dan typography: palet warna yang bersih dan font yang mudah dibaca.',
-    'Kebutuhan responsive: tampilan rapi dan proporsional di layar desktop maupun mobile.',
-  ];
-
   return (
     <Frame>
       <Eyebrow>Build Portfolio dengan Google AI Studio</Eyebrow>
-      <h2 style={{ ...abs(X0, 132, W), ...headline(56) }}>
+      <h2 style={{ ...abs(X0, 130, W), ...headline(48) }}>
         Dari konsep UI menjadi{' '}
         <Highlight color={HIGHLIGHT_TEAL}>website yang bisa digunakan.</Highlight>
       </h2>
-      <p style={{ ...abs(X0, 208, 1420), margin: 0, fontSize: 24, color: BODY }}>
+      <p style={{ ...abs(X0, 198, 1420), margin: 0, fontSize: 23, color: BODY }}>
         Gunakan Google AI Studio sebagai environment untuk membangun dan mengembangkan website
         dengan bantuan AI.
       </p>
 
       <div
         style={{
-          ...abs(X0, 282, 820, 664),
+          ...abs(X0, 264, 820, 682),
           borderRadius: 24,
           background: '#FFFFFF',
           border: `2px solid ${INK_HEX}`,
-          padding: '26px 32px',
+          padding: '28px 34px',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-between',
         }}
       >
-        <div>
-          <div style={{ ...row, justifyContent: 'space-between', marginBottom: 14 }}>
-            <span style={{ fontFamily: MONO, fontSize: 19, fontWeight: 780, color: TEAL_HEX }}>
-              INPUT PREPARATION
-            </span>
-            <span style={{ fontSize: 18, color: SOFT }}>Klik item untuk detail</span>
-          </div>
-          <h3 style={{ ...headline(36), marginBottom: 16 }}>Siapkan Sebelum Generate</h3>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
-            <PrepInputRow
-              num="01"
-              title="Tujuan website."
-              active={selectedInput === 0}
-              onClick={() => setSelectedInput(0)}
-            />
-            <PrepInputRow
-              num="02"
-              title="Konten portfolio."
-              active={selectedInput === 1}
-              onClick={() => setSelectedInput(1)}
-            />
-            <PrepInputRow
-              num="03"
-              title="Referensi desain."
-              active={selectedInput === 2}
-              onClick={() => setSelectedInput(2)}
-            />
-            <PrepInputRow
-              num="04"
-              title="Konsep UI dari Google Stitch."
-              active={selectedInput === 3}
-              onClick={() => setSelectedInput(3)}
-            />
-            <PrepInputRow
-              num="05"
-              title="Struktur section."
-              active={selectedInput === 4}
-              onClick={() => setSelectedInput(4)}
-            />
-            <PrepInputRow
-              num="06"
-              title="Warna dan typography."
-              active={selectedInput === 5}
-              onClick={() => setSelectedInput(5)}
-            />
-            <PrepInputRow
-              num="07"
-              title="Kebutuhan responsive."
-              active={selectedInput === 6}
-              onClick={() => setSelectedInput(6)}
-            />
-          </div>
+        <div style={{ ...row, justifyContent: 'space-between', marginBottom: 8 }}>
+          <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: TEAL_HEX }}>
+            INPUT PREPARATION
+          </span>
+          <span style={{ fontFamily: MONO, fontSize: 17, color: SOFT }}>7 Bahan Utama</span>
         </div>
+        <h3 style={{ ...headline(34), marginBottom: 20 }}>Siapkan Sebelum Generate</h3>
 
-        <div
-          style={{
-            borderRadius: 14,
-            background: TINT_TEAL,
-            padding: '14px 18px',
-            fontSize: 20,
-            color: INK,
-            fontWeight: 600,
-          }}
-        >
-          {inputDetails[selectedInput]}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 11 }}>
+          <PrepInputRow
+            num="01"
+            title="Tujuan website."
+            active={selectedInput === 0}
+            onClick={() => setSelectedInput(0)}
+          />
+          <PrepInputRow
+            num="02"
+            title="Konten portfolio."
+            active={selectedInput === 1}
+            onClick={() => setSelectedInput(1)}
+          />
+          <PrepInputRow
+            num="03"
+            title="Referensi desain."
+            active={selectedInput === 2}
+            onClick={() => setSelectedInput(2)}
+          />
+          <PrepInputRow
+            num="04"
+            title="Konsep UI dari Google Stitch."
+            active={selectedInput === 3}
+            onClick={() => setSelectedInput(3)}
+          />
+          <PrepInputRow
+            num="05"
+            title="Struktur section."
+            active={selectedInput === 4}
+            onClick={() => setSelectedInput(4)}
+          />
+          <PrepInputRow
+            num="06"
+            title="Warna dan typography."
+            active={selectedInput === 5}
+            onClick={() => setSelectedInput(5)}
+          />
+          <PrepInputRow
+            num="07"
+            title="Kebutuhan responsive."
+            active={selectedInput === 6}
+            onClick={() => setSelectedInput(6)}
+          />
         </div>
       </div>
 
-      <MorphElement id="portfolio-workflow-bar">
-        <div
-          style={{
-            ...abs(976, 282, 824, 502),
-            borderRadius: 24,
-            background: TINT_NEUTRAL,
-            border: `1.5px solid ${RULE}`,
-          }}
-        />
-      </MorphElement>
       <div
         style={{
-          ...abs(976, 282, 824, 664),
+          ...abs(976, 264, 824, 682),
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          gap: 22,
+          gap: 20,
         }}
       >
         <div
           style={{
             flex: 1,
             borderRadius: 24,
+            background: TINT_NEUTRAL,
+            border: `1.5px solid ${RULE}`,
             padding: '28px 32px',
             display: 'flex',
             flexDirection: 'column',
@@ -2239,12 +2099,12 @@ const Slide08BuildPortfolioAIStudio: Page = () => {
           }}
         >
           <div>
-            <div style={{ fontFamily: MONO, fontSize: 19, fontWeight: 780, color: CORAL_HEX }}>
+            <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: CORAL_HEX, translate: '0px 8.8px' }}>
               DEVELOPMENT WORKFLOW
             </div>
-            <h3 style={{ ...headline(36), margin: '8px 0 20px' }}>Workflow Google AI Studio</h3>
+            <h3 style={{ ...headline(34), margin: '6px 0 18px', translate: '0px 19.3px' }}>Workflow Google AI Studio</h3>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, minWidth: '0px', minHeight: '0px', maxWidth: 'none', maxHeight: 'none', flexShrink: '0', flexGrow: '0', flexBasis: 'auto', width: '758.4px', height: '328.5px', translate: '0px 34.35px' }}>
               <StudioWorkflowTile stage="TAHAP 01" title="Brief + Content + UI Reference" />
               <StudioWorkflowTile stage="TAHAP 02" title="Google AI Studio" accent />
               <StudioWorkflowTile stage="TAHAP 03" title="Generate Portfolio" />
@@ -2260,21 +2120,21 @@ const Slide08BuildPortfolioAIStudio: Page = () => {
             borderRadius: 24,
             background: TINT_YELLOW,
             border: `2px solid #E2B93B`,
-            padding: '24px 32px',
+            padding: '22px 30px',
           }}
         >
           <div
             style={{
               fontFamily: MONO,
-              fontSize: 19,
+              fontSize: 18,
               fontWeight: 780,
               color: '#946200',
-              marginBottom: 6,
+              marginBottom: 4,
             }}
           >
             BEST PRACTICE
           </div>
-          <div style={{ fontSize: 23, lineHeight: 1.44, fontWeight: 650, color: INK }}>
+          <div style={{ fontSize: 22, lineHeight: 1.42, fontWeight: 650, color: INK }}>
             Mulai dari struktur dan tampilan utama. Review hasilnya terlebih dahulu sebelum meminta
             AI melakukan perubahan lanjutan.
           </div>
@@ -2283,9 +2143,6 @@ const Slide08BuildPortfolioAIStudio: Page = () => {
     </Frame>
   );
 };
-
-Slide07GoogleStitch.transition = morphTransition;
-Slide08BuildPortfolioAIStudio.transition = morphTransition;
 
 const QualityCheckTile = ({
   code,
@@ -2309,7 +2166,7 @@ const QualityCheckTile = ({
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
-      minHeight: 156,
+      minHeight: 158,
     }}
   >
     <div style={{ ...row, justifyContent: 'space-between' }}>
@@ -2360,14 +2217,14 @@ const Slide09PortfolioQualityCheck: Page = () => {
   return (
     <Frame>
       <Eyebrow>Review Project 1 · Portfolio Quality Check</Eyebrow>
-      <h2 style={{ ...abs(X0, 132, W), ...headline(56) }}>
+      <h2 style={{ ...abs(X0, 130, W), ...headline(46), translate: '0px 10.77px' }}>
         Website selesai dibuat{' '}
         <Highlight color={HIGHLIGHT_PINK}>bukan berarti sudah selesai dikerjakan.</Highlight>
       </h2>
 
       <div
         style={{
-          ...abs(X0, 262, 1140, 684),
+          ...abs(X0, 236, 1140, 710),
           borderRadius: 24,
           background: TINT_NEUTRAL,
           padding: '28px 32px',
@@ -2464,7 +2321,7 @@ const Slide09PortfolioQualityCheck: Page = () => {
 
       <div
         style={{
-          ...abs(1292, 262, 508, 684),
+          ...abs(1292, 236, 508, 710),
           borderRadius: 24,
           background: INK_HEX,
           color: '#FFFFFF',
@@ -2567,24 +2424,24 @@ const BrandDirRow = ({
     className="s3-interactive"
     style={{
       borderRadius: 16,
-      padding: '16px 20px',
+      padding: '15px 20px',
       background: active ? INK_HEX : TINT_NEUTRAL,
       color: active ? '#FFFFFF' : INK,
     }}
   >
     <div style={{ ...row, justifyContent: 'space-between', marginBottom: 4 }}>
-      <span style={{ fontSize: 23, fontWeight: 740 }}>{title}</span>
+      <span style={{ fontSize: 22, fontWeight: 740 }}>{title}</span>
       <span
         style={{
           fontFamily: MONO,
-          fontSize: 17,
+          fontSize: 16,
           color: active ? YELLOW : SOFT,
         }}
       >
         {code}
       </span>
     </div>
-    <div style={{ fontSize: 19, color: active ? '#D8D7D4' : BODY }}>{sub}</div>
+    <div style={{ fontSize: 18, lineHeight: 1.34, color: active ? '#D8D7D4' : BODY }}>{sub}</div>
   </div>
 );
 
@@ -2594,34 +2451,26 @@ const Slide10UrbanStoreOverview: Page = () => {
   return (
     <Frame>
       <Eyebrow>Project 2 · Product Landing Page UrbanStore</Eyebrow>
-      <h2 style={{ ...abs(X0, 132, W), ...headline(58) }}>
+      <h2 style={{ ...abs(X0, 130, W), ...headline(46), translate: '0px 12.56px' }}>
         Sekarang, gunakan <Highlight color={HIGHLIGHT_TEAL}>workflow yang sama</Highlight> untuk
         memperkenalkan sebuah produk.
       </h2>
 
-      <MorphElement id="urbanstore-banner">
-        <div
-          style={{
-            ...abs(X0, 268, 820, 154),
-            borderRadius: 22,
-            background: INK_HEX,
-          }}
-        />
-      </MorphElement>
       <div
         style={{
-          ...abs(X0, 268, 820, 678),
+          ...abs(X0, 236, 820, 710),
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          gap: 16,
+          gap: 18,
         }}
       >
         <div
           style={{
-            borderRadius: 22,
+            borderRadius: 24,
+            background: INK_HEX,
             color: '#FFFFFF',
-            padding: '24px 30px',
+            padding: '26px 32px',
           }}
         >
           <div
@@ -2636,58 +2485,77 @@ const Slide10UrbanStoreOverview: Page = () => {
             STUDI KASUS · PROJECT 2
           </div>
           <h3 style={{ ...headline(38), color: '#FFFFFF', marginBottom: 8 }}>UrbanStore</h3>
-          <p style={{ margin: 0, fontSize: 22, lineHeight: 1.42, color: '#E2E1DD' }}>
+          <p style={{ margin: 0, fontSize: 21, lineHeight: 1.42, color: '#E2E1DD' }}>
             UrbanStore adalah online store fashion untuk pria dan wanita yang menyasar Gen Z.
           </p>
         </div>
 
         <div
           style={{
-            borderRadius: 22,
-            background: TINT_TEAL,
-            border: `1.5px solid ${TEAL_HEX}`,
-            padding: '22px 30px',
+            flex: 1,
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: 18,
           }}
         >
           <div
             style={{
-              fontFamily: MONO,
-              fontSize: 18,
-              fontWeight: 780,
-              color: TEAL_HEX,
-              marginBottom: 6,
+              borderRadius: 22,
+              background: TINT_TEAL,
+              border: `1.5px solid ${TEAL_HEX}`,
+              padding: '24px 26px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
             }}
           >
-            TUJUAN LANDING PAGE
+            <div>
+              <div
+                style={{
+                  fontFamily: MONO,
+                  fontSize: 17,
+                  fontWeight: 780,
+                  color: TEAL_HEX,
+                  marginBottom: 8,
+                }}
+              >
+                TUJUAN LANDING PAGE
+              </div>
+              <div style={{ fontSize: 21, lineHeight: 1.42, fontWeight: 630, color: INK }}>
+                Memperkenalkan UrbanStore, menampilkan nilai utama brand, dan mengarahkan
+                pengunjung melihat koleksi atau mulai berbelanja.
+              </div>
+            </div>
           </div>
-          <div style={{ fontSize: 22, lineHeight: 1.42, fontWeight: 630, color: INK }}>
-            Memperkenalkan UrbanStore, menampilkan nilai utama brand, dan mengarahkan pengunjung
-            untuk melihat koleksi atau mulai berbelanja.
-          </div>
-        </div>
 
-        <div
-          style={{
-            borderRadius: 22,
-            background: TINT_YELLOW,
-            border: `1.5px solid #E2B93B`,
-            padding: '22px 30px',
-          }}
-        >
           <div
             style={{
-              fontFamily: MONO,
-              fontSize: 18,
-              fontWeight: 780,
-              color: '#946200',
-              marginBottom: 6,
+              borderRadius: 22,
+              background: TINT_YELLOW,
+              border: `1.5px solid #E2B93B`,
+              padding: '24px 26px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
             }}
           >
-            TARGET AUDIENCE
-          </div>
-          <div style={{ fontSize: 22, lineHeight: 1.42, fontWeight: 630, color: INK }}>
-            Gen Z dan young adults yang mencari produk fashion stylish dengan pengalaman belanja
-            online yang praktis.
+            <div>
+              <div
+                style={{
+                  fontFamily: MONO,
+                  fontSize: 17,
+                  fontWeight: 780,
+                  color: '#946200',
+                  marginBottom: 8,
+                }}
+              >
+                TARGET AUDIENCE
+              </div>
+              <div style={{ fontSize: 21, lineHeight: 1.42, fontWeight: 630, color: INK }}>
+                Gen Z dan young adults yang mencari produk fashion stylish dengan pengalaman
+                belanja online yang praktis.
+              </div>
+            </div>
           </div>
         </div>
 
@@ -2696,7 +2564,7 @@ const Slide10UrbanStoreOverview: Page = () => {
             borderRadius: 22,
             background: TINT_PINK,
             border: `2px solid ${CORAL_HEX}`,
-            padding: '20px 30px',
+            padding: '22px 28px',
           }}
         >
           <div
@@ -2705,7 +2573,7 @@ const Slide10UrbanStoreOverview: Page = () => {
               fontSize: 18,
               fontWeight: 780,
               color: CORAL_HEX,
-              marginBottom: 4,
+              marginBottom: 6,
             }}
           >
             IMPORTANT
@@ -2719,99 +2587,81 @@ const Slide10UrbanStoreOverview: Page = () => {
 
       <div
         style={{
-          ...abs(976, 268, 824, 678),
+          ...abs(976, 236, 824, 710),
           borderRadius: 24,
           background: '#FFFFFF',
           border: `2.5px solid ${INK_HEX}`,
           padding: '28px 34px',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-between',
         }}
       >
-        <div>
-          <div style={{ ...row, justifyContent: 'space-between', marginBottom: 14 }}>
-            <div>
-              <div style={{ fontFamily: MONO, fontSize: 19, fontWeight: 780, color: CORAL_HEX }}>
-                VISUAL IDENTITY
-              </div>
-              <h3 style={{ ...headline(36), marginTop: 4 }}>Brand Direction</h3>
+        <div style={{ ...row, justifyContent: 'space-between', marginBottom: 18, translate: '0px 18.61px' }}>
+          <div>
+            <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: CORAL_HEX }}>
+              VISUAL IDENTITY
             </div>
-            <div style={{ ...row, gap: 8 }}>
-              <span
-                style={{
-                  width: 28,
-                  height: 28,
-                  borderRadius: 99,
-                  background: '#111111',
-                  border: `1px solid ${RULE}`,
-                }}
-              />
-              <span
-                style={{
-                  width: 28,
-                  height: 28,
-                  borderRadius: 99,
-                  background: '#FFFFFF',
-                  border: `1.5px solid ${INK_HEX}`,
-                }}
-              />
-              <span style={{ width: 28, height: 28, borderRadius: 99, background: TEAL_HEX }} />
-            </div>
+            <h3 style={{ ...headline(34), marginTop: 4 }}>Brand Direction</h3>
           </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            <BrandDirRow
-              code="01"
-              title="Modern Minimalist."
-              sub="Fokus pada produk tanpa elemen dekoratif yang berlebihan."
-              active={selectedDir === 0}
-              onClick={() => setSelectedDir(0)}
+          <div style={{ ...row, gap: 8 }}>
+            <span
+              style={{
+                width: 26,
+                height: 26,
+                borderRadius: 99,
+                background: '#111111',
+                border: `1px solid ${RULE}`,
+              }}
             />
-            <BrandDirRow
-              code="02"
-              title="Swiss Style × Japanese Design."
-              sub="Grid terstruktur, asimetri editorial, dan ruang kosong yang lega."
-              active={selectedDir === 1}
-              onClick={() => setSelectedDir(1)}
+            <span
+              style={{
+                width: 26,
+                height: 26,
+                borderRadius: 99,
+                background: '#FFFFFF',
+                border: `1.5px solid ${INK_HEX}`,
+              }}
             />
-            <BrandDirRow
-              code="03"
-              title="Dominasi hitam dan putih."
-              sub="Kontras tinggi yang menonjolkan foto koleksi fashion."
-              active={selectedDir === 2}
-              onClick={() => setSelectedDir(2)}
-            />
-            <BrandDirRow
-              code="04"
-              title="Clean layout dan strong typography."
-              sub="Hierarki ukuran huruf yang tegas dan mudah dipindai."
-              active={selectedDir === 3}
-              onClick={() => setSelectedDir(3)}
-            />
-            <BrandDirRow
-              code="05"
-              title="Copywriting ringkas dengan karakter Gen Z."
-              sub="Bahasa lugas, relevan, dan langsung ke manfaat utama."
-              active={selectedDir === 4}
-              onClick={() => setSelectedDir(4)}
-            />
+            <span style={{ width: 26, height: 26, borderRadius: 99, background: TEAL_HEX }} />
           </div>
         </div>
 
-        <div
-          style={{
-            borderRadius: 16,
-            background: TINT_NEUTRAL,
-            padding: '16px 22px',
-            ...row,
-            justifyContent: 'space-between',
-          }}
-        >
-          <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 700, color: INK }}>
-            URBANSTORE · SWISS × JAPANESE MINIMALISM
-          </span>
-          <span style={{ fontSize: 19, color: BODY }}>Klik baris untuk fokus</span>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12, translate: '0px 18.61px' }}>
+          <BrandDirRow
+            code="01"
+            title="Modern Minimalist."
+            sub="Fokus pada produk tanpa elemen dekoratif yang berlebihan."
+            active={selectedDir === 0}
+            onClick={() => setSelectedDir(0)}
+          />
+          <BrandDirRow
+            code="02"
+            title="Swiss Style × Japanese Design."
+            sub="Grid terstruktur, asimetri editorial, dan ruang kosong yang lega."
+            active={selectedDir === 1}
+            onClick={() => setSelectedDir(1)}
+          />
+          <BrandDirRow
+            code="03"
+            title="Dominasi hitam dan putih."
+            sub="Kontras tinggi yang menonjolkan foto koleksi fashion."
+            active={selectedDir === 2}
+            onClick={() => setSelectedDir(2)}
+          />
+          <BrandDirRow
+            code="04"
+            title="Clean layout dan strong typography."
+            sub="Hierarki ukuran huruf yang tegas dan mudah dipindai."
+            active={selectedDir === 3}
+            onClick={() => setSelectedDir(3)}
+          />
+          <BrandDirRow
+            code="05"
+            title="Copywriting ringkas dengan karakter Gen Z."
+            sub="Bahasa lugas, relevan, dan langsung ke manfaat utama."
+            active={selectedDir === 4}
+            onClick={() => setSelectedDir(4)}
+          />
         </div>
       </div>
     </Frame>
@@ -2838,7 +2688,7 @@ const LandingSecTile = ({
     className="s3-interactive"
     style={{
       borderRadius: 22,
-      padding: '24px 26px',
+      padding: '22px 24px',
       background: active ? INK_HEX : even ? TINT_NEUTRAL : '#FFFFFF',
       color: active ? '#FFFFFF' : INK,
       border: `2px solid ${active ? INK_HEX : RULE}`,
@@ -2848,11 +2698,11 @@ const LandingSecTile = ({
     }}
   >
     <div>
-      <div style={{ ...row, justifyContent: 'space-between', marginBottom: 12 }}>
+      <div style={{ ...row, justifyContent: 'space-between', marginBottom: 10 }}>
         <span
           style={{
             fontFamily: MONO,
-            fontSize: 22,
+            fontSize: 20,
             fontWeight: 780,
             color: active ? YELLOW : TEAL_HEX,
           }}
@@ -2861,7 +2711,7 @@ const LandingSecTile = ({
         </span>
         <span
           style={{
-            fontSize: 16,
+            fontSize: 15,
             fontFamily: MONO,
             color: active ? '#7CE8E4' : SOFT,
           }}
@@ -2871,9 +2721,9 @@ const LandingSecTile = ({
       </div>
       <h3
         style={{
-          ...headline(29),
+          ...headline(26),
           color: active ? '#FFFFFF' : INK,
-          marginBottom: 10,
+          marginBottom: 8,
           lineHeight: 1.18,
         }}
       >
@@ -2882,8 +2732,8 @@ const LandingSecTile = ({
       <p
         style={{
           margin: 0,
-          fontSize: 20,
-          lineHeight: 1.4,
+          fontSize: 19,
+          lineHeight: 1.38,
           color: active ? '#E2E1DD' : BODY,
         }}
       >
@@ -2893,7 +2743,7 @@ const LandingSecTile = ({
 
     <div
       style={{
-        fontSize: 17,
+        fontSize: 16,
         fontWeight: 700,
         color: active ? YELLOW : TEAL_HEX,
       }}
@@ -2909,14 +2759,14 @@ const Slide11LandingPageStructure: Page = () => {
   return (
     <Frame>
       <Eyebrow>Struktur Landing Page yang Efektif · UrbanStore</Eyebrow>
-      <h2 style={{ ...abs(X0, 132, 1580), ...headline(64) }}>
+      <h2 style={{ ...abs(X0, 130, W), ...headline(44), translate: '0px 17.94px' }}>
         Susun informasi agar pengunjung{' '}
         <Highlight color={HIGHLIGHT_TEAL}>memahami produk</Highlight> dan tahu langkah berikutnya.
       </h2>
 
       <div
         style={{
-          ...abs(X0, 264, W, 556),
+          ...abs(X0, 248, W, 568),
           display: 'grid',
           gridTemplateColumns: 'repeat(4, 1fr)',
           gridTemplateRows: '1fr 1fr',
@@ -2985,25 +2835,18 @@ const Slide11LandingPageStructure: Page = () => {
         />
       </div>
 
-      <MorphElement id="urbanstore-banner">
-        <div
-          style={{
-            ...abs(X0, 848, W, 98),
-            borderRadius: 20,
-            background: TINT_TEAL,
-            border: `2px solid ${TEAL_HEX}`,
-          }}
-        />
-      </MorphElement>
       <div
         style={{
-          ...abs(X0, 848, W, 98),
+          ...abs(X0, 844, W, 98),
+          borderRadius: 20,
+          background: TINT_TEAL,
+          border: `2px solid ${TEAL_HEX}`,
           padding: '0 34px',
           ...row,
           justifyContent: 'space-between',
         }}
       >
-        <div style={{ fontSize: 26, fontWeight: 720, color: INK }}>
+        <div style={{ fontSize: 25, fontWeight: 720, color: INK }}>
           “Landing page harus membantu pengunjung memahami produk, bukan sekadar menampilkan
           banyak section.”
         </div>
@@ -3014,9 +2857,6 @@ const Slide11LandingPageStructure: Page = () => {
     </Frame>
   );
 };
-
-Slide10UrbanStoreOverview.transition = morphTransition;
-Slide11LandingPageStructure.transition = morphTransition;
 
 const CopyDraftChip = ({ num, text }: { num: string; text: string }) => (
   <div
@@ -3050,13 +2890,13 @@ const Slide12CopywritingAI: Page = () => {
   return (
     <Frame>
       <Eyebrow>Copywriting dengan Bantuan AI</Eyebrow>
-      <h2 style={{ ...abs(X0, 132, 1520), ...headline(66) }}>
+      <h2 style={{ ...abs(X0, 130, W), ...headline(52) }}>
         Desain menarik perlu didukung <Highlight color={HIGHLIGHT}>pesan yang jelas.</Highlight>
       </h2>
 
       <div
         style={{
-          ...abs(X0, 260, 780, 686),
+          ...abs(X0, 236, 780, 710),
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -3117,7 +2957,7 @@ const Slide12CopywritingAI: Page = () => {
               STANDAR KUALITAS TEKS
             </div>
             <h3 style={{ ...headline(32), marginBottom: 14 }}>Prinsip Copywriting</h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               <CopyPrincipleItem text="Spesifik dan mudah dipahami." />
               <CopyPrincipleItem text="Fokus pada manfaat pengguna." />
               <CopyPrincipleItem text="Sesuaikan tone dengan target audience." />
@@ -3130,7 +2970,7 @@ const Slide12CopywritingAI: Page = () => {
 
       <div
         style={{
-          ...abs(936, 260, 864, 686),
+          ...abs(936, 236, 864, 710),
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -3310,7 +3150,7 @@ const LandingInputRow = ({ num, text }: { num: string; text: string }) => (
       padding: '14px 20px',
       borderRadius: 14,
       border: `1.5px solid ${RULE}`,
-      fontSize: 22,
+      fontSize: 21,
       fontWeight: 640,
       color: INK,
     }}
@@ -3343,7 +3183,7 @@ const LandingWorkflowCard = ({
       padding: '18px 18px',
       background: active ? TEAL_HEX : final ? INK_HEX : TINT_NEUTRAL,
       color: active || final ? '#FFFFFF' : INK,
-      minHeight: 138,
+      minHeight: 144,
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
@@ -3369,14 +3209,14 @@ const Slide13BuildLandingPageAIStudio: Page = () => {
   return (
     <Frame>
       <Eyebrow>Build Landing Page dengan Google AI Studio</Eyebrow>
-      <h2 style={{ ...abs(X0, 132, W), ...headline(56) }}>
+      <h2 style={{ ...abs(X0, 130, W), ...headline(48), translate: '0px 7.18px' }}>
         Terapkan workflow yang sama.{' '}
         <Highlight color={HIGHLIGHT_TEAL}>Ganti konteks dan tujuannya.</Highlight>
       </h2>
 
       <div
         style={{
-          ...abs(X0, 260, 680, 686),
+          ...abs(X0, 236, 680, 710),
           borderRadius: 24,
           background: TINT_NEUTRAL,
           padding: '28px 32px',
@@ -3391,7 +3231,7 @@ const Slide13BuildLandingPageAIStudio: Page = () => {
           </div>
           <h3 style={{ ...headline(36), margin: '8px 0 20px' }}>Siapkan Input</h3>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 11 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             <LandingInputRow num="01" text="Konteks dan tujuan UrbanStore." />
             <LandingInputRow num="02" text="Target audience." />
             <LandingInputRow num="03" text="Brand direction dan design system." />
@@ -3405,7 +3245,7 @@ const Slide13BuildLandingPageAIStudio: Page = () => {
 
       <div
         style={{
-          ...abs(836, 260, 964, 686),
+          ...abs(836, 236, 964, 710),
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -3536,9 +3376,9 @@ const DualCheckItem = ({
       ...row,
       gap: 14,
       background: '#FFFFFF',
-      padding: '11px 18px',
+      padding: '10px 18px',
       borderRadius: 12,
-      fontSize: 21,
+      fontSize: 20,
       fontWeight: 630,
       color: INK,
     }}
@@ -3555,6 +3395,7 @@ const DualCheckItem = ({
         justifyContent: 'center',
         fontSize: 15,
         fontWeight: 800,
+        flexShrink: 0,
       }}
     >
       {done ? '✓' : ''}
@@ -3597,14 +3438,14 @@ const Slide14ReviewAndImprove: Page = () => {
   return (
     <Frame>
       <Eyebrow>Review &amp; Improve · Dua Website, Satu Workflow</Eyebrow>
-      <h2 style={{ ...abs(X0, 132, W), ...headline(56) }}>
+      <h2 style={{ ...abs(X0, 130, W), ...headline(46), translate: '0px 12.56px' }}>
         Gunakan checklist yang sesuai dengan{' '}
         <Highlight color={HIGHLIGHT_TEAL}>tujuan masing-masing website.</Highlight>
       </h2>
 
       <div
         style={{
-          ...abs(X0, 248, 816, 480),
+          ...abs(X0, 240, 816, 480),
           borderRadius: 24,
           background: TINT_TEAL,
           border: `2px solid ${TEAL_HEX}`,
@@ -3612,13 +3453,13 @@ const Slide14ReviewAndImprove: Page = () => {
         }}
       >
         <div style={{ ...row, justifyContent: 'space-between', marginBottom: 14 }}>
-          <h3 style={{ ...headline(34) }}>Portfolio Checklist</h3>
+          <h3 style={{ ...headline(33) }}>Portfolio Checklist</h3>
           <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 760, color: TEAL_HEX }}>
             01 · PERSONAL BRAND
           </span>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 9, translate: '0px 17.5px' }}>
           <DualCheckItem
             text="Identitas personal jelas."
             done={p0}
@@ -3660,7 +3501,7 @@ const Slide14ReviewAndImprove: Page = () => {
 
       <div
         style={{
-          ...abs(984, 248, 816, 480),
+          ...abs(984, 240, 816, 480),
           borderRadius: 24,
           background: TINT_YELLOW,
           border: `2px solid #E2B93B`,
@@ -3668,13 +3509,13 @@ const Slide14ReviewAndImprove: Page = () => {
         }}
       >
         <div style={{ ...row, justifyContent: 'space-between', marginBottom: 14 }}>
-          <h3 style={{ ...headline(34) }}>Landing Page Checklist</h3>
+          <h3 style={{ ...headline(33) }}>Landing Page Checklist</h3>
           <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 760, color: '#946200' }}>
             02 · URBANSTORE
           </span>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 9, translate: '0px 13px' }}>
           <DualCheckItem
             text="Produk dan value proposition jelas."
             done={l0}
@@ -3716,7 +3557,7 @@ const Slide14ReviewAndImprove: Page = () => {
 
       <div
         style={{
-          ...abs(X0, 750, W, 114),
+          ...abs(X0, 746, W, 110),
           borderRadius: 20,
           background: TINT_NEUTRAL,
           border: `1.5px solid ${RULE}`,
@@ -3745,14 +3586,14 @@ const Slide14ReviewAndImprove: Page = () => {
 
       <div
         style={{
-          ...abs(X0, 882, W, 74),
+          ...abs(X0, 878, W, 72),
           borderRadius: 16,
           background: INK_HEX,
           color: '#FFFFFF',
           padding: '0 32px',
           ...row,
           justifyContent: 'space-between',
-          fontSize: 23,
+          fontSize: 22,
           fontWeight: 680,
         }}
       >
@@ -3780,16 +3621,27 @@ const ChallengeStepRow = ({
   <div
     style={{
       ...row,
-      gap: 14,
+      gap: 12,
       background: '#FFFFFF',
-      padding: compact ? '11px 16px' : '13px 16px',
+      padding: compact ? '9px 14px' : '12px 16px',
       borderRadius: 12,
-      fontSize: 20,
+      fontSize: compact ? 18 : 19,
+      lineHeight: 1.28,
       fontWeight: 640,
       color: INK,
     }}
   >
-    <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: accent }}>{num}</span>
+    <span
+      style={{
+        fontFamily: MONO,
+        fontSize: 17,
+        fontWeight: 780,
+        color: accent,
+        flexShrink: 0,
+      }}
+    >
+      {num}
+    </span>
     <span>{text}</span>
   </div>
 );
@@ -3798,17 +3650,17 @@ const Slide15HandsOnChallenge: Page = () => {
   return (
     <Frame>
       <Eyebrow>Hands-on Challenge &amp; Session Output</Eyebrow>
-      <h2 style={{ ...abs(X0, 130, 1500), ...headline(68) }}>
+      <h2 style={{ ...abs(X0, 128, 1500), ...headline(58) }}>
         Saatnya <Highlight color={HIGHLIGHT_TEAL}>Bangun Dua Website!</Highlight>
       </h2>
 
       <div
         style={{
-          ...abs(X0, 236, 540, 504),
+          ...abs(X0, 224, 540, 526),
           borderRadius: 24,
           background: TINT_TEAL,
           border: `2px solid ${TEAL_HEX}`,
-          padding: '26px 28px',
+          padding: '24px 26px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -3816,18 +3668,12 @@ const Slide15HandsOnChallenge: Page = () => {
       >
         <div>
           <div
-            style={{
-              fontFamily: MONO,
-              fontSize: 18,
-              fontWeight: 780,
-              color: TEAL_HEX,
-              marginBottom: 6,
-            }}
+            style={{ fontFamily: MONO, fontSize: 17, fontWeight: 780, color: TEAL_HEX, marginBottom: 4, translate: '0px 16.63px' }}
           >
             CHALLENGE 1
           </div>
-          <h3 style={{ ...headline(34), marginBottom: 18 }}>Personal Portfolio</h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 11 }}>
+          <h3 style={{ ...headline(32), marginBottom: 16, translate: '0px 26.63px' }}>Personal Portfolio</h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10, translate: '0px 36.63px' }}>
             <ChallengeStepRow num="1." text="Siapkan konten personal." accent={TEAL_HEX} />
             <ChallengeStepRow num="2." text="Cari referensi portfolio." accent={TEAL_HEX} />
             <ChallengeStepRow
@@ -3847,11 +3693,11 @@ const Slide15HandsOnChallenge: Page = () => {
 
       <div
         style={{
-          ...abs(690, 236, 540, 504),
+          ...abs(690, 224, 540, 526),
           borderRadius: 24,
           background: TINT_YELLOW,
           border: `2px solid #E2B93B`,
-          padding: '26px 28px',
+          padding: '24px 26px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -3859,18 +3705,12 @@ const Slide15HandsOnChallenge: Page = () => {
       >
         <div>
           <div
-            style={{
-              fontFamily: MONO,
-              fontSize: 18,
-              fontWeight: 780,
-              color: '#946200',
-              marginBottom: 6,
-            }}
+            style={{ fontFamily: MONO, fontSize: 17, fontWeight: 780, color: '#946200', marginBottom: 4, translate: '0px 16.63px' }}
           >
             CHALLENGE 2
           </div>
-          <h3 style={{ ...headline(34), marginBottom: 16 }}>UrbanStore Landing Page</h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
+          <h3 style={{ ...headline(32), marginBottom: 14, translate: '0px 26.63px' }}>UrbanStore Landing Page</h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, translate: '0px 36.63px' }}>
             <ChallengeStepRow
               num="1."
               text="Gunakan brief dan konteks UrbanStore."
@@ -3908,42 +3748,36 @@ const Slide15HandsOnChallenge: Page = () => {
 
       <div
         style={{
-          ...abs(1260, 236, 540, 504),
+          ...abs(1260, 224, 540, 526),
           borderRadius: 24,
           background: '#FFFFFF',
           border: `2.5px solid ${INK_HEX}`,
-          padding: '26px 28px',
+          padding: '24px 26px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
         }}
       >
-        <div>
+        <div style={{ translate: '0px 36.63px' }}>
           <div
-            style={{
-              fontFamily: MONO,
-              fontSize: 18,
-              fontWeight: 780,
-              color: CORAL_HEX,
-              marginBottom: 6,
-            }}
+            style={{ fontFamily: MONO, fontSize: 17, fontWeight: 780, color: CORAL_HEX, marginBottom: 4, translate: '0px -20px' }}
           >
             DELIVERABLES
           </div>
-          <h3 style={{ ...headline(34), marginBottom: 18 }}>Final Output Sesi 3</h3>
+          <h3 style={{ ...headline(32), marginBottom: 16, translate: '0px -10px' }}>Final Output Sesi 3</h3>
 
           <div
             style={{
               borderRadius: 16,
               background: TINT_TEAL,
-              padding: '20px 22px',
-              marginBottom: 16,
+              padding: '18px 20px',
+              marginBottom: 14,
             }}
           >
             <div
               style={{
                 fontFamily: MONO,
-                fontSize: 18,
+                fontSize: 17,
                 fontWeight: 780,
                 color: TEAL_HEX,
                 marginBottom: 4,
@@ -3951,7 +3785,7 @@ const Slide15HandsOnChallenge: Page = () => {
             >
               01 · PERSONAL PORTFOLIO WEBSITE
             </div>
-            <div style={{ fontSize: 21, fontWeight: 650, lineHeight: 1.38, color: INK }}>
+            <div style={{ fontSize: 20, fontWeight: 650, lineHeight: 1.38, color: INK }}>
               Website untuk memperkenalkan diri dan menampilkan karya.
             </div>
           </div>
@@ -3960,13 +3794,13 @@ const Slide15HandsOnChallenge: Page = () => {
             style={{
               borderRadius: 16,
               background: TINT_YELLOW,
-              padding: '20px 22px',
+              padding: '18px 20px',
             }}
           >
             <div
               style={{
                 fontFamily: MONO,
-                fontSize: 18,
+                fontSize: 17,
                 fontWeight: 780,
                 color: '#946200',
                 marginBottom: 4,
@@ -3974,7 +3808,7 @@ const Slide15HandsOnChallenge: Page = () => {
             >
               02 · URBANSTORE PRODUCT LANDING PAGE
             </div>
-            <div style={{ fontSize: 21, fontWeight: 650, lineHeight: 1.38, color: INK }}>
+            <div style={{ fontSize: 20, fontWeight: 650, lineHeight: 1.38, color: INK }}>
               Website untuk memperkenalkan brand dan mengarahkan pengunjung ke koleksi produk.
             </div>
           </div>
@@ -3987,11 +3821,11 @@ const Slide15HandsOnChallenge: Page = () => {
 
       <div
         style={{
-          ...abs(X0, 768, W, 184),
+          ...abs(X0, 774, W, 174),
           borderRadius: 24,
           background: INK_HEX,
           color: '#FFFFFF',
-          padding: '26px 38px',
+          padding: '24px 36px',
           ...row,
           justifyContent: 'space-between',
         }}
@@ -4000,18 +3834,18 @@ const Slide15HandsOnChallenge: Page = () => {
           <div
             style={{
               fontFamily: MONO,
-              fontSize: 18,
+              fontSize: 17,
               fontWeight: 780,
               color: YELLOW,
-              marginBottom: 8,
+              marginBottom: 6,
             }}
           >
             PREVIEW SESI 4 · NEXT SESSION
           </div>
-          <h3 style={{ ...headline(40), color: '#FFFFFF', marginBottom: 8 }}>
+          <h3 style={{ ...headline(38), color: '#FFFFFF', marginBottom: 6 }}>
             Build Web Application
           </h3>
-          <p style={{ margin: 0, fontSize: 22, lineHeight: 1.4, color: '#E2E1DD' }}>
+          <p style={{ margin: 0, fontSize: 21, lineHeight: 1.38, color: '#E2E1DD', minWidth: '0px', minHeight: '0px', maxWidth: 'none', maxHeight: 'none', flexShrink: '0', flexGrow: '0', flexBasis: 'auto', width: '1091.46px', height: '57.95px', translate: '0px 0px' }}>
             Dari website yang berfungsi sebagai media informasi, kita akan melangkah ke aplikasi web
             dengan fitur dan interaksi yang lebih kompleks.
           </p>
@@ -4022,7 +3856,7 @@ const Slide15HandsOnChallenge: Page = () => {
             borderRadius: 16,
             background: TEAL_HEX,
             color: '#FFFFFF',
-            fontSize: 22,
+            fontSize: 21,
             fontWeight: 780,
             whiteSpace: 'nowrap',
           }}
