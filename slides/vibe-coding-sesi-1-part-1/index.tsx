@@ -370,7 +370,7 @@ const Frame = ({
   children: ReactNode;
   hideFooter?: boolean;
 }) => (
-  <div style={root}>
+  <div data-osd-interactive="true" style={root}>
     {children}
     {!hideFooter && <Footer />}
   </div>
