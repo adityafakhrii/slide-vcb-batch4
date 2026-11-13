@@ -3473,51 +3473,57 @@ const Slide14MentorDemo: Page = () => (
 /* SLIDE 15 — PRAKTIK & HANDS-ON CHALLENGE                                      */
 /* ============================================================================ */
 
-const ChallengeCard = ({
+const ActionStepCard = ({
   num,
-  role,
+  tag,
   title,
-  desc,
+  action,
   tint,
   accent,
 }: {
   num: string;
-  role: string;
+  tag: string;
   title: string;
-  desc: string;
+  action: string;
   tint: string;
   accent: string;
 }) => (
   <div
     style={{
-      borderRadius: 22,
+      borderRadius: 20,
       background: tint,
       border: `2px solid ${accent}`,
-      padding: '20px 24px',
+      padding: '20px 26px',
       display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-between',
+      alignItems: 'center',
+      gap: 20,
     }}
   >
-    <div>
-      <div style={{ ...row, justifyContent: 'space-between', marginBottom: 8 }}>
-        <span style={{ fontFamily: MONO, fontSize: 16, fontWeight: 780, color: accent }}>{num}</span>
-        <span
-          style={{
-            padding: '4px 12px',
-            borderRadius: 99,
-            background: '#FFFFFF',
-            fontFamily: MONO,
-            fontSize: 14,
-            fontWeight: 740,
-            color: INK,
-          }}
-        >
-          {role}
-        </span>
+    <div
+      style={{
+        width: 56,
+        height: 56,
+        borderRadius: 14,
+        background: '#FFFFFF',
+        border: `2px solid ${accent}`,
+        color: accent,
+        fontFamily: MONO,
+        fontSize: 22,
+        fontWeight: 780,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0,
+      }}
+    >
+      {num}
+    </div>
+    <div style={{ flex: 1 }}>
+      <div style={{ fontFamily: MONO, fontSize: 14, fontWeight: 780, color: accent, marginBottom: 4 }}>
+        {tag}
       </div>
-      <div style={{ ...headline(25), marginBottom: 6 }}>{title}</div>
-      <div style={{ fontSize: 18, lineHeight: 1.38, color: BODY }}>{desc}</div>
+      <div style={{ ...headline(25), marginBottom: 4 }}>{title}</div>
+      <div style={{ fontSize: 18, color: BODY, lineHeight: 1.35 }}>{action}</div>
     </div>
   </div>
 );
@@ -3525,107 +3531,97 @@ const ChallengeCard = ({
 const Slide15HandsOnChallenge: Page = () => (
   <Frame>
     <Eyebrow>Praktik &amp; Hands-on Session</Eyebrow>
-    <h2 style={{ ...abs(X0, 128, W), ...headline(48) }}>
-      Saatnya upgrade <Highlight color={HIGHLIGHT_TEAL}>UrbanStore-mu</Highlight> menjadi{' '}
-      <Highlight>Intelligent Product</Highlight>!
+    <h2 style={{ ...abs(X0, 128, W), ...headline(52) }}>
+      Saatnya praktik! Upgrade <Highlight color={HIGHLIGHT_TEAL}>UrbanStore-mu</Highlight> sekarang.
     </h2>
+    <p style={{ ...abs(X0, 200, 1400), margin: 0, fontSize: 23, color: BODY }}>
+      Lanjutkan repository UrbanStore dari Sesi 4 dan kerjakan 6 langkah to-the-point berikut:
+    </p>
 
-    {/* 3x2 Challenge Grid */}
+    {/* 2x3 Crisp Action Grid */}
     <div
       style={{
-        ...abs(X0, 212, W, 536),
+        ...abs(X0, 258, W, 520),
         display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
-        gridTemplateRows: '1fr 1fr',
+        gridTemplateColumns: '1fr 1fr',
+        gridTemplateRows: 'repeat(3, 1fr)',
         gap: 20,
       }}
     >
-      <ChallengeCard
-        num="CHALLENGE 01"
-        role="GOOGLE AI STUDIO"
+      <ActionStepCard
+        num="01"
+        tag="GOOGLE AI STUDIO"
         title="Setup Gemini API di Backend"
-        desc="Ambil API Key dari Google AI Studio dan simpan di .env Backend tanpa ekspos ke Frontend."
+        action="Ambil API Key dari Google AI Studio dan simpan aman di .env Backend."
         tint={TINT_TEAL}
         accent={TEAL_HEX}
       />
-      <ChallengeCard
-        num="CHALLENGE 02"
-        role="CUSTOMER"
-        title="Floating Chat Asisten CS"
-        desc="Buat floating chat untuk cek stok, konsultasi ukuran (BB & TB), dan rekomendasi mix & match."
+      <ActionStepCard
+        num="02"
+        tag="SISI CUSTOMER"
+        title="Pasang Floating Chat CS"
+        action="Aktifkan cek stok, konsultasi BB/TB, dan mix & match katalog."
         tint={TINT_YELLOW}
         accent="#946200"
       />
-      <ChallengeCard
-        num="CHALLENGE 03"
-        role="STORE ADMIN"
+      <ActionStepCard
+        num="03"
+        tag="SISI ADMIN"
         title="AI Generate Deskripsi Produk"
-        desc="Pasang tombol generate deskripsi otomatis di Form Tambah Produk dari nama, kategori, & ukuran."
+        action="Tambahkan tombol generate deskripsi otomatis di Form Produk."
         tint={TINT_BLUE}
         accent="#2B6CB0"
       />
-      <ChallengeCard
-        num="CHALLENGE 04"
-        role="STORE ADMIN"
+      <ActionStepCard
+        num="04"
+        tag="SISI ADMIN"
         title="Dokumen Analisis Penjualan"
-        desc="Olah data pesanan Sesi 4 menjadi dokumen analisis AI + rekomendasi strategi penjualan kedepan."
+        action="Generate laporan performa order & strategi penjualan kedepan."
         tint={TINT_PINK}
         accent={CORAL_HEX}
       />
-      <ChallengeCard
-        num="CHALLENGE 05"
-        role="UX & 9ROUTER"
-        title="AI UX, 9Router, & Hemat Token"
-        desc="Terapkan skeleton/loading state, retry, 9Router switch model, & ringkas payload katalog/order."
+      <ActionStepCard
+        num="05"
+        tag="UX, 9ROUTER, & COST"
+        title="Rapikan AI UX & Hemat Token"
+        action="Tambah loading/retry, pasang 9Router, dan ringkas payload data."
         tint={TINT_GREEN}
         accent="#2F7A43"
       />
-      <ChallengeCard
-        num="CHALLENGE 06"
-        role="SKILL & GIT"
+      <ActionStepCard
+        num="06"
+        tag="SKILL & GIT"
         title="Skill Audit & Git Commit"
-        desc="Audit keamanan API key, anti-hallucination stok, perbaiki temuan, lalu commit rapi ke Git."
+        action="Audit keamanan/bug, perbaiki temuan, lalu commit rapi ke Git."
         tint={TINT_NEUTRAL}
         accent={INK_HEX}
       />
     </div>
 
-    {/* Bottom Final Output Banner */}
+    {/* Compact CTA Footer Banner */}
     <div
       style={{
-        ...abs(X0, 774, W, 174),
-        borderRadius: 24,
+        ...abs(X0, 810, W, 134),
+        borderRadius: 22,
         background: INK_HEX,
         color: '#FFFFFF',
-        padding: '24px 36px',
+        padding: '22px 34px',
         ...row,
         justifyContent: 'space-between',
       }}
     >
-      <div style={{ maxWidth: 1240 }}>
-        <div
-          style={{
-            fontFamily: MONO,
-            fontSize: 17,
-            fontWeight: 780,
-            color: YELLOW,
-            marginBottom: 6,
-          }}
-        >
-          FINAL OUTPUT SESI 5 · URBANSTORE INTELLIGENT PRODUCT
+      <div>
+        <div style={{ fontFamily: MONO, fontSize: 16, fontWeight: 780, color: YELLOW, marginBottom: 4 }}>
+          TARGET SESI 5
         </div>
-        <h3 style={{ ...headline(36), color: '#FFFFFF', marginBottom: 6 }}>
-          Aplikasi Web E-Commerce Cerdas Siap Pakai
-        </h3>
-        <p style={{ margin: 0, fontSize: 20, lineHeight: 1.38, color: '#E2E1DD' }}>
-          Floating Chat CS (Stok, BB/TB, Mix &amp; Match) · AI Deskripsi Produk · Dokumen Analisis
-          &amp; Strategi Penjualan · Gemini API Aman · AI UX · 9Router · Cost Optimization.
-        </p>
+        <div style={{ ...headline(32), color: '#FFFFFF' }}>
+          UrbanStore Intelligent Product siap diuji &amp; didemokan!
+        </div>
       </div>
       <div
         style={{
-          padding: '16px 28px',
-          borderRadius: 16,
+          padding: '15px 28px',
+          borderRadius: 14,
           background: TEAL_HEX,
           color: '#FFFFFF',
           fontSize: 21,
@@ -3633,7 +3629,7 @@ const Slide15HandsOnChallenge: Page = () => (
           whiteSpace: 'nowrap',
         }}
       >
-        ✓ Siap Demo &amp; Review
+        Mulai Praktek →
       </div>
     </div>
   </Frame>
