@@ -931,22 +931,21 @@ const ScopeFeatureRow = ({
 );
 
 const Slide03UrbanStoreMVPScope: Page = () => {
-  const live = useIsActivePage();
   const [focusRole, setFocusRole] = useState<'both' | 'admin' | 'customer'>('both');
 
   return (
     <Frame>
       <Eyebrow>Studi Kasus · UrbanStore Web Application MVP</Eyebrow>
-      <h2 style={{ ...abs(X0, 132, W), ...headline(48) }}>
-        Menghubungkan <Highlight color={HIGHLIGHT_TEAL}>Penjual (Admin)</Highlight> dan{' '}
-        <Highlight>Pembeli (Customer)</Highlight> dalam satu aplikasi.
+      <h2 style={{ ...abs(X0, 132, W), ...headline(44) }}>
+        Menghubungkan <Highlight color={HIGHLIGHT_TEAL}>Penjual (Admin)</Highlight> &amp;{' '}
+        <Highlight>Pembeli (Customer)</Highlight> dalam satu alur.
       </h2>
 
       <div
         onClick={() => setFocusRole(focusRole === 'admin' ? 'both' : 'admin')}
         className="s4-interactive"
         style={{
-          ...abs(X0, 236, 816, 588),
+          ...abs(X0, 224, 816, 594),
           borderRadius: 26,
           background: TINT_TEAL,
           border: `2.5px solid ${focusRole === 'admin' ? INK_HEX : TEAL_HEX}`,
@@ -1003,7 +1002,7 @@ const Slide03UrbanStoreMVPScope: Page = () => {
         onClick={() => setFocusRole(focusRole === 'customer' ? 'both' : 'customer')}
         className="s4-interactive"
         style={{
-          ...abs(984, 236, 816, 588),
+          ...abs(984, 224, 816, 594),
           borderRadius: 26,
           background: TINT_YELLOW,
           border: `2.5px solid ${focusRole === 'customer' ? INK_HEX : '#E2B93B'}`,
@@ -1078,8 +1077,6 @@ const Slide03UrbanStoreMVPScope: Page = () => {
           PRD Sesi 2 → MVP Sesi 4
         </span>
       </div>
-
-      <UnderlineDoodle x={X0} y={190} w={460} color={TEAL_HEX} live={live} delay={0.4} />
     </Frame>
   );
 };
@@ -1601,8 +1598,9 @@ const StepChainItem = ({
     style={{
       ...row,
       justifyContent: 'space-between',
-      padding: '11px 18px',
-      borderRadius: 12,
+      flex: 1,
+      padding: '12px 20px',
+      borderRadius: 14,
       background: active ? INK_HEX : '#FFFFFF',
       color: active ? '#FFFFFF' : INK,
       border: `1.5px solid ${active ? INK_HEX : RULE}`,
@@ -1615,13 +1613,14 @@ const StepChainItem = ({
           fontSize: 17,
           fontWeight: 780,
           color: active ? YELLOW : TEAL_HEX,
+          whiteSpace: 'nowrap',
         }}
       >
         {num}
       </span>
       <span style={{ fontSize: 20, fontWeight: 680 }}>{title}</span>
     </div>
-    <span style={{ fontFamily: MONO, fontSize: 15, color: active ? '#7CE8E4' : SOFT }}>
+    <span style={{ fontFamily: MONO, fontSize: 15, color: active ? '#7CE8E4' : SOFT, whiteSpace: 'nowrap' }}>
       1 Prompt
     </span>
   </div>
@@ -1633,18 +1632,18 @@ const Slide06IncrementalDevelopment: Page = () => {
   return (
     <Frame>
       <Eyebrow>Bangun Fitur Secara Bertahap · Modular Prompting</Eyebrow>
-      <h2 style={{ ...abs(X0, 130, W), ...headline(50) }}>
-        Jangan minta AI membuat seluruh aplikasi sekaligus.{' '}
+      <h2 style={{ ...abs(X0, 130, W), ...headline(44) }}>
+        Jangan bangun sekaligus — ikuti prinsip{' '}
         <Highlight color={HIGHLIGHT}>One Prompt = One Feature.</Highlight>
       </h2>
 
       <div
         style={{
-          ...abs(X0, 236, 760, 710),
+          ...abs(X0, 222, 760, 724),
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          gap: 20,
+          gap: 18,
         }}
       >
         <div
@@ -1673,7 +1672,7 @@ const Slide06IncrementalDevelopment: Page = () => {
                 padding: '18px 22px',
                 fontSize: 20,
                 fontStyle: 'italic',
-                lineHeight: 1.42,
+                lineHeight: 1.44,
                 color: INK,
                 marginBottom: 20,
               }}
@@ -1682,7 +1681,7 @@ const Slide06IncrementalDevelopment: Page = () => {
               keranjang belanja, checkout, dan laporan penjualan.”
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 15 }}>
               <div style={{ ...row, gap: 12, fontSize: 21, fontWeight: 650, color: INK }}>
                 <span style={{ color: CORAL_HEX, fontWeight: 800 }}>✕</span>
                 <span>Output AI terpotong karena batas token / context limit.</span>
@@ -1697,6 +1696,19 @@ const Slide06IncrementalDevelopment: Page = () => {
               </div>
             </div>
           </div>
+
+          <div
+            style={{
+              borderRadius: 14,
+              background: '#FFFFFF',
+              padding: '13px 18px',
+              fontSize: 18,
+              fontWeight: 700,
+              color: CORAL_HEX,
+            }}
+          >
+            Dampak: Aplikasi sering macet di tengah jalan &amp; boros waktu debugging.
+          </div>
         </div>
 
         <div
@@ -1704,13 +1716,13 @@ const Slide06IncrementalDevelopment: Page = () => {
             borderRadius: 22,
             background: INK_HEX,
             color: '#FFFFFF',
-            padding: '22px 28px',
+            padding: '24px 30px',
           }}
         >
           <div style={{ fontFamily: MONO, fontSize: 17, fontWeight: 780, color: YELLOW }}>
             PRINSIP UTAMA SESI 4
           </div>
-          <div style={{ fontSize: 23, fontWeight: 740, marginTop: 4 }}>
+          <div style={{ fontSize: 22, fontWeight: 740, marginTop: 6 }}>
             Buat 1 Fitur → Uji di Browser → Git Commit → Lanjut Fitur Berikutnya.
           </div>
         </div>
@@ -1718,69 +1730,66 @@ const Slide06IncrementalDevelopment: Page = () => {
 
       <div
         style={{
-          ...abs(916, 236, 884, 710),
+          ...abs(916, 222, 884, 724),
           borderRadius: 24,
           background: TINT_TEAL,
           border: `2px solid ${TEAL_HEX}`,
           padding: '28px 34px',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-between',
         }}
       >
-        <div>
-          <div style={{ ...row, justifyContent: 'space-between', marginBottom: 6 }}>
-            <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: TEAL_HEX }}>
-              ✓ WORKFLOW YANG BENAR
-            </span>
-            <span style={{ fontFamily: MONO, fontSize: 17, color: INK }}>7 Tahap Terukur</span>
-          </div>
-          <h3 style={{ ...headline(34), marginBottom: 18 }}>Urutan Pembangunan Fitur</h3>
+        <div style={{ ...row, justifyContent: 'space-between', marginBottom: 6 }}>
+          <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: TEAL_HEX }}>
+            ✓ WORKFLOW YANG BENAR
+          </span>
+          <span style={{ fontFamily: MONO, fontSize: 17, color: INK }}>7 Tahap Terukur</span>
+        </div>
+        <h3 style={{ ...headline(34), marginBottom: 18 }}>Urutan Pembangunan Fitur</h3>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-            <StepChainItem
-              num="STEP 01"
-              title="Setup Data Schema & Form Tambah Produk Admin"
-              active={activeStep === 0}
-              onClick={() => setActiveStep(0)}
-            />
-            <StepChainItem
-              num="STEP 02"
-              title="Tampilkan Produk Admin di Katalog Depan Customer"
-              active={activeStep === 1}
-              onClick={() => setActiveStep(1)}
-            />
-            <StepChainItem
-              num="STEP 03"
-              title="Modal / Halaman Detail Produk & Size Picker (S–XL)"
-              active={activeStep === 2}
-              onClick={() => setActiveStep(2)}
-            />
-            <StepChainItem
-              num="STEP 04"
-              title="Sistem Shopping Cart (Add, Update Qty, Subtotal)"
-              active={activeStep === 3}
-              onClick={() => setActiveStep(3)}
-            />
-            <StepChainItem
-              num="STEP 05"
-              title="Formulir Checkout & Validasi Alamat Pengiriman"
-              active={activeStep === 4}
-              onClick={() => setActiveStep(4)}
-            />
-            <StepChainItem
-              num="STEP 06"
-              title="Order Generation & Halaman Invoice Pembayaran"
-              active={activeStep === 5}
-              onClick={() => setActiveStep(5)}
-            />
-            <StepChainItem
-              num="STEP 07"
-              title="Dashboard Pesanan Admin & Konfirmasi Lunas"
-              active={activeStep === 6}
-              onClick={() => setActiveStep(6)}
-            />
-          </div>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <StepChainItem
+            num="STEP 01"
+            title="Setup Data Schema & Form Tambah Produk Admin"
+            active={activeStep === 0}
+            onClick={() => setActiveStep(0)}
+          />
+          <StepChainItem
+            num="STEP 02"
+            title="Tampilkan Produk Admin di Katalog Depan Customer"
+            active={activeStep === 1}
+            onClick={() => setActiveStep(1)}
+          />
+          <StepChainItem
+            num="STEP 03"
+            title="Modal / Halaman Detail Produk & Size Picker (S–XL)"
+            active={activeStep === 2}
+            onClick={() => setActiveStep(2)}
+          />
+          <StepChainItem
+            num="STEP 04"
+            title="Sistem Shopping Cart (Add, Update Qty, Subtotal)"
+            active={activeStep === 3}
+            onClick={() => setActiveStep(3)}
+          />
+          <StepChainItem
+            num="STEP 05"
+            title="Formulir Checkout & Validasi Alamat Pengiriman"
+            active={activeStep === 4}
+            onClick={() => setActiveStep(4)}
+          />
+          <StepChainItem
+            num="STEP 06"
+            title="Order Generation & Halaman Invoice Pembayaran"
+            active={activeStep === 5}
+            onClick={() => setActiveStep(5)}
+          />
+          <StepChainItem
+            num="STEP 07"
+            title="Dashboard Pesanan Admin & Konfirmasi Lunas"
+            active={activeStep === 6}
+            onClick={() => setActiveStep(6)}
+          />
         </div>
       </div>
     </Frame>
@@ -2896,17 +2905,27 @@ const CommitRow = ({ step, msg, desc }: { step: string; msg: string; desc: strin
       borderRadius: 14,
       background: 'rgba(255,255,255,0.07)',
       border: '1px solid rgba(255,255,255,0.14)',
-      padding: '13px 18px',
+      padding: '12px 18px',
       display: 'flex',
       flexDirection: 'column',
       gap: 4,
     }}
   >
-    <div style={{ ...row, justifyContent: 'space-between' }}>
-      <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 740, color: '#7CE8E4' }}>
+    <div style={{ ...row, justifyContent: 'space-between', gap: 16 }}>
+      <span
+        style={{
+          fontFamily: MONO,
+          fontSize: 17,
+          fontWeight: 740,
+          color: '#7CE8E4',
+          whiteSpace: 'nowrap',
+        }}
+      >
         git commit -m &quot;{msg}&quot;
       </span>
-      <span style={{ fontFamily: MONO, fontSize: 15, color: YELLOW }}>{step}</span>
+      <span style={{ fontFamily: MONO, fontSize: 14, color: YELLOW, whiteSpace: 'nowrap' }}>
+        {step}
+      </span>
     </div>
     <div style={{ fontSize: 17, color: '#D0CFCC' }}>{desc}</div>
   </div>
@@ -2916,18 +2935,18 @@ const Slide13GitWorkflow: Page = () => {
   return (
     <Frame>
       <Eyebrow>Git Workflow &amp; Best Practice Development</Eyebrow>
-      <h2 style={{ ...abs(X0, 130, W), ...headline(50) }}>
+      <h2 style={{ ...abs(X0, 130, W), ...headline(44) }}>
         Setiap fitur yang selesai dan teruji{' '}
         <Highlight color={HIGHLIGHT}>wajib langsung di-commit ke Git.</Highlight>
       </h2>
 
       <div
         style={{
-          ...abs(X0, 236, 740, 710),
+          ...abs(X0, 222, 740, 724),
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          gap: 20,
+          gap: 18,
         }}
       >
         <div
@@ -2977,7 +2996,7 @@ const Slide13GitWorkflow: Page = () => {
             borderRadius: 24,
             background: TINT_YELLOW,
             border: `2px solid #E2B93B`,
-            padding: '24px 30px',
+            padding: '22px 30px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
@@ -2986,7 +3005,16 @@ const Slide13GitWorkflow: Page = () => {
           <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: '#946200' }}>
             CHECKLIST SEBELUM COMMIT
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 10, fontSize: 20, fontWeight: 650 }}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 10,
+              marginTop: 12,
+              fontSize: 20,
+              fontWeight: 650,
+            }}
+          >
             <div>✓ Fitur berjalan normal tanpa error console.</div>
             <div>✓ Tidak merusak fitur yang sudah dibuat sebelumnya.</div>
             <div>✓ Tampilan rapi di desktop maupun mobile.</div>
@@ -2996,11 +3024,11 @@ const Slide13GitWorkflow: Page = () => {
 
       <div
         style={{
-          ...abs(896, 236, 904, 710),
+          ...abs(886, 222, 914, 724),
           borderRadius: 24,
           background: INK_HEX,
           color: '#FFFFFF',
-          padding: '28px 34px',
+          padding: '26px 32px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -3019,34 +3047,43 @@ const Slide13GitWorkflow: Page = () => {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 11 }}>
             <CommitRow
               step="COMMIT 01"
-              msg="feat: build admin product management and add product form"
-              desc="Admin dapat menginput produk pakaian baru ke dalam katalog."
+              msg="feat: add admin product form"
+              desc="Admin input produk pakaian baru ke dalam katalog."
             />
             <CommitRow
               step="COMMIT 02"
-              msg="feat: render dynamic products and add size selector"
-              desc="Katalog depan menampilkan produk dari admin lengkap dengan pilihan ukuran."
+              msg="feat: render catalog & size picker"
+              desc="Etalase customer tampilkan produk lengkap dengan ukuran S–XL."
             />
             <CommitRow
               step="COMMIT 03"
-              msg="feat: implement shopping cart with quantity and subtotal"
-              desc="Keranjang belanja dapat menambah item, ubah qty, dan hitung total."
+              msg="feat: implement shopping cart"
+              desc="Tambah item, ubah qty, hapus barang, & hitung subtotal."
             />
             <CommitRow
               step="COMMIT 04"
-              msg="feat: create checkout form and generate unique order record"
-              desc="Formulir pengiriman customer menghasilkan nomor invoice unik."
+              msg="feat: create checkout & invoice"
+              desc="Form pengiriman customer & generate Order ID unik."
             />
             <CommitRow
               step="COMMIT 05"
-              msg="feat: build admin order dashboard and payment confirmation"
-              desc="Admin dapat memantau pesanan masuk dan mengonfirmasi pembayaran lunas."
+              msg="feat: add admin order confirmation"
+              desc="Admin pantau order masuk & konfirmasi pembayaran lunas."
             />
           </div>
         </div>
 
-        <div style={{ fontFamily: MONO, fontSize: 18, color: YELLOW }}>
-          Tip: Jika prompt berikutnya merusak kode, cukup kembali ke commit terakhir yang stabil.
+        <div
+          style={{
+            borderRadius: 12,
+            background: 'rgba(248,218,126,0.12)',
+            padding: '12px 18px',
+            fontFamily: MONO,
+            fontSize: 16,
+            color: YELLOW,
+          }}
+        >
+          Tip: Jika prompt berikutnya merusak kode, rollback cepat ke commit stabil terakhir.
         </div>
       </div>
     </Frame>
@@ -3302,14 +3339,12 @@ const Slide14MentorDemo: Page = () => {
 
 const ChallengeCard = ({
   num,
-  role,
   title,
   desc,
   tint,
   accent,
 }: {
   num: string;
-  role: string;
   title: string;
   desc: string;
   tint: string;
@@ -3319,33 +3354,17 @@ const ChallengeCard = ({
     style={{
       borderRadius: 20,
       background: tint,
-      padding: '20px 24px',
+      border: `2px solid ${accent}`,
+      padding: '22px 26px',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
     }}
   >
+    <div style={{ fontFamily: MONO, fontSize: 16, fontWeight: 780, color: accent }}>{num}</div>
     <div>
-      <div style={{ ...row, justifyContent: 'space-between', marginBottom: 8 }}>
-        <span style={{ fontFamily: MONO, fontSize: 17, fontWeight: 780, color: accent }}>
-          {num}
-        </span>
-        <span
-          style={{
-            padding: '3px 10px',
-            borderRadius: 99,
-            background: '#FFFFFF',
-            fontFamily: MONO,
-            fontSize: 14,
-            fontWeight: 760,
-            color: INK,
-          }}
-        >
-          {role}
-        </span>
-      </div>
-      <h3 style={{ ...headline(26), marginBottom: 8 }}>{title}</h3>
-      <p style={{ margin: 0, fontSize: 18, lineHeight: 1.38, color: BODY }}>{desc}</p>
+      <h3 style={{ ...headline(27), marginBottom: 6 }}>{title}</h3>
+      <p style={{ margin: 0, fontSize: 19, lineHeight: 1.38, color: BODY }}>{desc}</p>
     </div>
   </div>
 );
@@ -3353,14 +3372,17 @@ const ChallengeCard = ({
 const Slide15HandsOnChallenge: Page = () => {
   return (
     <Frame>
-      <Eyebrow>Praktik &amp; Hands-on Challenge · Sesi 4</Eyebrow>
-      <h2 style={{ ...abs(X0, 128, W), ...headline(54) }}>
-        Saatnya Membangun <Highlight color={HIGHLIGHT_TEAL}>UrbanStore Web App!</Highlight>
+      <Eyebrow>Saatnya Praktik · UrbanStore Web App</Eyebrow>
+      <h2 style={{ ...abs(X0, 128, W), ...headline(52) }}>
+        Ayo Bangun Aplikasi Web <Highlight color={HIGHLIGHT_TEAL}>UrbanStore</Highlight> Sekarang!
       </h2>
+      <p style={{ ...abs(X0, 200, W), margin: 0, fontSize: 22, color: BODY }}>
+        Kerjakan satu fitur per prompt secara berurutan, uji di browser, lalu commit setiap selesai:
+      </p>
 
       <div
         style={{
-          ...abs(X0, 224, W, 526),
+          ...abs(X0, 256, W, 536),
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
           gridTemplateRows: '1fr 1fr',
@@ -3368,50 +3390,44 @@ const Slide15HandsOnChallenge: Page = () => {
         }}
       >
         <ChallengeCard
-          num="CHALLENGE 01"
-          role="STORE ADMIN"
-          title="Tambah & Kelola Produk"
-          desc="Buat form admin untuk input produk baru (Nama, Kategori, Harga, Ukuran S–XL, Stok, & Foto)."
+          num="01 · STORE ADMIN"
+          title="Form Tambah Produk"
+          desc="Buat /admin untuk input nama, kategori, harga, size S–XL, & stok."
           tint={TINT_TEAL}
           accent={TEAL_HEX}
         />
         <ChallengeCard
-          num="CHALLENGE 02"
-          role="CUSTOMER"
-          title="Katalog Dinamis & Size Picker"
-          desc="Tampilkan produk yang diinput admin ke etalase utama lengkap dengan pemilihan ukuran."
+          num="02 · CUSTOMER"
+          title="Katalog & Size Picker"
+          desc="Tampilkan produk dari admin lengkap dengan pemilihan ukuran."
           tint={TINT_YELLOW}
           accent="#946200"
         />
         <ChallengeCard
-          num="CHALLENGE 03"
-          role="CUSTOMER"
-          title="Shopping Cart Interaktif"
-          desc="Implementasikan Add to Cart, pengubah kuantitas (+ / -), hapus item, dan kalkulasi subtotal."
+          num="03 · CUSTOMER"
+          title="Shopping Cart"
+          desc="Tambah item ke keranjang, atur qty (+ / -), & hitung subtotal."
           tint={TINT_BLUE}
           accent="#2B6CB0"
         />
         <ChallengeCard
-          num="CHALLENGE 04"
-          role="CUSTOMER"
-          title="Checkout & Halaman Invoice"
-          desc="Buat form pengiriman, generate Order ID unik, dan tampilkan rekening transfer bank."
+          num="04 · CUSTOMER"
+          title="Checkout & Invoice"
+          desc="Buat form pengiriman, Order ID unik, & info rekening transfer."
           tint={TINT_PINK}
           accent={CORAL_HEX}
         />
         <ChallengeCard
-          num="CHALLENGE 05"
-          role="STORE ADMIN"
-          title="Order Dashboard & Konfirmasi"
-          desc="Buat tabel pesanan masuk di Admin dan tombol Konfirmasi Lunas untuk mengubah status."
+          num="05 · STORE ADMIN"
+          title="Konfirmasi Pesanan"
+          desc="Buat tabel order di /admin & tombol ubah status menjadi Lunas."
           tint={TINT_GREEN}
           accent="#2F7A43"
         />
         <ChallengeCard
-          num="CHALLENGE 06"
-          role="GIT WORKFLOW"
-          title="Minimal 5 Commit Terstruktur"
-          desc="Uji setiap fitur di browser dan simpan kemajuannya dengan minimal 5 commit Git yang rapi."
+          num="06 · GIT WORKFLOW"
+          title="Minimal 5 Commit Rapi"
+          desc="Uji fitur berjalan tanpa error, lalu commit tiap selesai 1 fitur."
           tint={TINT_NEUTRAL}
           accent={INK_HEX}
         />
@@ -3419,47 +3435,33 @@ const Slide15HandsOnChallenge: Page = () => {
 
       <div
         style={{
-          ...abs(X0, 774, W, 174),
-          borderRadius: 24,
+          ...abs(X0, 818, W, 124),
+          borderRadius: 22,
           background: INK_HEX,
           color: '#FFFFFF',
-          padding: '24px 36px',
+          padding: '22px 34px',
           ...row,
           justifyContent: 'space-between',
         }}
       >
-        <div style={{ maxWidth: 1240 }}>
-          <div
-            style={{
-              fontFamily: MONO,
-              fontSize: 17,
-              fontWeight: 780,
-              color: YELLOW,
-              marginBottom: 6,
-            }}
-          >
-            FINAL OUTPUT SESI 4 · URBANSTORE MVP
-          </div>
-          <h3 style={{ ...headline(36), color: '#FFFFFF', marginBottom: 6 }}>
-            Aplikasi E-Commerce Fungsional Siap Digunakan
-          </h3>
-          <p style={{ margin: 0, fontSize: 20, lineHeight: 1.38, color: '#E2E1DD' }}>
-            Admin Input Produk → Katalog Dinamis → Shopping Cart → Checkout → Invoice Manual →
-            Admin Order Confirmation → Minimal 5 Git Commits.
-          </p>
+        <div style={{ fontSize: 22, fontWeight: 680 }}>
+          <span style={{ fontFamily: MONO, color: YELLOW, fontWeight: 800, marginRight: 14 }}>
+            TARGET SESI 4:
+          </span>
+          UrbanStore MVP fungsional ujung-ke-ujung siap lanjut ke fitur AI di Sesi 5.
         </div>
         <div
           style={{
-            padding: '16px 28px',
-            borderRadius: 16,
+            padding: '14px 28px',
+            borderRadius: 14,
             background: TEAL_HEX,
             color: '#FFFFFF',
-            fontSize: 21,
+            fontSize: 20,
             fontWeight: 780,
             whiteSpace: 'nowrap',
           }}
         >
-          ✓ Siap Demo &amp; Review
+          Mulai dari Step 01
         </div>
       </div>
     </Frame>
@@ -3487,7 +3489,7 @@ export const notes: (string | undefined)[] = [
   `Fitur 5: Store Admin memantau pesanan masuk di dashboard dan menekan tombol Konfirmasi Lunas setelah memverifikasi transfer.`,
   `Terapkan disiplin Git Workflow: setiap selesai dan menguji 1 fitur, langsung lakukan git commit dengan pesan yang jelas.`,
   `Lakukan live demo end-to-end mulai dari input produk di Admin, belanja sebagai Customer, hingga verifikasi pembayaran di Admin.`,
-  `Saatnya Hands-on Challenge! Peserta mengerjakan 6 challenge berurutan dan menghasilkan minimal 5 commit Git yang terstruktur.`,
+  `Saatnya praktik! Kerjakan 6 langkah UrbanStore Web App satu per satu, uji di browser, dan simpan dengan minimal 5 Git Commit rapi.`,
 ];
 
 export default [
