@@ -74,7 +74,15 @@ const TINT_BLUE = '#E7F3F8';
 const TINT_PINK = '#FAF1F5';
 const TINT_GREEN = '#EDF3EC';
 const TINT_TEAL = '#EBF7F6';
+const TINT_LAVENDER = '#F2EFFB';
 const TINT_NEUTRAL = '#F5F4F0';
+const BLUE_BORDER = '#7AAEC5';
+const BLUE_TEXT = '#205E7A';
+const AMBER_BORDER = '#E2BA4A';
+const AMBER_TEXT = '#946200';
+const LAVENDER_BORDER = '#B6AAD8';
+const LAVENDER_TEXT = '#5A4A96';
+const CORAL_TEXT = '#C42B4B';
 
 const X0 = 120;
 const W = 1680;
@@ -381,66 +389,155 @@ const TallyBox = ({ x, accent = false }: { x: number; accent?: boolean }) => (
 );
 
 /* ============================================================================ */
-/* SLIDE 01 — COVER (Centered Editorial Hero + 3-Pillar Bento Showcase)         */
+/* SLIDE 01 — COVER (Centered Editorial Hero + Sesi 2/6 Style Single Ink Art)   */
 /* ============================================================================ */
 
-const CoverBentoChatArt = () => (
-  <Ink width={440} height={152} style={{ display: 'block' }} wobble={1.3}>
-    {/* Customer BB/TB Bubble */}
-    <rect x="130" y="6" width="298" height="44" rx="12" fill="#FFFFFF" strokeWidth={2.4} />
-    <path d="M150 24h180M150 37h120" stroke={INK_HEX} strokeWidth={2.2} />
-    <circle cx="404" cy="28" r="10" fill={YELLOW} stroke="none" />
+const CoverSesi5AIArt = ({ live }: { live: boolean }) => (
+  <Ink width={1600} height={428} wobble={2.0} style={abs(160, 524)}>
+    {/* Soft Pastel Backdrop Blobs (Distinct Color Rhythm from Sesi 6) */}
+    <circle cx="790" cy="212" r="204" fill={TINT_YELLOW} stroke="none" />
+    <circle cx="1065" cy="148" r="108" fill={TINT_PINK} stroke="none" />
+    <circle cx="535" cy="236" r="102" fill={TINT_TEAL} stroke="none" />
+    <circle cx="1275" cy="226" r="82" fill={TINT_BLUE} stroke="none" />
 
-    {/* AI CS Reply Bubble */}
-    <rect x="6" y="64" width="330" height="78" rx="14" fill="#FFFFFF" stroke={TEAL_HEX} strokeWidth={2.6} />
-    <circle cx="32" cy="94" r="14" fill={TEAL_HEX} stroke="none" />
-    <path d="M26 94h12M32 88v12" stroke="#FFFFFF" strokeWidth={2.4} />
-    <path d="M58 84h210M58 104h248M58 122h170" stroke={INK_HEX} strokeWidth={2.2} />
+    {/* Continuous Hand-Drawn Ground Baseline */}
+    <path
+      d="M140 398 Q620 392 1040 396 T1460 395"
+      stroke={INK_HEX}
+      strokeWidth={3}
+      strokeLinecap="round"
+    />
 
-    <Sparkle x={388} y={102} s={0.85} fill={TEAL_HEX} />
-  </Ink>
-);
+    {/* Center Hero Browser Frame: UrbanStore + Floating Chat Asisten CS */}
+    <g transform="translate(555, 38)">
+      <rect
+        x="0"
+        y="0"
+        width="490"
+        height="340"
+        rx="24"
+        fill="#FFFFFF"
+        stroke={INK_HEX}
+        strokeWidth={3.4}
+      />
+      {/* Top Browser Bar */}
+      <circle cx="28" cy="26" r="6" fill={CORAL_HEX} stroke="none" />
+      <circle cx="48" cy="26" r="6" fill={YELLOW} stroke="none" />
+      <circle cx="68" cy="26" r="6" fill={TEAL_HEX} stroke="none" />
+      <rect x="96" y="14" width="210" height="24" rx="8" fill={TINT_NEUTRAL} stroke="none" />
+      <path d="M112 26h138" stroke={INK_HEX} strokeWidth={2.6} strokeLinecap="round" />
+      <path d="M0 52h490" stroke={RULE} strokeWidth={2} />
 
-const CoverBentoRouterArt = () => (
-  <Ink width={440} height={152} style={{ display: 'block' }} wobble={1.3}>
-    {/* Top Provider Row */}
-    <rect x="14" y="10" width="124" height="40" rx="10" fill="rgba(255,255,255,0.12)" stroke="#7CE8E4" strokeWidth={2.2} />
-    <path d="M32 30h86" stroke="#7CE8E4" strokeWidth={2.6} />
-    <rect x="158" y="10" width="124" height="40" rx="10" fill="rgba(255,255,255,0.12)" stroke={YELLOW} strokeWidth={2.2} />
-    <path d="M176 30h86" stroke={YELLOW} strokeWidth={2.6} />
-    <rect x="302" y="10" width="124" height="40" rx="10" fill="rgba(255,255,255,0.12)" stroke={CORAL_HEX} strokeWidth={2.2} />
-    <path d="M320 30h86" stroke={CORAL_HEX} strokeWidth={2.6} />
+      {/* Left Pane: UrbanStore Apparel Preview */}
+      <rect
+        x="24"
+        y="70"
+        width="196"
+        height="244"
+        rx="16"
+        fill="#F8F8F6"
+        stroke={RULE}
+        strokeWidth={2}
+      />
+      <path
+        d="M84 102 C102 114 134 114 152 102 L176 124 L160 144 L146 136 L146 210 L90 210 L90 136 L76 144 L60 124 Z"
+        fill={TINT_TEAL}
+        stroke={INK_HEX}
+        strokeWidth={2.8}
+        strokeLinejoin="round"
+      />
+      <path d="M46 238h134" stroke={INK_HEX} strokeWidth={3.2} strokeLinecap="round" />
+      <path d="M46 258h86" stroke={CORAL_HEX} strokeWidth={2.8} strokeLinecap="round" />
+      <rect x="46" y="276" width="152" height="22" rx="8" fill={TINT_YELLOW} stroke="none" />
 
-    {/* Connector Lines into 9Router Bar */}
-    <path d="M76 50v22M220 50v22M364 50v22" stroke="#FFFFFF" strokeWidth={2.2} strokeDasharray="4 4" />
+      {/* Right Pane: Floating Chat Asisten CS Overlay */}
+      <rect
+        x="236"
+        y="70"
+        width="230"
+        height="244"
+        rx="18"
+        fill="#FFFFFF"
+        stroke={TEAL_HEX}
+        strokeWidth={2.8}
+      />
+      <rect x="236" y="70" width="230" height="44" rx="18" fill={TEAL_HEX} stroke="none" />
+      <circle cx="262" cy="92" r="10" fill="#FFFFFF" stroke="none" />
+      <path d="M282 92h116" stroke="#FFFFFF" strokeWidth={3} strokeLinecap="round" />
 
-    {/* 9Router Unified Engine Bar */}
-    <rect x="14" y="76" width="412" height="66" rx="14" fill={TEAL_HEX} stroke="none" />
-    <circle cx="48" cy="109" r="14" fill={YELLOW} stroke="none" />
-    <path d="M78 100h190" stroke="#FFFFFF" strokeWidth={3.2} />
-    <path d="M78 118h140" stroke="#D4F2F0" strokeWidth={2.4} />
-    <rect x="308" y="92" width="98" height="34" rx="17" fill={INK_HEX} stroke="none" />
-    <path d="M328 109h58" stroke={YELLOW} strokeWidth={2.6} />
-  </Ink>
-);
+      {/* User Query Bubble */}
+      <rect x="278" y="128" width="172" height="44" rx="12" fill={TINT_YELLOW} stroke="none" />
+      <path d="M294 144h128M294 158h92" stroke={INK_HEX} strokeWidth={2.4} strokeLinecap="round" />
 
-const CoverBentoAdminArt = () => (
-  <Ink width={440} height={152} style={{ display: 'block' }} wobble={1.3}>
-    {/* Sales Chart Card */}
-    <rect x="6" y="8" width="218" height="136" rx="14" fill="#FFFFFF" strokeWidth={2.4} />
-    <rect x="28" y="80" width="26" height="44" rx="4" fill={TINT_TEAL} />
-    <rect x="66" y="62" width="26" height="62" rx="4" fill={TINT_BLUE} />
-    <rect x="104" y="42" width="26" height="82" rx="4" fill={TEAL_HEX} stroke="none" />
-    <rect x="142" y="28" width="26" height="96" rx="4" fill={CORAL_HEX} stroke="none" />
-    <path d="M24 128h182" stroke={INK_HEX} strokeWidth={2.2} />
+      {/* AI CS Reply Bubble */}
+      <rect x="252" y="186" width="184" height="66" rx="12" fill={TINT_TEAL} stroke="none" />
+      <path d="M268 204h140M268 220h152M268 236h104" stroke={INK_HEX} strokeWidth={2.4} strokeLinecap="round" />
 
-    {/* Generated Strategy & Copy Card */}
-    <rect x="238" y="8" width="194" height="136" rx="14" fill="#FFFFFF" strokeWidth={2.4} />
-    <rect x="256" y="24" width="96" height="22" rx="6" fill={TINT_PINK} stroke="none" />
-    <path d="M266 35h74" stroke={CORAL_HEX} strokeWidth={2.2} />
-    <path d="M256 66h154M256 86h136M256 106h148M256 126h104" stroke={INK_HEX} strokeWidth={2.4} />
+      {/* Chat Input Bar + Coral Send Button */}
+      <rect x="252" y="266" width="150" height="34" rx="10" fill={TINT_NEUTRAL} stroke="none" />
+      <path d="M268 283h94" stroke={SOFT} strokeWidth={2.4} strokeLinecap="round" />
+      <circle cx="430" cy="283" r="17" fill={CORAL_HEX} stroke="none" />
+      <path d="M424 283h12m-5-5l5 5-5 5" stroke="#FFFFFF" strokeWidth={2.4} strokeLinecap="round" />
 
-    <Sparkle x={414} y={24} s={0.9} fill={CORAL_HEX} />
+      {/* Floating Yellow AI Sparkle Badge on Top Right */}
+      <circle cx="484" cy="42" r="32" fill={YELLOW} stroke={INK_HEX} strokeWidth={3.2} />
+      <Sparkle x={484} y={42} s={0.88} fill={INK_HEX} />
+    </g>
+
+    {/* Left Tilted Floating Element: Gemini API + 9Router Hub */}
+    <g transform="translate(200, 134) rotate(4)">
+      <rect width="248" height="140" rx="18" fill="#FFFFFF" stroke={INK_HEX} strokeWidth={3} />
+      <rect x="18" y="18" width="212" height="48" rx="12" fill={INK_HEX} stroke="none" />
+      <circle cx="46" cy="42" r="10" fill="#7CE8E4" stroke="none" />
+      <circle cx="76" cy="42" r="10" fill={YELLOW} stroke="none" />
+      <circle cx="106" cy="42" r="10" fill={CORAL_HEX} stroke="none" />
+      <path d="M132 42h78" stroke="#FFFFFF" strokeWidth={3} strokeLinecap="round" />
+
+      <rect x="18" y="82" width="100" height="38" rx="10" fill={TINT_TEAL} stroke={TEAL_HEX} strokeWidth={2} />
+      <path d="M34 101h68" stroke={TEAL_HEX} strokeWidth={2.8} strokeLinecap="round" />
+      <rect x="130" y="82" width="100" height="38" rx="10" fill={TINT_YELLOW} stroke="#E2B93B" strokeWidth={2} />
+      <path d="M146 101h68" stroke="#946200" strokeWidth={2.8} strokeLinecap="round" />
+    </g>
+
+    {/* Right Tilted Floating Element: Admin Sales Analytics & Copywriter */}
+    <g transform="translate(1152, 130) rotate(-4)">
+      <rect width="248" height="146" rx="18" fill="#FFFFFF" stroke={INK_HEX} strokeWidth={3} />
+      {/* Mini Bar Chart on Left */}
+      <rect x="20" y="74" width="22" height="50" rx="5" fill={TINT_BLUE} stroke="none" />
+      <rect x="50" y="54" width="22" height="70" rx="5" fill={TEAL_HEX} stroke="none" />
+      <rect x="80" y="34" width="22" height="90" rx="5" fill={CORAL_HEX} stroke="none" />
+      <path d="M16 126h92" stroke={INK_HEX} strokeWidth={2.4} strokeLinecap="round" />
+
+      {/* Generated Strategy & Copy Lines on Right */}
+      <rect x="122" y="24" width="104" height="24" rx="8" fill={TINT_PINK} stroke="none" />
+      <path d="M134 36h80" stroke={CORAL_HEX} strokeWidth={2.6} strokeLinecap="round" />
+      <path d="M122 68h104M122 90h88M122 112h96" stroke={INK_HEX} strokeWidth={3} strokeLinecap="round" />
+    </g>
+
+    {/* Dashed Curved Flow Connectors */}
+    <Stroke
+      d="M454 202 C494 202 518 186 548 164"
+      color={TEAL_HEX}
+      width={3}
+      live={live}
+      delay={0.45}
+      dur={0.65}
+    />
+    <Stroke
+      d="M1054 236 C1092 238 1116 224 1148 206"
+      color={CORAL_HEX}
+      width={3}
+      live={live}
+      delay={0.55}
+      dur={0.65}
+    />
+
+    {/* Hand-Drawn Sparkles */}
+    <Sparkle x={294} y={84} s={0.95} fill={TEAL_HEX} />
+    <Sparkle x={498} y={78} s={1.05} fill={YELLOW} />
+    <Sparkle x={1118} y={82} s={1.0} fill={CORAL_HEX} />
+    <Sparkle x={1418} y={248} s={0.88} fill={TEAL_HEX} />
+    <Sparkle x={480} y={322} s={0.82} fill={PINK} />
   </Ink>
 );
 
@@ -532,226 +629,8 @@ const Slide01Cover: Page = () => {
         <strong style={{ color: INK }}>9Router</strong>.
       </p>
 
-      {/* Bottom 3-Pillar Bento Showcase */}
-      {/* Pillar 1: Customer Floating Chat CS */}
-      <div
-        style={{
-          ...abs(X0, 548, 534, 386),
-          borderRadius: 22,
-          background: TINT_TEAL,
-          border: `2.5px solid ${INK_HEX}`,
-          boxShadow: `8px 8px 0 ${TEAL_HEX}`,
-          padding: '24px 28px',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-        }}
-      >
-        <div>
-          <span
-            style={{
-              fontFamily: MONO,
-              fontSize: 15,
-              fontWeight: 800,
-              color: TEAL_HEX,
-              letterSpacing: '0.04em',
-            }}
-          >
-            01 · CUSTOMER SIDE
-          </span>
-          <div style={{ marginTop: 10, fontSize: 27, fontWeight: 780, color: INK }}>
-            Floating Chat Asisten CS
-          </div>
-        </div>
-
-        <CoverBentoChatArt />
-
-        <div style={{ ...row, gap: 8, flexWrap: 'wrap' }}>
-          <span
-            style={{
-              padding: '5px 12px',
-              borderRadius: 99,
-              background: '#FFFFFF',
-              fontSize: 15,
-              fontWeight: 700,
-              color: INK,
-            }}
-          >
-            Tanya Stok
-          </span>
-          <span
-            style={{
-              padding: '5px 12px',
-              borderRadius: 99,
-              background: '#FFFFFF',
-              fontSize: 15,
-              fontWeight: 700,
-              color: INK,
-            }}
-          >
-            Ukuran BB / TB
-          </span>
-          <span
-            style={{
-              padding: '5px 12px',
-              borderRadius: 99,
-              background: '#FFFFFF',
-              fontSize: 15,
-              fontWeight: 700,
-              color: TEAL_HEX,
-            }}
-          >
-            Mix &amp; Match
-          </span>
-        </div>
-      </div>
-
-      {/* Pillar 2: Dark Charcoal Center Core (Gemini API + 9Router) */}
-      <div
-        style={{
-          ...abs(693, 548, 534, 386),
-          borderRadius: 22,
-          background: INK_HEX,
-          border: `2.5px solid ${INK_HEX}`,
-          boxShadow: `8px 8px 0 ${YELLOW}`,
-          padding: '24px 28px',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          color: '#FFFFFF',
-        }}
-      >
-        <div>
-          <span
-            style={{
-              fontFamily: MONO,
-              fontSize: 15,
-              fontWeight: 800,
-              color: YELLOW,
-              letterSpacing: '0.04em',
-            }}
-          >
-            02 · ENGINE &amp; ROUTING
-          </span>
-          <div style={{ marginTop: 10, fontSize: 27, fontWeight: 780, color: '#FFFFFF' }}>
-            Gemini API + 9Router
-          </div>
-        </div>
-
-        <CoverBentoRouterArt />
-
-        <div style={{ ...row, gap: 8, flexWrap: 'wrap' }}>
-          <span
-            style={{
-              padding: '5px 12px',
-              borderRadius: 99,
-              background: 'rgba(255,255,255,0.12)',
-              fontSize: 15,
-              fontWeight: 700,
-              color: '#FFFFFF',
-            }}
-          >
-            Smart Routing
-          </span>
-          <span
-            style={{
-              padding: '5px 12px',
-              borderRadius: 99,
-              background: 'rgba(255,255,255,0.12)',
-              fontSize: 15,
-              fontWeight: 700,
-              color: YELLOW,
-            }}
-          >
-            Cost Optimization
-          </span>
-          <span
-            style={{
-              padding: '5px 12px',
-              borderRadius: 99,
-              background: 'rgba(255,255,255,0.12)',
-              fontSize: 15,
-              fontWeight: 700,
-              color: '#7CE8E4',
-            }}
-          >
-            AI Skill Audit
-          </span>
-        </div>
-      </div>
-
-      {/* Pillar 3: Store Admin AI Strategist */}
-      <div
-        style={{
-          ...abs(1266, 548, 534, 386),
-          borderRadius: 22,
-          background: TINT_YELLOW,
-          border: `2.5px solid ${INK_HEX}`,
-          boxShadow: `8px 8px 0 ${CORAL_HEX}`,
-          padding: '24px 28px',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-        }}
-      >
-        <div>
-          <span
-            style={{
-              fontFamily: MONO,
-              fontSize: 15,
-              fontWeight: 800,
-              color: '#946200',
-              letterSpacing: '0.04em',
-            }}
-          >
-            03 · STORE ADMIN
-          </span>
-          <div style={{ marginTop: 10, fontSize: 27, fontWeight: 780, color: INK }}>
-            AI Strategist &amp; Copywriter
-          </div>
-        </div>
-
-        <CoverBentoAdminArt />
-
-        <div style={{ ...row, gap: 8, flexWrap: 'wrap' }}>
-          <span
-            style={{
-              padding: '5px 12px',
-              borderRadius: 99,
-              background: '#FFFFFF',
-              fontSize: 15,
-              fontWeight: 700,
-              color: INK,
-            }}
-          >
-            Auto Deskripsi
-          </span>
-          <span
-            style={{
-              padding: '5px 12px',
-              borderRadius: 99,
-              background: '#FFFFFF',
-              fontSize: 15,
-              fontWeight: 700,
-              color: INK,
-            }}
-          >
-            Dokumen Analisis
-          </span>
-          <span
-            style={{
-              padding: '5px 12px',
-              borderRadius: 99,
-              background: '#FFFFFF',
-              fontSize: 15,
-              fontWeight: 700,
-              color: CORAL_HEX,
-            }}
-          >
-            Strategi Sales
-          </span>
-        </div>
-      </div>
+      {/* Wide Single Hand-Drawn Illustration (Same Style as Sesi 2 & 6, Distinct Shape) */}
+      <CoverSesi5AIArt live={live} />
 
       {/* Bottom Centered Credit */}
       <div
@@ -1024,9 +903,9 @@ const FeatureLineCard = ({
       ...row,
       gap: 14,
       background: '#FFFFFF',
-      padding: '13px 18px',
-      borderRadius: 12,
-      fontSize: 20,
+      padding: '15px 20px',
+      borderRadius: 14,
+      fontSize: 21,
       color: INK,
     }}
   >
@@ -1042,7 +921,7 @@ const FeatureLineCard = ({
       {code}
     </span>
     <div>
-      <strong style={{ fontWeight: 730 }}>{title}:</strong>{' '}
+      <strong style={{ fontWeight: 740 }}>{title}:</strong>{' '}
       <span style={{ color: BODY, fontWeight: 540 }}>{desc}</span>
     </div>
   </div>
@@ -1063,12 +942,12 @@ const Slide03TwoSidedStudyCase: Page = () => {
         onClick={() => setFocusRole(focusRole === 'customer' ? 'both' : 'customer')}
         className="s5-interactive"
         style={{
-          ...abs(X0, 224, 816, 560),
+          ...abs(X0, 228, 816, 550),
           borderRadius: 26,
           background: TINT_TEAL,
           border: `2.5px solid ${focusRole === 'customer' ? INK_HEX : TEAL_HEX}`,
           opacity: focusRole === 'admin' ? 0.55 : 1,
-          padding: '26px 30px',
+          padding: '28px 32px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -1081,28 +960,28 @@ const Slide03TwoSidedStudyCase: Page = () => {
             </span>
           </div>
 
-          <h3 style={{ ...headline(34), marginBottom: 8 }}>Floating Chat Asisten CS</h3>
-          <p style={{ margin: '0 0 16px', fontSize: 20, lineHeight: 1.4, color: BODY }}>
-            Membantu pembeli langsung di etalase sebelum memasukkan barang ke keranjang:
+          <h3 style={{ ...headline(36), marginBottom: 8 }}>Floating Chat Asisten CS</h3>
+          <p style={{ margin: '0 0 20px', fontSize: 21, lineHeight: 1.4, color: BODY }}>
+            Bantu pembeli di etalase sebelum checkout:
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <FeatureLineCard
               code="C1"
-              title="Tanya Ketersediaan Stok"
-              desc="Menjawab stok & varian ukuran produk nyata yang diinput Admin."
+              title="Tanya Stok"
+              desc="Cek ketersediaan stok & varian ukuran nyata."
               accentColor={TEAL_HEX}
             />
             <FeatureLineCard
               code="C2"
-              title="Konsultasi Ukuran (BB & TB)"
-              desc="Saran ukuran S/M/L/XL sesuai berat badan & tinggi badan pembeli."
+              title="Konsultasi Size (BB/TB)"
+              desc="Saran ukuran S/M/L/XL sesuai postur pembeli."
               accentColor={TEAL_HEX}
             />
             <FeatureLineCard
               code="C3"
-              title="Rekomendasi Mix & Match"
-              desc="Padu padan pakaian berdasarkan produk yang dimiliki katalog toko."
+              title="Mix & Match"
+              desc="Rekomendasi padu padan dari katalog toko."
               accentColor={TEAL_HEX}
             />
           </div>
@@ -1112,13 +991,13 @@ const Slide03TwoSidedStudyCase: Page = () => {
           style={{
             borderRadius: 12,
             background: '#FFFFFF',
-            padding: '11px 16px',
+            padding: '13px 18px',
             fontFamily: MONO,
             fontSize: 16,
             color: INK,
           }}
         >
-          Alur: Chat Customer + Katalog Aktif ➔ Gemini ➔ Stok / Size / Mix &amp; Match ➔ Cart
+          Alur: Pertanyaan + Katalog ➔ Gemini ➔ Jawaban Real-Time
         </div>
       </div>
 
@@ -1126,12 +1005,12 @@ const Slide03TwoSidedStudyCase: Page = () => {
         onClick={() => setFocusRole(focusRole === 'admin' ? 'both' : 'admin')}
         className="s5-interactive"
         style={{
-          ...abs(984, 224, 816, 560),
+          ...abs(984, 228, 816, 550),
           borderRadius: 26,
           background: TINT_YELLOW,
           border: `2.5px solid ${focusRole === 'admin' ? INK_HEX : '#E2B93B'}`,
           opacity: focusRole === 'customer' ? 0.55 : 1,
-          padding: '26px 30px',
+          padding: '28px 32px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -1144,28 +1023,28 @@ const Slide03TwoSidedStudyCase: Page = () => {
             </span>
           </div>
 
-          <h3 style={{ ...headline(34), marginBottom: 8 }}>AI Business &amp; Catalog Tools</h3>
-          <p style={{ margin: '0 0 16px', fontSize: 20, lineHeight: 1.4, color: BODY }}>
-            Mempercepat pengelolaan etalase dan membantu pemilik toko mengambil keputusan:
+          <h3 style={{ ...headline(36), marginBottom: 8 }}>AI Business &amp; Catalog Tools</h3>
+          <p style={{ margin: '0 0 20px', fontSize: 21, lineHeight: 1.4, color: BODY }}>
+            Percepat pengelolaan katalog &amp; analisis penjual:
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <FeatureLineCard
               code="A1"
-              title="Generate Deskripsi Produk"
-              desc="Otomatis buat deskripsi dari nama produk, kategori, harga, & ukuran."
+              title="Generate Deskripsi"
+              desc="Buat copy produk otomatis di Form Admin."
               accentColor={CORAL_HEX}
             />
             <FeatureLineCard
               code="A2"
-              title="AI Analisis Penjualan"
-              desc="Mengolah data order & omzet dari Sesi 4 menjadi ringkasan insight."
+              title="Analisis Penjualan"
+              desc="Ringkas data order & omzet Sesi 4 jadi insight."
               accentColor={CORAL_HEX}
             />
             <FeatureLineCard
               code="A3"
-              title="Dokumen Strategi Kedepan"
-              desc="Output dokumen rekomendasi promo, bundling, & prioritas restock."
+              title="Strategi Kedepan"
+              desc="Rekomendasi promo, bundling, & restock toko."
               accentColor={CORAL_HEX}
             />
           </div>
@@ -1175,46 +1054,46 @@ const Slide03TwoSidedStudyCase: Page = () => {
           style={{
             borderRadius: 12,
             background: '#FFFFFF',
-            padding: '11px 16px',
+            padding: '13px 18px',
             fontFamily: MONO,
             fontSize: 16,
             color: INK,
           }}
         >
-          Alur: Data Order / Input Produk ➔ Gemini ➔ Dokumen Strategi / Deskripsi ➔ Simpan
+          Alur: Data Produk / Order ➔ Gemini ➔ Deskripsi / Strategi
         </div>
       </div>
 
       <div
         style={{
-          ...abs(X0, 810, W, 134),
+          ...abs(X0, 810, W, 128),
           borderRadius: 22,
-          background: INK_HEX,
-          color: '#FFFFFF',
+          background: TINT_BLUE,
+          border: `2px solid ${BLUE_BORDER}`,
+          color: INK,
           padding: '22px 34px',
           ...row,
           justifyContent: 'space-between',
         }}
       >
         <div style={{ maxWidth: 1320 }}>
-          <div style={{ fontFamily: MONO, fontSize: 16, fontWeight: 780, color: YELLOW, marginBottom: 4 }}>
+          <div style={{ fontFamily: MONO, fontSize: 16, fontWeight: 780, color: BLUE_TEXT, marginBottom: 4 }}>
             INSIGHT ARSITEKTUR
           </div>
-          <div style={{ fontSize: 22, lineHeight: 1.4, color: '#F5F4F0' }}>
-            AI bekerja di atas <strong style={{ color: '#7CE8E4' }}>data nyata UrbanStore</strong>{' '}
-            (katalog produk &amp; riwayat pesanan Sesi 4). Validasi stok, penyimpanan produk, dan
-            keputusan bisnis tetap berada di tangan aplikasi &amp; Admin.
+          <div style={{ fontSize: 22, lineHeight: 1.4, color: INK }}>
+            AI membaca <strong style={{ color: TEAL_HEX }}>katalog &amp; order nyata Sesi 4</strong> — kontrol stok &amp; keputusan tetap di tangan Admin.
           </div>
         </div>
         <span
           style={{
             padding: '10px 20px',
             borderRadius: 12,
-            background: 'rgba(255,255,255,0.1)',
+            background: '#FFFFFF',
+            border: `1.5px solid ${BLUE_BORDER}`,
             fontFamily: MONO,
             fontSize: 17,
             fontWeight: 700,
-            color: '#7CE8E4',
+            color: BLUE_TEXT,
             whiteSpace: 'nowrap',
           }}
         >
@@ -1499,18 +1378,32 @@ const Slide04HowAIWorks: Page = () => {
         style={{
           ...abs(X0, 846, W, 96),
           borderRadius: 18,
-          background: INK_HEX,
-          color: '#FFFFFF',
+          background: TINT_NEUTRAL,
+          border: `2px solid ${RULE}`,
+          color: INK,
           padding: '18px 32px',
           ...row,
           justifyContent: 'space-between',
         }}
       >
         <span style={{ fontSize: 22, fontWeight: 650 }}>
-          <strong style={{ color: YELLOW }}>Prinsip Utama:</strong> Semakin akurat Input (data nyata
+          <strong style={{ color: TEAL_HEX }}>Prinsip Utama:</strong> Semakin akurat Input (data nyata
           UrbanStore) dan semakin spesifik Prompt, semakin tepat guna Output AI.
         </span>
-        <span style={{ fontFamily: MONO, fontSize: 17, color: '#7CE8E4' }}>Garbage In = Garbage Out</span>
+        <span
+          style={{
+            fontFamily: MONO,
+            fontSize: 17,
+            fontWeight: 750,
+            color: AMBER_TEXT,
+            background: TINT_YELLOW,
+            border: `1.5px solid ${AMBER_BORDER}`,
+            padding: '8px 16px',
+            borderRadius: 10,
+          }}
+        >
+          Garbage In = Garbage Out
+        </span>
       </div>
     </Frame>
   );
@@ -1576,15 +1469,15 @@ const ArchNode = ({
   <div
     style={{
       borderRadius: 14,
-      background: 'rgba(255,255,255,0.08)',
-      border: `1.5px solid rgba(255,255,255,0.16)`,
+      background: '#FFFFFF',
+      border: `1.5px solid ${RULE}`,
       padding: '13px 20px',
       ...row,
       justifyContent: 'space-between',
     }}
   >
-    <span style={{ fontSize: 20, fontWeight: 740, color: '#FFFFFF' }}>{label}</span>
-    <span style={{ fontFamily: MONO, fontSize: 16, fontWeight: 700, color: accent }}>{detail}</span>
+    <span style={{ fontSize: 20, fontWeight: 740, color: INK }}>{label}</span>
+    <span style={{ fontFamily: MONO, fontSize: 16, fontWeight: 740, color: accent }}>{detail}</span>
   </div>
 );
 
@@ -1666,8 +1559,9 @@ const Slide05GeminiIntegration: Page = () => (
       style={{
         ...abs(924, 224, 876, 720),
         borderRadius: 26,
-        background: INK_HEX,
-        color: '#FFFFFF',
+        background: TINT_BLUE,
+        border: `2px solid ${BLUE_BORDER}`,
+        color: INK,
         padding: '28px 34px',
         display: 'flex',
         flexDirection: 'column',
@@ -1676,41 +1570,54 @@ const Slide05GeminiIntegration: Page = () => (
     >
       <div>
         <div style={{ ...row, justifyContent: 'space-between', marginBottom: 14 }}>
-          <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: YELLOW }}>
+          <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: BLUE_TEXT }}>
             WORKFLOW INTEGRASI AI URBANSTORE
           </span>
-          <span style={{ fontFamily: MONO, fontSize: 16, color: '#7CE8E4' }}>Server-Side Proxy</span>
+          <span
+            style={{
+              fontFamily: MONO,
+              fontSize: 16,
+              fontWeight: 700,
+              color: TEAL_HEX,
+              background: '#FFFFFF',
+              border: `1.5px solid ${BLUE_BORDER}`,
+              padding: '4px 12px',
+              borderRadius: 99,
+            }}
+          >
+            Server-Side Proxy
+          </span>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           <ArchNode
             label="1. User (Customer Chat / Admin Dashboard)"
             detail="UI Trigger"
-            accent={YELLOW}
+            accent={AMBER_TEXT}
           />
-          <div style={{ textAlign: 'center', fontFamily: MONO, fontSize: 18, color: '#7CE8E4' }}>↓</div>
+          <div style={{ textAlign: 'center', fontFamily: MONO, fontSize: 18, color: BLUE_TEXT }}>↓</div>
           <ArchNode
             label="2. Frontend UrbanStore"
             detail="Kirim Request ke Backend"
-            accent="#FFFFFF"
+            accent={INK_HEX}
           />
-          <div style={{ textAlign: 'center', fontFamily: MONO, fontSize: 18, color: '#7CE8E4' }}>↓</div>
+          <div style={{ textAlign: 'center', fontFamily: MONO, fontSize: 18, color: BLUE_TEXT }}>↓</div>
           <ArchNode
             label="3. Backend API (/api/chat · /api/admin/...)"
             detail="Baca .env + Katalog/Order"
-            accent="#7CE8E4"
+            accent={TEAL_HEX}
           />
-          <div style={{ textAlign: 'center', fontFamily: MONO, fontSize: 18, color: '#7CE8E4' }}>↓</div>
+          <div style={{ textAlign: 'center', fontFamily: MONO, fontSize: 18, color: BLUE_TEXT }}>↓</div>
           <ArchNode
             label="4. Gemini API (Google AI Studio)"
             detail="Proses Prompt + Konteks"
-            accent={YELLOW}
+            accent={BLUE_TEXT}
           />
-          <div style={{ textAlign: 'center', fontFamily: MONO, fontSize: 18, color: '#7CE8E4' }}>↓</div>
+          <div style={{ textAlign: 'center', fontFamily: MONO, fontSize: 18, color: BLUE_TEXT }}>↓</div>
           <ArchNode
             label="5. Validasi & Render ke Frontend"
             detail="Chat / Deskripsi / Laporan"
-            accent={GREEN}
+            accent="#2F7A43"
           />
         </div>
       </div>
@@ -1718,18 +1625,18 @@ const Slide05GeminiIntegration: Page = () => (
       <div
         style={{
           borderRadius: 16,
-          background: 'rgba(255,255,255,0.06)',
-          border: '1.5px solid rgba(255,255,255,0.14)',
+          background: '#FFFFFF',
+          border: `1.5px solid ${BLUE_BORDER}`,
           padding: '14px 20px',
           ...row,
           justifyContent: 'space-between',
         }}
       >
-        <span style={{ fontSize: 18, color: '#E2E1DD' }}>
-          <strong style={{ color: '#FFFFFF' }}>Alternatif via 9Router:</strong> OpenAI · Claude · Grok ·
+        <span style={{ fontSize: 18, color: BODY }}>
+          <strong style={{ color: INK }}>Alternatif via 9Router:</strong> OpenAI · Claude · Grok ·
           DeepSeek · Groq
         </span>
-        <span style={{ fontFamily: MONO, fontSize: 16, color: '#7CE8E4' }}>Primary: Gemini</span>
+        <span style={{ fontFamily: MONO, fontSize: 16, fontWeight: 700, color: TEAL_HEX }}>Primary: Gemini</span>
       </div>
     </div>
   </Frame>
@@ -1861,8 +1768,9 @@ const Slide06ThreeAIFeatures: Page = () => {
         style={{
           ...abs(X0, 626, W, 322),
           borderRadius: 24,
-          background: INK_HEX,
-          color: '#FFFFFF',
+          background: TINT_NEUTRAL,
+          border: `2px solid ${RULE}`,
+          color: INK,
           padding: '26px 34px',
           display: 'flex',
           flexDirection: 'column',
@@ -1870,14 +1778,26 @@ const Slide06ThreeAIFeatures: Page = () => {
         }}
       >
         <div style={{ ...row, justifyContent: 'space-between' }}>
-          <span style={{ fontFamily: MONO, fontSize: 17, fontWeight: 780, color: YELLOW }}>
+          <span
+            style={{
+              fontFamily: MONO,
+              fontSize: 17,
+              fontWeight: 780,
+              color:
+                activeFeature === 'chat'
+                  ? TEAL_HEX
+                  : activeFeature === 'describe'
+                    ? AMBER_TEXT
+                    : CORAL_TEXT,
+            }}
+          >
             {activeFeature === 'chat'
               ? 'LIVE PREVIEW · FLOATING CHAT ASISTEN CS'
               : activeFeature === 'describe'
                 ? 'LIVE PREVIEW · FORM ADMIN GENERATE DESKRIPSI'
                 : 'LIVE PREVIEW · DOKUMEN ANALISIS & STRATEGI PENJUALAN AI'}
           </span>
-          <span style={{ fontFamily: MONO, fontSize: 15, color: '#7CE8E4' }}>
+          <span style={{ fontFamily: MONO, fontSize: 15, color: BODY }}>
             Klik salah satu kartu di atas untuk mengganti preview
           </span>
         </div>
@@ -1887,13 +1807,15 @@ const Slide06ThreeAIFeatures: Page = () => {
             <div
               style={{
                 borderRadius: 16,
-                background: 'rgba(255,255,255,0.08)',
+                background: '#FFFFFF',
+                border: `1.5px solid ${RULE}`,
                 padding: '18px 22px',
                 fontSize: 20,
                 lineHeight: 1.45,
+                color: INK,
               }}
             >
-              <div style={{ fontFamily: MONO, fontSize: 14, color: YELLOW, marginBottom: 6 }}>
+              <div style={{ fontFamily: MONO, fontSize: 14, fontWeight: 760, color: AMBER_TEXT, marginBottom: 6 }}>
                 CUSTOMER QUESTION
               </div>
               “Kak, tinggi aku 172 cm berat 68 kg. Oversized Tee warna hitam masih ada? Cocok size
@@ -1902,14 +1824,15 @@ const Slide06ThreeAIFeatures: Page = () => {
             <div
               style={{
                 borderRadius: 16,
-                background: 'rgba(60,165,161,0.22)',
-                border: `1.5px solid ${TEAL_HEX}`,
+                background: TINT_TEAL,
+                border: `2px solid ${TEAL_HEX}`,
                 padding: '18px 22px',
                 fontSize: 20,
                 lineHeight: 1.45,
+                color: INK,
               }}
             >
-              <div style={{ fontFamily: MONO, fontSize: 14, color: '#7CE8E4', marginBottom: 6 }}>
+              <div style={{ fontFamily: MONO, fontSize: 14, fontWeight: 760, color: TEAL_HEX, marginBottom: 6 }}>
                 GEMINI CS ASSISTANT (GROUNDED CATALOG)
               </div>
               “Ready kak! Sisa 12 pcs. Untuk 172 cm / 68 kg paling pas pakai <strong>Size L</strong>.
@@ -1924,11 +1847,13 @@ const Slide06ThreeAIFeatures: Page = () => {
             <div
               style={{
                 borderRadius: 16,
-                background: 'rgba(255,255,255,0.08)',
+                background: '#FFFFFF',
+                border: `1.5px solid ${RULE}`,
                 padding: '18px 22px',
                 fontFamily: MONO,
                 fontSize: 17,
                 lineHeight: 1.5,
+                color: INK,
               }}
             >
               Nama: Urban Boxy Work Jacket
@@ -1940,14 +1865,15 @@ const Slide06ThreeAIFeatures: Page = () => {
             <div
               style={{
                 borderRadius: 16,
-                background: 'rgba(248,218,126,0.16)',
-                border: `1.5px solid ${YELLOW}`,
+                background: TINT_YELLOW,
+                border: `2px solid ${AMBER_BORDER}`,
                 padding: '18px 22px',
                 fontSize: 20,
                 lineHeight: 1.45,
+                color: INK,
               }}
             >
-              <div style={{ fontFamily: MONO, fontSize: 14, color: YELLOW, marginBottom: 6 }}>
+              <div style={{ fontFamily: MONO, fontSize: 14, fontWeight: 760, color: AMBER_TEXT, marginBottom: 6 }}>
                 HASIL GENERATE DESKRIPSI AI (SIAP EDIT ADMIN)
               </div>
               “Tampil effortless dengan <strong>Urban Boxy Work Jacket</strong>. Dibuat dari bahan
@@ -1962,11 +1888,13 @@ const Slide06ThreeAIFeatures: Page = () => {
             <div
               style={{
                 borderRadius: 16,
-                background: 'rgba(255,255,255,0.08)',
+                background: '#FFFFFF',
+                border: `1.5px solid ${RULE}`,
                 padding: '18px 22px',
                 fontFamily: MONO,
                 fontSize: 17,
                 lineHeight: 1.5,
+                color: INK,
               }}
             >
               Total Order Lunas: 48 transaksi (Rp 14.2jt)
@@ -1978,14 +1906,15 @@ const Slide06ThreeAIFeatures: Page = () => {
             <div
               style={{
                 borderRadius: 16,
-                background: 'rgba(255,95,124,0.18)',
-                border: `1.5px solid ${CORAL_HEX}`,
+                background: TINT_PINK,
+                border: `2px solid ${CORAL_HEX}`,
                 padding: '18px 22px',
                 fontSize: 19,
                 lineHeight: 1.45,
+                color: INK,
               }}
             >
-              <div style={{ fontFamily: MONO, fontSize: 14, color: '#FF8DA1', marginBottom: 6 }}>
+              <div style={{ fontFamily: MONO, fontSize: 14, fontWeight: 760, color: CORAL_TEXT, marginBottom: 6 }}>
                 DOKUMEN ANALISIS &amp; REKOMENDASI STRATEGI PENJUALAN
               </div>
               <strong>1. Restock Segera:</strong> Size L Essentials menyumbang 60% penjualan.{' '}
@@ -2316,17 +2245,20 @@ const SkillPillarCard = ({
 }) => (
   <div
     style={{
-      borderRadius: 20,
+      borderRadius: 22,
       background: tint,
       border: `2px solid ${accent}`,
-      padding: '20px 24px',
+      padding: '26px 28px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
     }}
   >
-    <div style={{ fontFamily: MONO, fontSize: 15, fontWeight: 780, color: accent, marginBottom: 6 }}>
+    <div style={{ fontFamily: MONO, fontSize: 16, fontWeight: 780, color: accent, marginBottom: 8 }}>
       {tag}
     </div>
-    <div style={{ ...headline(26), marginBottom: 6 }}>{title}</div>
-    <div style={{ fontSize: 18, color: BODY, lineHeight: 1.4 }}>{desc}</div>
+    <div style={{ ...headline(29), marginBottom: 10 }}>{title}</div>
+    <div style={{ fontSize: 21, color: BODY, lineHeight: 1.42 }}>{desc}</div>
   </div>
 );
 
@@ -2350,28 +2282,28 @@ const Slide08AISkillAudit: Page = () => (
       <SkillPillarCard
         tag="SKILL 01 · SECURITY"
         title="Keamanan API Key"
-        desc="Pastikan GEMINI_API_KEY tidak bocor ke client & input chat aman dari prompt injection."
+        desc="Pastikan GEMINI_API_KEY aman di backend & bebas prompt injection."
         tint={TINT_PINK}
         accent={CORAL_HEX}
       />
       <SkillPillarCard
         tag="SKILL 02 · RELIABILITY"
         title="Anti-Hallucination"
-        desc="Cegah chat CS mengarang produk/stok palsu dan pastikan angka analisis penjualan akurat."
+        desc="Cegah chat mengarang stok palsu & jaga akurasi angka laporan."
         tint={TINT_TEAL}
         accent={TEAL_HEX}
       />
       <SkillPillarCard
         tag="SKILL 03 · PERFORMANCE"
         title="Efisiensi Payload"
-        desc="Cek apakah data katalog & data order yang dikirim ke Gemini terlalu besar / boros token."
+        desc="Pangkas data katalog & order agar hemat token Gemini."
         tint={TINT_YELLOW}
         accent="#946200"
       />
       <SkillPillarCard
         tag="SKILL 04 · TESTING"
         title="Refactor & Edge Case"
-        desc="Uji kondisi stok 0, input BB/TB tidak lengkap, dan data pesanan Admin masih kosong."
+        desc="Uji stok 0, input BB/TB kosong, & data order belum ada."
         tint={TINT_GREEN}
         accent="#2F7A43"
       />
@@ -2380,110 +2312,131 @@ const Slide08AISkillAudit: Page = () => (
     {/* Bottom Left Insight */}
     <div
       style={{
-        ...abs(X0, 816, 820, 128),
+        ...abs(X0, 814, 820, 130),
         borderRadius: 20,
         background: TINT_NEUTRAL,
         border: `2px solid ${RULE}`,
-        padding: '20px 26px',
+        padding: '22px 28px',
         ...row,
       }}
     >
-      <div style={{ fontSize: 20, lineHeight: 1.42, color: INK }}>
-        <strong>Insight:</strong> Skill menjaga kualitas fitur AI UrbanStore secara konsisten
-        tanpa perlu menulis prompt audit panjang berulang kali.
+      <div style={{ fontSize: 22, lineHeight: 1.42, color: INK }}>
+        <strong>Insight:</strong> Skill menjaga standar kualitas AI UrbanStore secara konsisten
+        tanpa menulis prompt audit berulang.
       </div>
     </div>
 
-    {/* Right Dark Audit Terminal Output */}
+    {/* Right Light Soft Audit Output */}
     <div
       style={{
         ...abs(976, 230, 824, 714),
         borderRadius: 26,
-        background: INK_HEX,
-        color: '#FFFFFF',
+        background: TINT_NEUTRAL,
+        border: `2px solid ${RULE}`,
+        color: INK,
         padding: '28px 34px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
       }}
     >
-      <div>
-        <div style={{ ...row, justifyContent: 'space-between', marginBottom: 16 }}>
-          <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: YELLOW }}>
-            CONTOH OUTPUT · AI SKILL AUDIT
-          </span>
-          <span style={{ fontFamily: MONO, fontSize: 15, color: '#7CE8E4' }}>UrbanStore AI</span>
+      <div style={{ ...row, justifyContent: 'space-between' }}>
+        <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: TEAL_HEX }}>
+          CONTOH OUTPUT · AI SKILL AUDIT
+        </span>
+        <span
+          style={{
+            fontFamily: MONO,
+            fontSize: 15,
+            fontWeight: 700,
+            color: BODY,
+            background: '#FFFFFF',
+            border: `1.5px solid ${RULE}`,
+            padding: '5px 14px',
+            borderRadius: 99,
+          }}
+        >
+          UrbanStore AI
+        </span>
+      </div>
+
+      <div
+        style={{
+          borderRadius: 14,
+          background: '#FFFFFF',
+          border: `1.5px solid ${RULE}`,
+          padding: '15px 22px',
+          fontFamily: MONO,
+          fontSize: 18,
+          color: INK,
+        }}
+      >
+        <span style={{ color: TEAL_HEX, fontWeight: 800 }}>$</span> Audit Chat CS, Copywriter, &amp;
+        Sales Analyst
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+        <div
+          style={{
+            borderRadius: 16,
+            background: TINT_PINK,
+            border: `2px solid ${CORAL_HEX}`,
+            padding: '18px 22px',
+          }}
+        >
+          <div style={{ fontFamily: MONO, fontSize: 16, fontWeight: 780, color: CORAL_TEXT }}>
+            [POTENSI BUG · CHAT CS]
+          </div>
+          <div style={{ fontSize: 21, marginTop: 6, lineHeight: 1.4, color: INK }}>
+            Filter produk <code>stock === 0</code> belum aktif di rekomendasi mix &amp; match.
+          </div>
         </div>
 
         <div
           style={{
-            borderRadius: 14,
-            background: 'rgba(255,255,255,0.08)',
-            padding: '14px 20px',
-            fontFamily: MONO,
-            fontSize: 17,
-            color: '#7CE8E4',
-            marginBottom: 18,
+            borderRadius: 16,
+            background: TINT_YELLOW,
+            border: `2px solid ${AMBER_BORDER}`,
+            padding: '18px 22px',
           }}
         >
-          $ Audit Floating Chat CS, Product Copywriter, &amp; Sales Analyst
+          <div style={{ fontFamily: MONO, fontSize: 16, fontWeight: 780, color: AMBER_TEXT }}>
+            [OPTIMASI TOKEN · ADMIN ANALYST]
+          </div>
+          <div style={{ fontSize: 21, marginTop: 6, lineHeight: 1.4, color: INK }}>
+            Kirim agregat metrik order agar hemat hingga 70% input token Gemini.
+          </div>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-          <div
-            style={{
-              borderRadius: 16,
-              background: 'rgba(255,95,124,0.16)',
-              border: `1.5px solid ${CORAL_HEX}`,
-              padding: '16px 20px',
-            }}
-          >
-            <div style={{ fontFamily: MONO, fontSize: 15, fontWeight: 780, color: '#FF8DA1' }}>
-              [POTENSI BUG · CHAT CS]
-            </div>
-            <div style={{ fontSize: 19, marginTop: 4, lineHeight: 1.4 }}>
-              Chat belum memfilter produk dengan <code>stock === 0</code>, sehingga item habis
-              masih ikut direkomendasikan untuk mix &amp; match.
-            </div>
+        <div
+          style={{
+            borderRadius: 16,
+            background: TINT_TEAL,
+            border: `2px solid ${TEAL_HEX}`,
+            padding: '18px 22px',
+          }}
+        >
+          <div style={{ fontFamily: MONO, fontSize: 16, fontWeight: 780, color: TEAL_HEX }}>
+            [IMPROVEMENT · SECURITY &amp; UX]
           </div>
-
-          <div
-            style={{
-              borderRadius: 16,
-              background: 'rgba(248,218,126,0.14)',
-              border: `1.5px solid ${YELLOW}`,
-              padding: '16px 20px',
-            }}
-          >
-            <div style={{ fontFamily: MONO, fontSize: 15, fontWeight: 780, color: YELLOW }}>
-              [OPTIMASI TOKEN · ADMIN ANALYST]
-            </div>
-            <div style={{ fontSize: 19, marginTop: 4, lineHeight: 1.4 }}>
-              Ringkas array order menjadi agregat metrik sebelum dikirim ke Gemini untuk menghemat
-              hingga 70% input token.
-            </div>
-          </div>
-
-          <div
-            style={{
-              borderRadius: 16,
-              background: 'rgba(60,165,161,0.2)',
-              border: `1.5px solid ${TEAL_HEX}`,
-              padding: '16px 20px',
-            }}
-          >
-            <div style={{ fontFamily: MONO, fontSize: 15, fontWeight: 780, color: '#7CE8E4' }}>
-              [IMPROVEMENT · SECURITY &amp; UX]
-            </div>
-            <div style={{ fontSize: 19, marginTop: 4, lineHeight: 1.4 }}>
-              Tambahkan timeout handler 15 detik dan pastikan seluruh panggilan Gemini API berada di
-              server route.
-            </div>
+          <div style={{ fontSize: 21, marginTop: 6, lineHeight: 1.4, color: INK }}>
+            Tambah timeout 15 detik &amp; pastikan semua call Gemini di server route.
           </div>
         </div>
       </div>
 
-      <div style={{ fontFamily: MONO, fontSize: 16, color: '#A0A09C' }}>
+      <div
+        style={{
+          borderRadius: 12,
+          background: '#FFFFFF',
+          border: `1.5px solid ${RULE}`,
+          padding: '12px 18px',
+          fontFamily: MONO,
+          fontSize: 17,
+          fontWeight: 720,
+          color: TEAL_HEX,
+        }}
+      >
         Status: 3 Temuan ditemukan ➔ Siap diperbaiki AI Agent
       </div>
     </div>
@@ -2585,20 +2538,21 @@ const Slide09WhatIs9Router: Page = () => {
         <div
           style={{
             borderRadius: 24,
-            background: INK_HEX,
-            color: '#FFFFFF',
+            background: TINT_BLUE,
+            border: `2px solid ${BLUE_BORDER}`,
+            color: INK,
             padding: '28px 34px',
           }}
         >
-          <div style={{ fontFamily: MONO, fontSize: 17, fontWeight: 780, color: YELLOW, marginBottom: 8 }}>
+          <div style={{ fontFamily: MONO, fontSize: 17, fontWeight: 780, color: BLUE_TEXT, marginBottom: 8 }}>
             MANTRA 9ROUTER
           </div>
-          <div style={{ ...headline(38), color: '#FFFFFF' }}>
+          <div style={{ ...headline(38), color: INK }}>
             Satu endpoint.
             <br />
-            <span style={{ color: '#7CE8E4' }}>Banyak model AI.</span>
+            <span style={{ color: TEAL_HEX }}>Banyak model AI.</span>
           </div>
-          <div style={{ fontFamily: MONO, fontSize: 16, color: '#D0CFCB', marginTop: 14 }}>
+          <div style={{ fontFamily: MONO, fontSize: 16, fontWeight: 650, color: BODY, marginTop: 14 }}>
             Route aktif saat ini: {provider}
           </div>
         </div>
@@ -2657,17 +2611,20 @@ const Slide09WhatIs9Router: Page = () => {
             <div
               style={{
                 borderRadius: 18,
-                background: INK_HEX,
-                color: '#FFFFFF',
+                background: TINT_YELLOW,
+                border: `2.5px solid ${AMBER_BORDER}`,
+                color: INK,
                 padding: '24px 24px',
                 textAlign: 'center',
               }}
             >
-              <div style={{ fontFamily: MONO, fontSize: 15, color: YELLOW }}>SINGLE ENDPOINT</div>
-              <div style={{ fontSize: 30, fontWeight: 800, color: '#7CE8E4', marginTop: 4 }}>
+              <div style={{ fontFamily: MONO, fontSize: 15, fontWeight: 760, color: AMBER_TEXT }}>
+                SINGLE ENDPOINT
+              </div>
+              <div style={{ fontSize: 30, fontWeight: 800, color: INK, marginTop: 4 }}>
                 9Router
               </div>
-              <div style={{ fontSize: 16, color: '#D0CFCB', marginTop: 4 }}>Smart Model Gateway</div>
+              <div style={{ fontSize: 16, color: BODY, marginTop: 4 }}>Smart Model Gateway</div>
             </div>
           </div>
 
@@ -2830,81 +2787,118 @@ const Slide10Why9Router: Page = () => (
       style={{
         ...abs(1076, 232, 724, 712),
         borderRadius: 26,
-        background: INK_HEX,
-        color: '#FFFFFF',
-        padding: '30px 34px',
+        background: TINT_LAVENDER,
+        border: `2px solid ${LAVENDER_BORDER}`,
+        color: INK,
+        padding: '26px 32px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
       }}
     >
       <div>
-        <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: YELLOW, marginBottom: 10 }}>
+        <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: LAVENDER_TEXT, marginBottom: 8, translate: '0px 20px' }}>
           CONTOH SKENARIO DI URBANSTORE
         </div>
-        <h3 style={{ ...headline(32), color: '#FFFFFF', marginBottom: 22 }}>
+        <h3 style={{ ...headline(31), color: INK, marginBottom: 16, translate: '0px 20px' }}>
           Ganti Model Tanpa Mengubah Logika Aplikasi
         </h3>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 10, translate: '0px 40px' }}>
           <div
             style={{
               borderRadius: 16,
-              background: 'rgba(60,165,161,0.22)',
-              border: `1.5px solid ${TEAL_HEX}`,
-              padding: '18px 22px',
+              background: TINT_TEAL,
+              border: `2px solid ${TEAL_HEX}`,
+              padding: '15px 20px',
             }}
           >
-            <div style={{ fontFamily: MONO, fontSize: 15, color: '#7CE8E4', fontWeight: 760 }}>
+            <div style={{ fontFamily: MONO, fontSize: 15, color: TEAL_HEX, fontWeight: 760 }}>
               HARI INI · MVP LAUNCH
             </div>
-            <div style={{ fontSize: 24, fontWeight: 760, marginTop: 4 }}>Gemini (Google AI Studio)</div>
-            <div style={{ fontSize: 17, color: '#E2E1DD', marginTop: 4 }}>
+            <div style={{ fontSize: 23, fontWeight: 760, color: INK, marginTop: 3 }}>
+              Gemini (Google AI Studio)
+            </div>
+            <div style={{ fontSize: 17, color: BODY, marginTop: 3 }}>
               Menjalankan Floating Chat CS &amp; Generate Deskripsi Produk.
             </div>
           </div>
 
-          <div style={{ textAlign: 'center', fontFamily: MONO, fontSize: 22, color: YELLOW }}>↓</div>
+          <div
+            style={{
+              textAlign: 'center',
+              fontFamily: MONO,
+              fontSize: 19,
+              lineHeight: 1,
+              fontWeight: 800,
+              color: LAVENDER_TEXT,
+            }}
+          >
+            ↓
+          </div>
 
           <div
             style={{
               borderRadius: 16,
-              background: 'rgba(248,218,126,0.14)',
-              border: `1.5px solid ${YELLOW}`,
-              padding: '18px 22px',
+              background: TINT_YELLOW,
+              border: `2px solid ${AMBER_BORDER}`,
+              padding: '15px 20px',
             }}
           >
-            <div style={{ fontFamily: MONO, fontSize: 15, color: YELLOW, fontWeight: 760 }}>
+            <div style={{ fontFamily: MONO, fontSize: 15, color: AMBER_TEXT, fontWeight: 760 }}>
               BESOK · UJI KUALITAS STRATEGI
             </div>
-            <div style={{ fontSize: 24, fontWeight: 760, marginTop: 4 }}>Claude</div>
-            <div style={{ fontSize: 17, color: '#E2E1DD', marginTop: 4 }}>
+            <div style={{ fontSize: 23, fontWeight: 760, color: INK, marginTop: 3 }}>Claude</div>
+            <div style={{ fontSize: 17, color: BODY, marginTop: 3 }}>
               Menguji kedalaman Dokumen Analisis Penjualan Admin.
             </div>
           </div>
 
-          <div style={{ textAlign: 'center', fontFamily: MONO, fontSize: 22, color: YELLOW }}>↓</div>
+          <div
+            style={{
+              textAlign: 'center',
+              fontFamily: MONO,
+              fontSize: 19,
+              lineHeight: 1,
+              fontWeight: 800,
+              color: LAVENDER_TEXT,
+            }}
+          >
+            ↓
+          </div>
 
           <div
             style={{
               borderRadius: 16,
-              background: 'rgba(255,255,255,0.08)',
-              border: '1.5px solid rgba(255,255,255,0.2)',
-              padding: '18px 22px',
+              background: TINT_PINK,
+              border: `2px solid ${CORAL_HEX}`,
+              padding: '15px 20px',
             }}
           >
-            <div style={{ fontFamily: MONO, fontSize: 15, color: '#FF8DA1', fontWeight: 760 }}>
+            <div style={{ fontFamily: MONO, fontSize: 15, color: CORAL_TEXT, fontWeight: 760 }}>
               MINGGU DEPAN · SCALE EFISIEN
             </div>
-            <div style={{ fontSize: 24, fontWeight: 760, marginTop: 4 }}>DeepSeek</div>
-            <div style={{ fontSize: 17, color: '#E2E1DD', marginTop: 4 }}>
+            <div style={{ fontSize: 23, fontWeight: 760, color: INK, marginTop: 3 }}>DeepSeek</div>
+            <div style={{ fontSize: 17, color: BODY, marginTop: 3 }}>
               Menekan biaya operasional chat CS harian tanpa ubah kode UI.
             </div>
           </div>
         </div>
       </div>
 
-      <div style={{ fontFamily: MONO, fontSize: 16, color: '#7CE8E4' }}>
+      <div
+        style={{
+          marginTop: 14,
+          borderRadius: 12,
+          background: '#FFFFFF',
+          border: `1.5px solid ${LAVENDER_BORDER}`,
+          padding: '12px 18px',
+          fontFamily: MONO,
+          fontSize: 16,
+          fontWeight: 700,
+          color: TEAL_HEX,
+        }}
+      >
         Kode Frontend, Cart, &amp; Database UrbanStore = 0% berubah.
       </div>
     </div>
@@ -3010,8 +3004,9 @@ const Slide11UnlimitedCoding: Page = () => (
       style={{
         ...abs(1140, 232, 660, 712),
         borderRadius: 26,
-        background: INK_HEX,
-        color: '#FFFFFF',
+        background: TINT_NEUTRAL,
+        border: `2px solid ${RULE}`,
+        color: INK,
         padding: '30px 34px',
         display: 'flex',
         flexDirection: 'column',
@@ -3019,10 +3014,10 @@ const Slide11UnlimitedCoding: Page = () => (
       }}
     >
       <div>
-        <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: YELLOW, marginBottom: 10 }}>
+        <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: TEAL_HEX, marginBottom: 10 }}>
           PEMETAAN TASK URBANSTORE
         </div>
-        <h3 style={{ ...headline(30), color: '#FFFFFF', marginBottom: 20 }}>
+        <h3 style={{ ...headline(30), color: INK, marginBottom: 20 }}>
           Pilih Tier Model yang Tepat
         </h3>
 
@@ -3030,14 +3025,15 @@ const Slide11UnlimitedCoding: Page = () => (
           <div
             style={{
               borderRadius: 16,
-              background: 'rgba(255,255,255,0.08)',
+              background: '#FFFFFF',
+              border: `2px solid ${TEAL_HEX}`,
               padding: '18px 20px',
             }}
           >
-            <div style={{ fontFamily: MONO, fontSize: 15, color: '#7CE8E4', fontWeight: 760 }}>
+            <div style={{ fontFamily: MONO, fontSize: 15, color: TEAL_HEX, fontWeight: 760 }}>
               MODEL CEPAT &amp; HEMAT (FLASH / LITE)
             </div>
-            <div style={{ fontSize: 19, marginTop: 6, lineHeight: 1.42 }}>
+            <div style={{ fontSize: 19, marginTop: 6, lineHeight: 1.42, color: INK }}>
               • Floating Chat CS (cek stok &amp; BB/TB)
               <br />• AI Generate Deskripsi Produk Admin
               <br />• Perbaikan CSS / komponen UI kecil
@@ -3047,15 +3043,15 @@ const Slide11UnlimitedCoding: Page = () => (
           <div
             style={{
               borderRadius: 16,
-              background: 'rgba(248,218,126,0.14)',
-              border: `1.5px solid ${YELLOW}`,
+              background: TINT_YELLOW,
+              border: `2px solid ${AMBER_BORDER}`,
               padding: '18px 20px',
             }}
           >
-            <div style={{ fontFamily: MONO, fontSize: 15, color: YELLOW, fontWeight: 760 }}>
+            <div style={{ fontFamily: MONO, fontSize: 15, color: AMBER_TEXT, fontWeight: 760 }}>
               MODEL REASONING KUAT (PRO / FLAGSHIP)
             </div>
-            <div style={{ fontSize: 19, marginTop: 6, lineHeight: 1.42 }}>
+            <div style={{ fontSize: 19, marginTop: 6, lineHeight: 1.42, color: INK }}>
               • AI Analisis Penjualan &amp; Strategi Bisnis
               <br />• Skill Audit keamanan &amp; bug aplikasi
               <br />• Debugging backend &amp; alur transaksi kompleks
@@ -3067,11 +3063,12 @@ const Slide11UnlimitedCoding: Page = () => (
       <div
         style={{
           borderRadius: 16,
-          background: 'rgba(60,165,161,0.22)',
-          border: `1.5px solid ${TEAL_HEX}`,
+          background: TINT_TEAL,
+          border: `2px solid ${TEAL_HEX}`,
           padding: '18px 22px',
           fontSize: 20,
           lineHeight: 1.4,
+          color: INK,
         }}
       >
         <strong>Aturan Emas:</strong> Gunakan model sesuai kebutuhan task, bukan yang paling mahal.
@@ -3235,18 +3232,19 @@ const Slide12AICostOptimization: Page = () => (
       style={{
         ...abs(X0, 810, W, 134),
         borderRadius: 22,
-        background: INK_HEX,
-        color: '#FFFFFF',
+        background: TINT_BLUE,
+        border: `2px solid ${BLUE_BORDER}`,
+        color: INK,
         padding: '22px 34px',
         ...row,
         justifyContent: 'space-between',
       }}
     >
       <div>
-        <div style={{ fontFamily: MONO, fontSize: 16, fontWeight: 780, color: YELLOW, marginBottom: 4 }}>
+        <div style={{ fontFamily: MONO, fontSize: 16, fontWeight: 780, color: BLUE_TEXT, marginBottom: 4 }}>
           CONTOH NYATA OPTIMASI PAYLOAD CHAT CS
         </div>
-        <div style={{ fontFamily: MONO, fontSize: 19, color: '#7CE8E4' }}>
+        <div style={{ fontFamily: MONO, fontSize: 19, fontWeight: 650, color: INK }}>
           {'{ id: "P01", name: "Oversized Tee", cat: "Essentials", price: 179000, sizes: ["M","L"], stock: 12 }'}
         </div>
       </div>
@@ -3255,6 +3253,7 @@ const Slide12AICostOptimization: Page = () => (
           padding: '12px 22px',
           borderRadius: 12,
           background: TEAL_HEX,
+          color: '#FFFFFF',
           fontFamily: MONO,
           fontSize: 18,
           fontWeight: 780,
@@ -3456,17 +3455,17 @@ const OutputBadgeRow = ({ text }: { text: string }) => (
   <div
     style={{
       borderRadius: 14,
-      background: 'rgba(255,255,255,0.08)',
-      border: '1.5px solid rgba(255,255,255,0.14)',
+      background: '#FFFFFF',
+      border: `1.5px solid rgba(60,165,161,0.35)`,
       padding: '15px 20px',
       ...row,
       gap: 14,
       fontSize: 20,
       fontWeight: 650,
-      color: '#FFFFFF',
+      color: INK,
     }}
   >
-    <span style={{ color: '#7CE8E4', fontWeight: 800, fontSize: 22 }}>✓</span>
+    <span style={{ color: TEAL_HEX, fontWeight: 800, fontSize: 22 }}>✓</span>
     <span>{text}</span>
   </div>
 );
@@ -3539,8 +3538,9 @@ const Slide14MentorDemo: Page = () => (
       style={{
         ...abs(1136, 224, 664, 720),
         borderRadius: 26,
-        background: INK_HEX,
-        color: '#FFFFFF',
+        background: TINT_TEAL,
+        border: `2px solid ${TEAL_HEX}`,
+        color: INK,
         padding: '28px 32px',
         display: 'flex',
         flexDirection: 'column',
@@ -3548,10 +3548,10 @@ const Slide14MentorDemo: Page = () => (
       }}
     >
       <div>
-        <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: YELLOW, marginBottom: 10 }}>
+        <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: TEAL_HEX, marginBottom: 10 }}>
           OUTPUT DEMO YANG DIVERIFIKASI
         </div>
-        <h3 style={{ ...headline(32), color: '#FFFFFF', marginBottom: 20 }}>
+        <h3 style={{ ...headline(32), color: INK, marginBottom: 20 }}>
           Checklist Keberhasilan Demo
         </h3>
 
@@ -3567,11 +3567,12 @@ const Slide14MentorDemo: Page = () => (
       <div
         style={{
           borderRadius: 16,
-          background: TEAL_HEX,
+          background: TINT_YELLOW,
+          border: `2px solid ${AMBER_BORDER}`,
           padding: '16px 22px',
           fontSize: 19,
-          fontWeight: 720,
-          color: '#FFFFFF',
+          fontWeight: 740,
+          color: INK,
         }}
       >
         Siap lanjut ke sesi praktik peserta (Hands-on Session) →
@@ -3714,18 +3715,19 @@ const Slide15HandsOnChallenge: Page = () => (
       style={{
         ...abs(X0, 810, W, 134),
         borderRadius: 22,
-        background: INK_HEX,
-        color: '#FFFFFF',
+        background: TINT_TEAL,
+        border: `2px solid ${TEAL_HEX}`,
+        color: INK,
         padding: '22px 34px',
         ...row,
         justifyContent: 'space-between',
       }}
     >
       <div>
-        <div style={{ fontFamily: MONO, fontSize: 16, fontWeight: 780, color: YELLOW, marginBottom: 4 }}>
+        <div style={{ fontFamily: MONO, fontSize: 16, fontWeight: 780, color: TEAL_HEX, marginBottom: 4 }}>
           TARGET SESI 5
         </div>
-        <div style={{ ...headline(32), color: '#FFFFFF' }}>
+        <div style={{ ...headline(32), color: INK }}>
           UrbanStore Intelligent Product siap diuji &amp; didemokan!
         </div>
       </div>
