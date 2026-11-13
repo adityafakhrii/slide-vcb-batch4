@@ -14,8 +14,8 @@ export const design: DesignSystem = {
   fonts: {
     display: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, sans-serif',
     body: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, sans-serif',
+    typeScale: { hero: 118, body: 28 },
   },
-  typeScale: { hero: 118, body: 28 },
   radius: 24,
 };
 
