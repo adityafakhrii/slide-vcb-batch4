@@ -1051,7 +1051,7 @@ const Slide03TwoSidedStudyCase: Page = () => {
       >
         <div style={{ maxWidth: 1320 }}>
           <div style={{ fontFamily: MONO, fontSize: 16, fontWeight: 780, color: YELLOW, marginBottom: 4 }}>
-            💡 INSIGHT ARSITEKTUR
+            INSIGHT ARSITEKTUR
           </div>
           <div style={{ fontSize: 22, lineHeight: 1.4, color: '#F5F4F0' }}>
             AI bekerja di atas <strong style={{ color: '#7CE8E4' }}>data nyata UrbanStore</strong>{' '}
@@ -1360,7 +1360,7 @@ const Slide04HowAIWorks: Page = () => {
         }}
       >
         <span style={{ fontSize: 22, fontWeight: 650 }}>
-          💡 <strong style={{ color: YELLOW }}>Prinsip Utama:</strong> Semakin akurat Input (data nyata
+          <strong style={{ color: YELLOW }}>Prinsip Utama:</strong> Semakin akurat Input (data nyata
           UrbanStore) dan semakin spesifik Prompt, semakin tepat guna Output AI.
         </span>
         <span style={{ fontFamily: MONO, fontSize: 17, color: '#7CE8E4' }}>Garbage In = Garbage Out</span>
@@ -1502,7 +1502,7 @@ const Slide05GeminiIntegration: Page = () => (
         }}
       >
         <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: CORAL_HEX, marginBottom: 8 }}>
-          🔒 ATURAN KEAMANAN WAJIB
+          ATURAN KEAMANAN WAJIB
         </div>
         <div style={{ fontSize: 21, fontWeight: 720, color: INK, lineHeight: 1.4, marginBottom: 8 }}>
           Jangan pernah menaruh Gemini API Key di kode Frontend / Browser!
@@ -1837,7 +1837,7 @@ const Slide06ThreeAIFeatures: Page = () => {
               }}
             >
               <div style={{ fontFamily: MONO, fontSize: 14, color: YELLOW, marginBottom: 6 }}>
-                ✨ HASIL GENERATE DESKRIPSI AI (SIAP EDIT ADMIN)
+                HASIL GENERATE DESKRIPSI AI (SIAP EDIT ADMIN)
               </div>
               “Tampil effortless dengan <strong>Urban Boxy Work Jacket</strong>. Dibuat dari bahan
               canvas premium yang kokoh dengan potongan boxy modern dan resleting YKK yang awet
@@ -1875,7 +1875,7 @@ const Slide06ThreeAIFeatures: Page = () => {
               }}
             >
               <div style={{ fontFamily: MONO, fontSize: 14, color: '#FF8DA1', marginBottom: 6 }}>
-                📄 DOKUMEN ANALISIS &amp; REKOMENDASI STRATEGI PENJUALAN
+                DOKUMEN ANALISIS &amp; REKOMENDASI STRATEGI PENJUALAN
               </div>
               <strong>1. Restock Segera:</strong> Size L Essentials menyumbang 60% penjualan.{' '}
               <strong>2. Strategi Bundling:</strong> Buat paket “Campus Starter Pack” (Tee +
@@ -2073,7 +2073,7 @@ const Slide07AIUX: Page = () => {
               <>
                 <div>
                   <div style={{ fontFamily: MONO, fontSize: 15, color: TEAL_HEX, fontWeight: 760 }}>
-                    ✨ FLOATING CHAT &amp; ADMIN ANALYST · PROCESSING
+                    FLOATING CHAT &amp; ADMIN ANALYST · PROCESSING
                   </div>
                   <div style={{ fontSize: 24, fontWeight: 740, color: INK, marginTop: 10 }}>
                     “Asisten sedang mengecek stok katalog &amp; mencocokkan ukuran BB/TB-mu...”
@@ -2278,7 +2278,7 @@ const Slide08AISkillAudit: Page = () => (
       }}
     >
       <div style={{ fontSize: 20, lineHeight: 1.42, color: INK }}>
-        💡 <strong>Insight:</strong> Skill menjaga kualitas fitur AI UrbanStore secara konsisten
+        <strong>Insight:</strong> Skill menjaga kualitas fitur AI UrbanStore secara konsisten
         tanpa perlu menulis prompt audit panjang berulang kali.
       </div>
     </div>
@@ -2963,7 +2963,7 @@ const Slide11UnlimitedCoding: Page = () => (
           lineHeight: 1.4,
         }}
       >
-        💡 <strong>Aturan Emas:</strong> Gunakan model sesuai kebutuhan task, bukan yang paling mahal.
+        <strong>Aturan Emas:</strong> Gunakan model sesuai kebutuhan task, bukan yang paling mahal.
       </div>
     </div>
 
@@ -2978,7 +2978,7 @@ const Slide11UnlimitedCoding: Page = () => (
       }}
     >
       <span style={{ fontSize: 21, fontWeight: 700, color: INK }}>
-        🎯 Hasilnya: Biaya token terkendali dan kuota gratis/berbayar bertahan jauh lebih lama.
+        Hasilnya: Biaya token terkendali dan kuota gratis/berbayar bertahan jauh lebih lama.
       </span>
     </div>
   </Frame>

@@ -3112,7 +3112,7 @@ const Slide13GitWorkflow: Page = () => {
         </div>
 
         <div style={{ fontFamily: MONO, fontSize: 18, color: YELLOW }}>
-          💡 Jika prompt berikutnya merusak kode, cukup kembali ke commit terakhir yang stabil.
+          Tip: Jika prompt berikutnya merusak kode, cukup kembali ke commit terakhir yang stabil.
         </div>
       </div>
     </Frame>
