@@ -381,111 +381,66 @@ const TallyBox = ({ x, accent = false }: { x: number; accent?: boolean }) => (
 );
 
 /* ============================================================================ */
-/* SLIDE 01 — COVER                                                             */
+/* SLIDE 01 — COVER (Centered Editorial Hero + 3-Pillar Bento Showcase)         */
 /* ============================================================================ */
 
-const CoverAIProductArt = () => (
-  <Ink width={780} height={760} style={abs(1020, 110)}>
-    <ellipse cx="400" cy="360" rx="350" ry="310" fill={TINT_TEAL} stroke="none" />
-    <circle cx="650" cy="140" r="82" fill={YELLOW} stroke="none" />
-    <circle cx="90" cy="560" r="74" fill={TINT_PINK} stroke="none" />
+const CoverBentoChatArt = () => (
+  <Ink width={440} height={152} style={{ display: 'block' }} wobble={1.3}>
+    {/* Customer BB/TB Bubble */}
+    <rect x="130" y="6" width="298" height="44" rx="12" fill="#FFFFFF" strokeWidth={2.4} />
+    <path d="M150 24h180M150 37h120" stroke={INK_HEX} strokeWidth={2.2} />
+    <circle cx="404" cy="28" r="10" fill={YELLOW} stroke="none" />
 
-    {/* 1. UrbanStore Main Window + Floating Chat Widget */}
-    <g transform="translate(30, 44)">
-      <rect x="0" y="0" width="560" height="334" rx="16" fill="#FFFFFF" />
-      <path d="M0 44H560" />
-      <circle cx="24" cy="22" r="5" fill={CORAL_HEX} stroke="none" />
-      <circle cx="42" cy="22" r="5" fill={YELLOW} stroke="none" />
-      <circle cx="60" cy="22" r="5" fill={GREEN} stroke="none" />
-      <rect x="88" y="10" width="210" height="24" rx="6" fill={TINT_NEUTRAL} />
-      <path d="M104 22h130" strokeWidth={2.4} />
-      <rect x="316" y="10" width="124" height="24" rx="12" fill={TINT_TEAL} stroke="none" />
-      <circle cx="332" cy="22" r="4" fill={TEAL_HEX} stroke="none" />
-      <path d="M344 22h80" stroke={TEAL_HEX} strokeWidth={2.2} />
+    {/* AI CS Reply Bubble */}
+    <rect x="6" y="64" width="330" height="78" rx="14" fill="#FFFFFF" stroke={TEAL_HEX} strokeWidth={2.6} />
+    <circle cx="32" cy="94" r="14" fill={TEAL_HEX} stroke="none" />
+    <path d="M26 94h12M32 88v12" stroke="#FFFFFF" strokeWidth={2.4} />
+    <path d="M58 84h210M58 104h248M58 122h170" stroke={INK_HEX} strokeWidth={2.2} />
 
-      {/* Storefront Catalog Mini Preview (Left) */}
-      <rect x="20" y="62" width="250" height="252" rx="12" fill={TINT_NEUTRAL} />
-      <rect x="34" y="76" width="104" height="106" rx="8" fill="#FFFFFF" />
-      <path d="M68 104l18-14 18 14-5 44H73z" fill={TINT_TEAL} strokeWidth={2.2} />
-      <rect x="150" y="76" width="104" height="106" rx="8" fill="#FFFFFF" />
-      <path d="M184 102l18-12 18 12-4 46h-28z" fill={TINT_YELLOW} strokeWidth={2.2} />
-      <path d="M34 202h90m26 0h90" strokeWidth={2.6} />
-      <path d="M34 220h60m56 0h60" stroke={CORAL_HEX} strokeWidth={2.6} />
-      <rect x="34" y="244" width="220" height="54" rx="10" fill="#FFFFFF" />
-      <path d="M52 264h110m-110 16h160" strokeWidth={2.2} />
+    <Sparkle x={388} y={102} s={0.85} fill={TEAL_HEX} />
+  </Ink>
+);
 
-      {/* Floating Chat Asisten CS Overlay (Right) */}
-      <rect x="288" y="62" width="254" height="252" rx="14" fill="#FFFFFF" strokeWidth={2.6} />
-      <rect x="288" y="62" width="254" height="42" rx="14" fill={TEAL_HEX} stroke="none" />
-      <circle cx="312" cy="83" r="10" fill="#FFFFFF" stroke="none" />
-      <path d="M332 83h120" stroke="#FFFFFF" strokeWidth={2.6} />
+const CoverBentoRouterArt = () => (
+  <Ink width={440} height={152} style={{ display: 'block' }} wobble={1.3}>
+    {/* Top Provider Row */}
+    <rect x="14" y="10" width="124" height="40" rx="10" fill="rgba(255,255,255,0.12)" stroke="#7CE8E4" strokeWidth={2.2} />
+    <path d="M32 30h86" stroke="#7CE8E4" strokeWidth={2.6} />
+    <rect x="158" y="10" width="124" height="40" rx="10" fill="rgba(255,255,255,0.12)" stroke={YELLOW} strokeWidth={2.2} />
+    <path d="M176 30h86" stroke={YELLOW} strokeWidth={2.6} />
+    <rect x="302" y="10" width="124" height="40" rx="10" fill="rgba(255,255,255,0.12)" stroke={CORAL_HEX} strokeWidth={2.2} />
+    <path d="M320 30h86" stroke={CORAL_HEX} strokeWidth={2.6} />
 
-      {/* User BB/TB Query Bubble */}
-      <rect x="338" y="118" width="190" height="44" rx="10" fill={TINT_YELLOW} />
-      <path d="M352 134h140m-140 14h100" strokeWidth={2.2} />
+    {/* Connector Lines into 9Router Bar */}
+    <path d="M76 50v22M220 50v22M364 50v22" stroke="#FFFFFF" strokeWidth={2.2} strokeDasharray="4 4" />
 
-      {/* AI CS Reply: Stok + Size L + Mix & Match */}
-      <rect x="304" y="174" width="204" height="72" rx="10" fill={TINT_TEAL} />
-      <path d="M320 192h150m-150 16h170m-170 16h120" strokeWidth={2.2} />
+    {/* 9Router Unified Engine Bar */}
+    <rect x="14" y="76" width="412" height="66" rx="14" fill={TEAL_HEX} stroke="none" />
+    <circle cx="48" cy="109" r="14" fill={YELLOW} stroke="none" />
+    <path d="M78 100h190" stroke="#FFFFFF" strokeWidth={3.2} />
+    <path d="M78 118h140" stroke="#D4F2F0" strokeWidth={2.4} />
+    <rect x="308" y="92" width="98" height="34" rx="17" fill={INK_HEX} stroke="none" />
+    <path d="M328 109h58" stroke={YELLOW} strokeWidth={2.6} />
+  </Ink>
+);
 
-      {/* Floating Chat Input */}
-      <rect x="304" y="260" width="174" height="36" rx="8" fill={TINT_NEUTRAL} />
-      <path d="M320 278h110" strokeWidth={2.0} />
-      <circle cx="508" cy="278" r="18" fill={CORAL_HEX} stroke="none" />
-      <path d="M502 278h12m-5-5l5 5-5 5" stroke="#FFFFFF" strokeWidth={2.4} />
-    </g>
+const CoverBentoAdminArt = () => (
+  <Ink width={440} height={152} style={{ display: 'block' }} wobble={1.3}>
+    {/* Sales Chart Card */}
+    <rect x="6" y="8" width="218" height="136" rx="14" fill="#FFFFFF" strokeWidth={2.4} />
+    <rect x="28" y="80" width="26" height="44" rx="4" fill={TINT_TEAL} />
+    <rect x="66" y="62" width="26" height="62" rx="4" fill={TINT_BLUE} />
+    <rect x="104" y="42" width="26" height="82" rx="4" fill={TEAL_HEX} stroke="none" />
+    <rect x="142" y="28" width="26" height="96" rx="4" fill={CORAL_HEX} stroke="none" />
+    <path d="M24 128h182" stroke={INK_HEX} strokeWidth={2.2} />
 
-    {/* 2. Connector Pipes to Gemini API / 9Router */}
-    <path d="M180 378v86" strokeDasharray="6 4" stroke={TEAL_HEX} strokeWidth={3.0} />
-    <polygon points="174,464 186,464 180,476" fill={TEAL_HEX} stroke="none" />
-    <rect x="108" y="408" width="144" height="26" rx="13" fill="#FFFFFF" strokeWidth={2.0} />
-    <circle cx="122" cy="421" r="4" fill={TEAL_HEX} stroke="none" />
-    <path d="M134 421h100" strokeWidth={2.2} />
+    {/* Generated Strategy & Copy Card */}
+    <rect x="238" y="8" width="194" height="136" rx="14" fill="#FFFFFF" strokeWidth={2.4} />
+    <rect x="256" y="24" width="96" height="22" rx="6" fill={TINT_PINK} stroke="none" />
+    <path d="M266 35h74" stroke={CORAL_HEX} strokeWidth={2.2} />
+    <path d="M256 66h154M256 86h136M256 106h148M256 126h104" stroke={INK_HEX} strokeWidth={2.4} />
 
-    <path d="M460 378c0 42 80 32 80 86" strokeDasharray="6 4" stroke={INK_HEX} strokeWidth={3.0} />
-    <polygon points="534,464 546,464 540,476" fill={INK_HEX} stroke="none" />
-    <rect x="424" y="406" width="150" height="26" rx="13" fill="#FFFFFF" strokeWidth={2.2} />
-    <circle cx="438" cy="419" r="4" fill={CORAL_HEX} stroke="none" />
-    <path d="M450 419h106" strokeWidth={2.2} />
-
-    {/* 3. Admin Sales Strategy Doc (Bottom Left) */}
-    <g transform="translate(30, 484)">
-      <rect x="0" y="0" width="320" height="220" rx="16" fill="#FFFFFF" />
-      <rect x="0" y="0" width="320" height="44" rx="16" fill={TINT_YELLOW} />
-      <path d="M0 44h320" />
-      <circle cx="26" cy="22" r="8" fill={YELLOW} />
-      <path d="M46 22h140" strokeWidth={2.8} />
-
-      {/* Mini Bar Chart + Strategy Bullets */}
-      <rect x="26" y="66" width="26" height="62" rx="4" fill={TINT_TEAL} />
-      <rect x="64" y="84" width="26" height="44" rx="4" fill={TINT_BLUE} />
-      <rect x="102" y="58" width="26" height="70" rx="4" fill={TEAL_HEX} stroke="none" />
-      <path d="M150 72h140m-140 20h120m-140 20h136" strokeWidth={2.4} />
-      <rect x="24" y="148" width="272" height="52" rx="10" fill={TINT_PINK} />
-      <circle cx="44" cy="174" r="7" fill={CORAL_HEX} stroke="none" />
-      <path d="M64 166h196m-196 16h150" strokeWidth={2.4} />
-    </g>
-
-    {/* 4. Gemini + 9Router Hub (Bottom Right) */}
-    <g transform="translate(390, 484)">
-      <rect x="10" y="0" width="310" height="220" rx="18" fill={INK_HEX} />
-      <rect x="34" y="24" width="262" height="48" rx="10" fill={TEAL_HEX} stroke="none" />
-      <path d="M56 48h160" stroke="#FFFFFF" strokeWidth={3.0} />
-      <circle cx="268" cy="48" r="10" fill={YELLOW} stroke="none" />
-
-      <rect x="34" y="92" width="122" height="48" rx="10" fill="#FFFFFF" stroke="none" />
-      <path d="M52 116h86" stroke={INK_HEX} strokeWidth={2.6} />
-      <rect x="174" y="92" width="122" height="48" rx="10" fill={TINT_YELLOW} stroke="none" />
-      <path d="M192 116h86" stroke={INK_HEX} strokeWidth={2.6} />
-
-      <rect x="34" y="156" width="262" height="42" rx="10" fill="rgba(255,255,255,0.12)" stroke="#FFFFFF" strokeWidth={1.8} />
-      <path d="M54 177h180" stroke="#7CE8E4" strokeWidth={2.6} />
-    </g>
-
-    <Sparkle x={12} y={120} s={0.9} fill={TEAL_HEX} />
-    <Sparkle x={630} y={40} s={1.15} fill={YELLOW} />
-    <Sparkle x={718} y={430} s={0.85} fill={PINK} />
-    <Sparkle x={346} y={462} s={0.95} fill={TEAL_HEX} />
+    <Sparkle x={414} y={24} s={0.9} fill={CORAL_HEX} />
   </Ink>
 );
 
@@ -493,33 +448,62 @@ const Slide01Cover: Page = () => {
   const live = useIsActivePage();
   return (
     <Frame hideFooter>
-      <div style={{ ...abs(X0, 96), ...row, gap: 16 }}>
-        <CodepolitanLogo height={40} />
+      {/* Top Meta Bar */}
+      <div
+        style={{
+          ...abs(X0, 74, W, 44),
+          ...row,
+          justifyContent: 'space-between',
+        }}
+      >
+        <CodepolitanLogo height={36} />
         <span
           style={{
-            marginLeft: 6,
-            padding: '6px 18px',
+            padding: '7px 22px',
             borderRadius: 99,
             background: TINT_TEAL,
             color: TEAL_HEX,
-            fontSize: 20,
+            fontFamily: MONO,
+            fontSize: 18,
             fontWeight: 700,
           }}
         >
           VIBE CODING BOOTCAMP · BATCH 4 · SESI 5
         </span>
+        <span style={{ fontSize: 20, fontWeight: 700, color: BODY }}>
+          UrbanStore × Gemini API
+        </span>
       </div>
 
-      <h1 style={{ ...abs(X0, 206, 880), ...headline(98) }}>
-        AI Feature
+      {/* Centered Hero Title */}
+      <h1
+        style={{
+          ...abs(160, 148, 1600),
+          ...headline(92),
+          textAlign: 'center',
+          lineHeight: 1.04,
+        }}
+      >
+        AI Feature Integration
         <br />
-        Integration.
+        &amp; Cost Optimization.
       </h1>
 
+      {/* Decorative Flank Sparkles + Hand-Drawn Underline */}
+      <Ink width={44} height={44} style={abs(250, 174)} wobble={1.2}>
+        <Sparkle x={22} y={22} s={1.15} fill={YELLOW} />
+      </Ink>
+      <Ink width={44} height={44} style={abs(1624, 248)} wobble={1.2}>
+        <Sparkle x={22} y={22} s={1.1} fill={CORAL_HEX} />
+      </Ink>
+      <UnderlineDoodle x={630} y={338} w={660} color={CORAL_HEX} live={live} delay={0.35} />
+
+      {/* Centered Serif Italic Tagline */}
       <p
         style={{
-          ...abs(X0, 464, 860),
+          ...abs(260, 380, 1400),
           margin: 0,
+          textAlign: 'center',
           fontSize: 36,
           fontFamily: SERIF,
           fontStyle: 'italic',
@@ -531,67 +515,298 @@ const Slide01Cover: Page = () => {
         <Highlight>Intelligent Product</Highlight>
       </p>
 
+      {/* Centered Subtitle */}
       <p
         style={{
-          ...abs(X0, 552, 830),
+          ...abs(370, 444, 1180),
           margin: 0,
-          fontSize: 24,
-          lineHeight: 1.52,
+          textAlign: 'center',
+          fontSize: 23,
+          lineHeight: 1.5,
           color: BODY,
         }}
       >
-        Meningkatkan <strong style={{ color: INK }}>UrbanStore Web App</strong> dengan{' '}
-        <strong style={{ color: INK }}>Gemini API (Google AI Studio)</strong>: Floating Chat CS
-        untuk Customer serta AI Deskripsi Produk &amp; Dokumen Analisis Penjualan untuk Admin —
-        lengkap dengan <strong style={{ color: INK }}>9Router</strong> &amp;{' '}
-        <strong style={{ color: INK }}>Cost Optimization</strong>.
+        Menambahkan <strong style={{ color: INK }}>Floating Chat CS</strong> (Customer) serta{' '}
+        <strong style={{ color: INK }}>AI Deskripsi &amp; Dokumen Analisis Penjualan</strong>{' '}
+        (Admin) dengan <strong style={{ color: INK }}>Gemini API (Google AI Studio)</strong> dan{' '}
+        <strong style={{ color: INK }}>9Router</strong>.
       </p>
 
-      <div style={{ ...abs(X0, 756), ...row, gap: 12 }}>
-        <span
-          style={{
-            padding: '9px 18px',
-            borderRadius: 99,
-            background: TINT_TEAL,
-            fontSize: 18,
-            fontWeight: 720,
-            color: TEAL_HEX,
-          }}
-        >
-          01 · Floating Chat CS
-        </span>
-        <span
-          style={{
-            padding: '9px 18px',
-            borderRadius: 99,
-            background: TINT_YELLOW,
-            fontSize: 18,
-            fontWeight: 720,
-            color: '#946200',
-          }}
-        >
-          02 · Admin AI Strategist
-        </span>
-        <span
-          style={{
-            padding: '9px 18px',
-            borderRadius: 99,
-            background: TINT_PINK,
-            fontSize: 18,
-            fontWeight: 720,
-            color: CORAL_HEX,
-          }}
-        >
-          Gemini + 9Router
-        </span>
+      {/* Bottom 3-Pillar Bento Showcase */}
+      {/* Pillar 1: Customer Floating Chat CS */}
+      <div
+        style={{
+          ...abs(X0, 548, 534, 386),
+          borderRadius: 22,
+          background: TINT_TEAL,
+          border: `2.5px solid ${INK_HEX}`,
+          boxShadow: `8px 8px 0 ${TEAL_HEX}`,
+          padding: '24px 28px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+        }}
+      >
+        <div>
+          <div style={{ ...row, justifyContent: 'space-between' }}>
+            <span
+              style={{
+                fontFamily: MONO,
+                fontSize: 15,
+                fontWeight: 800,
+                color: TEAL_HEX,
+                letterSpacing: '0.04em',
+              }}
+            >
+              01 · CUSTOMER SIDE
+            </span>
+            <span
+              style={{
+                padding: '4px 12px',
+                borderRadius: 99,
+                background: '#FFFFFF',
+                fontSize: 14,
+                fontWeight: 700,
+                color: INK,
+              }}
+            >
+              Floating Widget
+            </span>
+          </div>
+          <div style={{ marginTop: 10, fontSize: 27, fontWeight: 780, color: INK }}>
+            Floating Chat Asisten CS
+          </div>
+        </div>
+
+        <CoverBentoChatArt />
+
+        <div style={{ ...row, gap: 8, flexWrap: 'wrap' }}>
+          <span
+            style={{
+              padding: '5px 12px',
+              borderRadius: 99,
+              background: '#FFFFFF',
+              fontSize: 15,
+              fontWeight: 700,
+              color: INK,
+            }}
+          >
+            Tanya Stok
+          </span>
+          <span
+            style={{
+              padding: '5px 12px',
+              borderRadius: 99,
+              background: '#FFFFFF',
+              fontSize: 15,
+              fontWeight: 700,
+              color: INK,
+            }}
+          >
+            Ukuran BB / TB
+          </span>
+          <span
+            style={{
+              padding: '5px 12px',
+              borderRadius: 99,
+              background: '#FFFFFF',
+              fontSize: 15,
+              fontWeight: 700,
+              color: TEAL_HEX,
+            }}
+          >
+            Mix &amp; Match
+          </span>
+        </div>
       </div>
 
-      <div style={{ ...abs(X0, 880), fontSize: 21, fontWeight: 650, color: SOFT }}>
-        by CODEPOLITAN
+      {/* Pillar 2: Dark Charcoal Center Core (Gemini API + 9Router) */}
+      <div
+        style={{
+          ...abs(693, 548, 534, 386),
+          borderRadius: 22,
+          background: INK_HEX,
+          border: `2.5px solid ${INK_HEX}`,
+          boxShadow: `8px 8px 0 ${YELLOW}`,
+          padding: '24px 28px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          color: '#FFFFFF',
+        }}
+      >
+        <div>
+          <div style={{ ...row, justifyContent: 'space-between' }}>
+            <span
+              style={{
+                fontFamily: MONO,
+                fontSize: 15,
+                fontWeight: 800,
+                color: YELLOW,
+                letterSpacing: '0.04em',
+              }}
+            >
+              02 · ENGINE &amp; ROUTING
+            </span>
+            <span
+              style={{
+                padding: '4px 12px',
+                borderRadius: 99,
+                background: 'rgba(124,232,228,0.16)',
+                fontSize: 14,
+                fontWeight: 700,
+                color: '#7CE8E4',
+              }}
+            >
+              AI Studio Key
+            </span>
+          </div>
+          <div style={{ marginTop: 10, fontSize: 27, fontWeight: 780, color: '#FFFFFF' }}>
+            Gemini API + 9Router
+          </div>
+        </div>
+
+        <CoverBentoRouterArt />
+
+        <div style={{ ...row, gap: 8, flexWrap: 'wrap' }}>
+          <span
+            style={{
+              padding: '5px 12px',
+              borderRadius: 99,
+              background: 'rgba(255,255,255,0.12)',
+              fontSize: 15,
+              fontWeight: 700,
+              color: '#FFFFFF',
+            }}
+          >
+            Smart Routing
+          </span>
+          <span
+            style={{
+              padding: '5px 12px',
+              borderRadius: 99,
+              background: 'rgba(255,255,255,0.12)',
+              fontSize: 15,
+              fontWeight: 700,
+              color: YELLOW,
+            }}
+          >
+            Cost Optimization
+          </span>
+          <span
+            style={{
+              padding: '5px 12px',
+              borderRadius: 99,
+              background: 'rgba(255,255,255,0.12)',
+              fontSize: 15,
+              fontWeight: 700,
+              color: '#7CE8E4',
+            }}
+          >
+            AI Skill Audit
+          </span>
+        </div>
       </div>
 
-      <CoverAIProductArt />
-      <CircleDoodle x={102} y={306} w={620} h={134} color={CORAL_HEX} live={live} delay={0.4} />
+      {/* Pillar 3: Store Admin AI Strategist */}
+      <div
+        style={{
+          ...abs(1266, 548, 534, 386),
+          borderRadius: 22,
+          background: TINT_YELLOW,
+          border: `2.5px solid ${INK_HEX}`,
+          boxShadow: `8px 8px 0 ${CORAL_HEX}`,
+          padding: '24px 28px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+        }}
+      >
+        <div>
+          <div style={{ ...row, justifyContent: 'space-between' }}>
+            <span
+              style={{
+                fontFamily: MONO,
+                fontSize: 15,
+                fontWeight: 800,
+                color: '#946200',
+                letterSpacing: '0.04em',
+              }}
+            >
+              03 · STORE ADMIN
+            </span>
+            <span
+              style={{
+                padding: '4px 12px',
+                borderRadius: 99,
+                background: '#FFFFFF',
+                fontSize: 14,
+                fontWeight: 700,
+                color: CORAL_HEX,
+              }}
+            >
+              AI Insights
+            </span>
+          </div>
+          <div style={{ marginTop: 10, fontSize: 27, fontWeight: 780, color: INK }}>
+            AI Strategist &amp; Copywriter
+          </div>
+        </div>
+
+        <CoverBentoAdminArt />
+
+        <div style={{ ...row, gap: 8, flexWrap: 'wrap' }}>
+          <span
+            style={{
+              padding: '5px 12px',
+              borderRadius: 99,
+              background: '#FFFFFF',
+              fontSize: 15,
+              fontWeight: 700,
+              color: INK,
+            }}
+          >
+            Auto Deskripsi
+          </span>
+          <span
+            style={{
+              padding: '5px 12px',
+              borderRadius: 99,
+              background: '#FFFFFF',
+              fontSize: 15,
+              fontWeight: 700,
+              color: INK,
+            }}
+          >
+            Dokumen Analisis
+          </span>
+          <span
+            style={{
+              padding: '5px 12px',
+              borderRadius: 99,
+              background: '#FFFFFF',
+              fontSize: 15,
+              fontWeight: 700,
+              color: CORAL_HEX,
+            }}
+          >
+            Strategi Sales
+          </span>
+        </div>
+      </div>
+
+      {/* Bottom Centered Credit */}
+      <div
+        style={{
+          ...abs(X0, 974, W, 32),
+          textAlign: 'center',
+          fontSize: 20,
+          fontWeight: 650,
+          color: SOFT,
+        }}
+      >
+        by CODEPOLITAN · UrbanStore Intelligence Upgrade
+      </div>
     </Frame>
   );
 };
