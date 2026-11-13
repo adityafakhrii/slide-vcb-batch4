@@ -2146,18 +2146,18 @@ const Slide09ShoppingCartAndSize: Page = () => {
   return (
     <Frame>
       <Eyebrow>Fitur 2 · Customer Shopping Cart &amp; Size Selection</Eyebrow>
-      <h2 style={{ ...abs(X0, 130, W), ...headline(50) }}>
+      <h2 style={{ ...abs(X0, 130, W), ...headline(48) }}>
         Pilih ukuran pakaian dan hitung{' '}
         <Highlight color={HIGHLIGHT_TEAL}>total keranjang secara otomatis.</Highlight>
       </h2>
 
       <div
         style={{
-          ...abs(X0, 236, 820, 710),
+          ...abs(X0, 236, 820, 668),
           borderRadius: 24,
           background: '#FFFFFF',
           border: `2.5px solid ${INK_HEX}`,
-          padding: '28px 34px',
+          padding: '32px 36px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -2173,15 +2173,17 @@ const Slide09ShoppingCartAndSize: Page = () => {
             </span>
           </div>
 
-          <h3 style={{ ...headline(34), marginBottom: 6 }}>Urban Oversized Heavy Tee</h3>
-          <div style={{ fontFamily: MONO, fontSize: 24, fontWeight: 780, color: TEAL_HEX, marginBottom: 20 }}>
+          <h3 style={{ ...headline(36), marginBottom: 8 }}>Urban Oversized Heavy Tee</h3>
+          <div style={{ fontFamily: MONO, fontSize: 25, fontWeight: 780, color: TEAL_HEX }}>
             Rp 189.000
           </div>
+        </div>
 
-          <div style={{ fontSize: 19, fontWeight: 720, marginBottom: 10 }}>
+        <div>
+          <div style={{ fontSize: 19, fontWeight: 720, marginBottom: 12 }}>
             1. Pilih Ukuran Pakaian (Wajib):
           </div>
-          <div style={{ ...row, gap: 12, marginBottom: 24 }}>
+          <div style={{ ...row, gap: 14 }}>
             {(['S', 'M', 'L', 'XL'] as const).map((sz) => (
               <button
                 key={sz}
@@ -2189,14 +2191,14 @@ const Slide09ShoppingCartAndSize: Page = () => {
                 onClick={() => setSelectedSize(sz)}
                 className="s4-interactive"
                 style={{
-                  width: 68,
-                  height: 54,
+                  width: 74,
+                  height: 58,
                   borderRadius: 12,
                   border: `2px solid ${selectedSize === sz ? INK_HEX : RULE}`,
                   background: selectedSize === sz ? INK_HEX : TINT_NEUTRAL,
                   color: selectedSize === sz ? '#FFFFFF' : INK,
                   fontFamily: MONO,
-                  fontSize: 20,
+                  fontSize: 21,
                   fontWeight: 780,
                 }}
               >
@@ -2204,18 +2206,20 @@ const Slide09ShoppingCartAndSize: Page = () => {
               </button>
             ))}
           </div>
+        </div>
 
-          <div style={{ fontSize: 19, fontWeight: 720, marginBottom: 10 }}>
+        <div>
+          <div style={{ fontSize: 19, fontWeight: 720, marginBottom: 12 }}>
             2. Atur Jumlah Barang (Quantity):
           </div>
-          <div style={{ ...row, gap: 16 }}>
+          <div style={{ ...row, gap: 18 }}>
             <button
               type="button"
               onClick={() => setQty(Math.max(1, qty - 1))}
               className="s4-interactive"
               style={{
-                width: 52,
-                height: 52,
+                width: 56,
+                height: 56,
                 borderRadius: 12,
                 border: `1.5px solid ${INK_HEX}`,
                 background: '#FFFFFF',
@@ -2225,7 +2229,7 @@ const Slide09ShoppingCartAndSize: Page = () => {
             >
               −
             </button>
-            <span style={{ fontFamily: MONO, fontSize: 26, fontWeight: 780, minWidth: 44, textAlign: 'center' }}>
+            <span style={{ fontFamily: MONO, fontSize: 28, fontWeight: 780, minWidth: 48, textAlign: 'center' }}>
               {qty}
             </span>
             <button
@@ -2233,8 +2237,8 @@ const Slide09ShoppingCartAndSize: Page = () => {
               onClick={() => setQty(qty + 1)}
               className="s4-interactive"
               style={{
-                width: 52,
-                height: 52,
+                width: 56,
+                height: 56,
                 borderRadius: 12,
                 border: `1.5px solid ${INK_HEX}`,
                 background: '#FFFFFF',
@@ -2252,7 +2256,7 @@ const Slide09ShoppingCartAndSize: Page = () => {
             borderRadius: 18,
             background: INK_HEX,
             color: '#FFFFFF',
-            padding: '20px 26px',
+            padding: '22px 28px',
             ...row,
             justifyContent: 'space-between',
           }}
@@ -2271,7 +2275,7 @@ const Slide09ShoppingCartAndSize: Page = () => {
 
       <div
         style={{
-          ...abs(976, 236, 824, 710),
+          ...abs(976, 236, 824, 668),
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -2286,41 +2290,45 @@ const Slide09ShoppingCartAndSize: Page = () => {
             padding: '28px 32px',
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'space-between',
           }}
         >
-          <div>
-            <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: CORAL_HEX }}>
-              ALUR KERJA SHOPPING CART
-            </div>
-            <h3 style={{ ...headline(34), margin: '6px 0 18px' }}>4 Komponen Logika Keranjang</h3>
+          <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: CORAL_HEX }}>
+            ALUR KERJA SHOPPING CART
+          </div>
+          <h3 style={{ ...headline(34), margin: '6px 0 18px' }}>4 Komponen Logika Keranjang</h3>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              <ScopeFeatureRow
-                code="01"
-                title="Size Picker Wajib"
-                desc="Cegah Add to Cart sebelum ukuran pakaian dipilih."
-                accentColor={TEAL_HEX}
-              />
-              <ScopeFeatureRow
-                code="02"
-                title="Snapshot Item"
-                desc="Simpan Product ID, Nama, Ukuran, Harga Satuan, & Qty."
-                accentColor={TEAL_HEX}
-              />
-              <ScopeFeatureRow
-                code="03"
-                title="Update & Delete"
-                desc="Tombol +/- mengubah kuantitas dan tombol hapus item."
-                accentColor={TEAL_HEX}
-              />
-              <ScopeFeatureRow
-                code="04"
-                title="Kalkulasi Otomatis"
-                desc="Subtotal dihitung ulang setiap kali qty berubah."
-                accentColor={TEAL_HEX}
-              />
-            </div>
+          <div
+            style={{
+              flex: 1,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+            }}
+          >
+            <ScopeFeatureRow
+              code="01"
+              title="Size Picker Wajib"
+              desc="Cegah Add to Cart sebelum ukuran pakaian dipilih."
+              accentColor={TEAL_HEX}
+            />
+            <ScopeFeatureRow
+              code="02"
+              title="Snapshot Item"
+              desc="Simpan Product ID, Nama, Ukuran, Harga Satuan, & Qty."
+              accentColor={TEAL_HEX}
+            />
+            <ScopeFeatureRow
+              code="03"
+              title="Update & Delete"
+              desc="Tombol +/- mengubah kuantitas dan tombol hapus item."
+              accentColor={TEAL_HEX}
+            />
+            <ScopeFeatureRow
+              code="04"
+              title="Kalkulasi Otomatis"
+              desc="Subtotal dihitung ulang setiap kali qty berubah."
+              accentColor={TEAL_HEX}
+            />
           </div>
         </div>
 
@@ -2531,71 +2539,68 @@ const Slide11InvoiceAndManualPayment: Page = () => {
   return (
     <Frame>
       <Eyebrow>Fitur 4 · Invoice, Pembayaran Manual, &amp; Konfirmasi</Eyebrow>
-      <h2 style={{ ...abs(X0, 130, W), ...headline(48) }}>
+      <h2 style={{ ...abs(X0, 130, W), ...headline(41) }}>
         Gunakan <Highlight color={HIGHLIGHT_TEAL}>transfer bank manual</Highlight> untuk memvalidasi
         alur bisnis MVP dengan cepat.
       </h2>
 
       <div
         style={{
-          ...abs(X0, 236, 840, 710),
+          ...abs(X0, 228, 820, 650),
           borderRadius: 24,
           background: '#FFFFFF',
           border: `2.5px solid ${INK_HEX}`,
-          padding: '28px 34px',
+          padding: '30px 34px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
         }}
       >
-        <div>
-          <div style={{ ...row, justifyContent: 'space-between', marginBottom: 14 }}>
-            <div>
-              <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: TEAL_HEX }}>
-                INVOICE PESANAN PELANGGAN
-              </div>
-              <h3 style={{ ...headline(34), marginTop: 4 }}>Order #URB-2026-001</h3>
+        <div style={{ ...row, justifyContent: 'space-between' }}>
+          <div>
+            <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: TEAL_HEX }}>
+              INVOICE PESANAN PELANGGAN
             </div>
-            <span
-              style={{
-                padding: '8px 16px',
-                borderRadius: 99,
-                background: paidClicked ? TINT_TEAL : TINT_YELLOW,
-                color: paidClicked ? TEAL_HEX : '#946200',
-                fontFamily: MONO,
-                fontSize: 16,
-                fontWeight: 780,
-              }}
-            >
-              {paidClicked ? '● Menunggu Verifikasi Admin' : '● Menunggu Pembayaran'}
-            </span>
+            <h3 style={{ ...headline(34), marginTop: 4 }}>Order #URB-2026-001</h3>
           </div>
-
-          <div
+          <span
             style={{
-              borderRadius: 18,
-              background: INK_HEX,
-              color: '#FFFFFF',
-              padding: '20px 24px',
-              marginBottom: 18,
+              padding: '8px 16px',
+              borderRadius: 99,
+              background: paidClicked ? TINT_TEAL : TINT_YELLOW,
+              color: paidClicked ? TEAL_HEX : '#946200',
+              fontFamily: MONO,
+              fontSize: 16,
+              fontWeight: 780,
             }}
           >
-            <div style={{ fontFamily: MONO, fontSize: 16, color: YELLOW, marginBottom: 4 }}>
-              INSTRUKSI TRANSFER BANK MANUAL
-            </div>
-            <div style={{ fontSize: 24, fontWeight: 780, marginBottom: 4 }}>
-              Bank BCA · 123-456-7890
-            </div>
-            <div style={{ fontSize: 18, color: '#D8D7D4' }}>
-              a.n. PT UrbanStore Fashion Indonesia
-            </div>
-          </div>
+            {paidClicked ? '● Menunggu Verifikasi Admin' : '● Menunggu Pembayaran'}
+          </span>
+        </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-            <FormFieldPreview label="Item Belanja" value="2× Urban Oversized Heavy Tee (Size L)" />
-            <FormFieldPreview label="Penerima" value="Budi Santoso · Jakarta Selatan" />
-            <FormFieldPreview label="Total Nominal Transfer" value="Rp 393.000" mono />
+        <div
+          style={{
+            borderRadius: 18,
+            background: INK_HEX,
+            color: '#FFFFFF',
+            padding: '22px 26px',
+          }}
+        >
+          <div style={{ fontFamily: MONO, fontSize: 16, color: YELLOW, marginBottom: 4 }}>
+            INSTRUKSI TRANSFER BANK MANUAL
           </div>
+          <div style={{ fontSize: 25, fontWeight: 780, marginBottom: 4 }}>
+            Bank BCA · 123-456-7890
+          </div>
+          <div style={{ fontSize: 18, color: '#D8D7D4' }}>
+            a.n. PT UrbanStore Fashion Indonesia
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <FormFieldPreview label="Item Belanja" value="2× Urban Oversized Heavy Tee (Size L)" />
+          <FormFieldPreview label="Penerima" value="Budi Santoso · Jakarta Selatan" />
+          <FormFieldPreview label="Total Nominal Transfer" value="Rp 393.000" mono />
         </div>
 
         <button
@@ -2604,7 +2609,7 @@ const Slide11InvoiceAndManualPayment: Page = () => {
           className="s4-interactive"
           style={{
             width: '100%',
-            padding: '16px 24px',
+            padding: '18px 24px',
             borderRadius: 14,
             border: 'none',
             background: paidClicked ? TEAL_HEX : CORAL_HEX,
@@ -2621,60 +2626,54 @@ const Slide11InvoiceAndManualPayment: Page = () => {
 
       <div
         style={{
-          ...abs(1000, 236, 800, 710),
+          ...abs(980, 228, 820, 650),
+          borderRadius: 24,
+          background: TINT_YELLOW,
+          border: `2px solid #E2B93B`,
+          padding: '30px 34px',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-between',
-          gap: 20,
         }}
       >
+        <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: '#946200' }}>
+          STRATEGI MVP
+        </div>
+        <h3 style={{ ...headline(34), margin: '6px 0 22px' }}>
+          Mengapa Pembayaran Manual?
+        </h3>
+
         <div
           style={{
             flex: 1,
-            borderRadius: 24,
-            background: TINT_YELLOW,
-            border: `2px solid #E2B93B`,
-            padding: '28px 32px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
           }}
         >
-          <div>
-            <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: '#946200' }}>
-              STRATEGI MVP
-            </div>
-            <h3 style={{ ...headline(34), margin: '6px 0 18px' }}>
-              Mengapa Pembayaran Manual?
-            </h3>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              <ScopeFeatureRow
-                code="01"
-                title="Implementasi Cepat"
-                desc="Tidak perlu menunggu verifikasi legalitas akun merchant."
-                accentColor="#946200"
-              />
-              <ScopeFeatureRow
-                code="02"
-                title="Fokus Alur Bisnis"
-                desc="Memastikan relasi produk, cart, dan order berjalan sempurna."
-                accentColor="#946200"
-              />
-              <ScopeFeatureRow
-                code="03"
-                title="Tanpa Biaya Komisi"
-                desc="Nol biaya potongan per transaksi selama fase pengujian."
-                accentColor="#946200"
-              />
-              <ScopeFeatureRow
-                code="04"
-                title="Siap Di-upgrade"
-                desc="Mudah dihubungkan ke QRIS / Payment Gateway di versi v2."
-                accentColor="#946200"
-              />
-            </div>
-          </div>
+          <ScopeFeatureRow
+            code="01"
+            title="Implementasi Cepat"
+            desc="Tidak perlu menunggu verifikasi legalitas akun merchant."
+            accentColor="#946200"
+          />
+          <ScopeFeatureRow
+            code="02"
+            title="Fokus Alur Bisnis"
+            desc="Memastikan relasi produk, cart, dan order berjalan sempurna."
+            accentColor="#946200"
+          />
+          <ScopeFeatureRow
+            code="03"
+            title="Tanpa Biaya Komisi"
+            desc="Nol biaya potongan per transaksi selama fase pengujian."
+            accentColor="#946200"
+          />
+          <ScopeFeatureRow
+            code="04"
+            title="Siap Di-upgrade"
+            desc="Mudah dihubungkan ke QRIS / Payment Gateway di versi v2."
+            accentColor="#946200"
+          />
         </div>
       </div>
     </Frame>
@@ -2756,123 +2755,121 @@ const Slide12AdminOrderDashboard: Page = () => {
 
       <div
         style={{
-          ...abs(X0, 414, W, 532),
+          ...abs(X0, 414, W, 486),
           borderRadius: 24,
           background: '#FFFFFF',
           border: `2.5px solid ${INK_HEX}`,
-          padding: '26px 32px',
+          padding: '30px 34px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
         }}
       >
-        <div>
-          <div style={{ ...row, justifyContent: 'space-between', marginBottom: 18 }}>
-            <div>
-              <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: CORAL_HEX }}>
-                ADMIN ORDER MANAGEMENT (/admin/orders)
-              </div>
-              <h3 style={{ ...headline(32), marginTop: 4 }}>Daftar Transaksi Pelanggan</h3>
+        <div style={{ ...row, justifyContent: 'space-between' }}>
+          <div>
+            <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: CORAL_HEX }}>
+              ADMIN ORDER MANAGEMENT (/admin/orders)
             </div>
-            <span style={{ fontSize: 18, color: SOFT }}>
-              Klik tombol Konfirmasi Lunas untuk simulasi
-            </span>
+            <h3 style={{ ...headline(32), marginTop: 4 }}>Daftar Transaksi Pelanggan</h3>
+          </div>
+          <span style={{ fontSize: 18, color: SOFT }}>
+            Klik tombol Konfirmasi Lunas untuk simulasi
+          </span>
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div
+            style={{
+              ...row,
+              justifyContent: 'space-between',
+              padding: '22px 26px',
+              borderRadius: 16,
+              background: order1Paid ? TINT_TEAL : TINT_YELLOW,
+              border: `2px solid ${order1Paid ? TEAL_HEX : '#E2B93B'}`,
+            }}
+          >
+            <div style={{ ...row, gap: 24 }}>
+              <span style={{ fontFamily: MONO, fontSize: 20, fontWeight: 780 }}>
+                #URB-2026-001
+              </span>
+              <div>
+                <div style={{ fontSize: 21, fontWeight: 740 }}>Budi Santoso (0812-3456-7890)</div>
+                <div style={{ fontSize: 18, color: BODY }}>
+                  2× Urban Oversized Heavy Tee (Size L) · Jakarta Selatan
+                </div>
+              </div>
+            </div>
+
+            <div style={{ ...row, gap: 20 }}>
+              <span style={{ fontFamily: MONO, fontSize: 21, fontWeight: 780 }}>Rp 393.000</span>
+              <span
+                style={{
+                  padding: '6px 14px',
+                  borderRadius: 99,
+                  background: '#FFFFFF',
+                  fontFamily: MONO,
+                  fontSize: 16,
+                  fontWeight: 760,
+                  color: order1Paid ? TEAL_HEX : '#946200',
+                }}
+              >
+                {order1Paid ? '✓ Lunas & Diproses' : 'Menunggu Verifikasi'}
+              </span>
+              <button
+                type="button"
+                onClick={() => setOrder1Paid(!order1Paid)}
+                className="s4-interactive"
+                style={{
+                  padding: '10px 20px',
+                  borderRadius: 10,
+                  border: 'none',
+                  background: order1Paid ? INK_HEX : TEAL_HEX,
+                  color: '#FFFFFF',
+                  fontSize: 18,
+                  fontWeight: 760,
+                }}
+              >
+                {order1Paid ? 'Batalkan' : '✓ Konfirmasi Lunas'}
+              </button>
+            </div>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            <div
-              style={{
-                ...row,
-                justifyContent: 'space-between',
-                padding: '18px 22px',
-                borderRadius: 16,
-                background: order1Paid ? TINT_TEAL : TINT_YELLOW,
-                border: `2px solid ${order1Paid ? TEAL_HEX : '#E2B93B'}`,
-              }}
-            >
-              <div style={{ ...row, gap: 24 }}>
-                <span style={{ fontFamily: MONO, fontSize: 20, fontWeight: 780 }}>
-                  #URB-2026-001
-                </span>
-                <div>
-                  <div style={{ fontSize: 21, fontWeight: 740 }}>Budi Santoso (0812-3456-7890)</div>
-                  <div style={{ fontSize: 18, color: BODY }}>
-                    2× Urban Oversized Heavy Tee (Size L) · Jakarta Selatan
-                  </div>
+          <div
+            style={{
+              ...row,
+              justifyContent: 'space-between',
+              padding: '22px 26px',
+              borderRadius: 16,
+              background: TINT_NEUTRAL,
+            }}
+          >
+            <div style={{ ...row, gap: 24 }}>
+              <span style={{ fontFamily: MONO, fontSize: 20, fontWeight: 780 }}>
+                #URB-2026-002
+              </span>
+              <div>
+                <div style={{ fontSize: 21, fontWeight: 740 }}>Siti Rahma (0813-9876-5432)</div>
+                <div style={{ fontSize: 18, color: BODY }}>
+                  1× Minimalist Work Jacket (Size M) · Bandung
                 </div>
-              </div>
-
-              <div style={{ ...row, gap: 20 }}>
-                <span style={{ fontFamily: MONO, fontSize: 21, fontWeight: 780 }}>Rp 393.000</span>
-                <span
-                  style={{
-                    padding: '6px 14px',
-                    borderRadius: 99,
-                    background: '#FFFFFF',
-                    fontFamily: MONO,
-                    fontSize: 16,
-                    fontWeight: 760,
-                    color: order1Paid ? TEAL_HEX : '#946200',
-                  }}
-                >
-                  {order1Paid ? '✓ Lunas & Diproses' : 'Menunggu Verifikasi'}
-                </span>
-                <button
-                  type="button"
-                  onClick={() => setOrder1Paid(!order1Paid)}
-                  className="s4-interactive"
-                  style={{
-                    padding: '10px 20px',
-                    borderRadius: 10,
-                    border: 'none',
-                    background: order1Paid ? INK_HEX : TEAL_HEX,
-                    color: '#FFFFFF',
-                    fontSize: 18,
-                    fontWeight: 760,
-                  }}
-                >
-                  {order1Paid ? 'Batalkan' : '✓ Konfirmasi Lunas'}
-                </button>
               </div>
             </div>
 
-            <div
-              style={{
-                ...row,
-                justifyContent: 'space-between',
-                padding: '18px 22px',
-                borderRadius: 16,
-                background: TINT_NEUTRAL,
-              }}
-            >
-              <div style={{ ...row, gap: 24 }}>
-                <span style={{ fontFamily: MONO, fontSize: 20, fontWeight: 780 }}>
-                  #URB-2026-002
-                </span>
-                <div>
-                  <div style={{ fontSize: 21, fontWeight: 740 }}>Siti Rahma (0813-9876-5432)</div>
-                  <div style={{ fontSize: 18, color: BODY }}>
-                    1× Minimalist Work Jacket (Size M) · Bandung
-                  </div>
-                </div>
-              </div>
-
-              <div style={{ ...row, gap: 20 }}>
-                <span style={{ fontFamily: MONO, fontSize: 21, fontWeight: 780 }}>Rp 364.000</span>
-                <span
-                  style={{
-                    padding: '6px 14px',
-                    borderRadius: 99,
-                    background: TINT_TEAL,
-                    fontFamily: MONO,
-                    fontSize: 16,
-                    fontWeight: 760,
-                    color: TEAL_HEX,
-                  }}
-                >
-                  ✓ Lunas &amp; Dikirim
-                </span>
-              </div>
+            <div style={{ ...row, gap: 20 }}>
+              <span style={{ fontFamily: MONO, fontSize: 21, fontWeight: 780 }}>Rp 364.000</span>
+              <span
+                style={{
+                  padding: '6px 14px',
+                  borderRadius: 99,
+                  background: TINT_TEAL,
+                  fontFamily: MONO,
+                  fontSize: 16,
+                  fontWeight: 760,
+                  color: TEAL_HEX,
+                }}
+              >
+                ✓ Lunas &amp; Dikirim
+              </span>
             </div>
           </div>
         </div>
@@ -2882,7 +2879,7 @@ const Slide12AdminOrderDashboard: Page = () => {
             borderRadius: 14,
             background: INK_HEX,
             color: '#FFFFFF',
-            padding: '14px 22px',
+            padding: '16px 24px',
             ...row,
             justifyContent: 'space-between',
             fontSize: 19,

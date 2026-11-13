@@ -381,206 +381,202 @@ const TallyBox = ({ x, accent = false }: { x: number; accent?: boolean }) => (
 );
 
 /* ============================================================================ */
-/* SLIDE 01 — COVER (Asymmetric Swiss Poster: Dark Left Telemetry + Right Hero) */
+/* SLIDE 01 — COVER (Swiss Editorial Poster + 4-Stage Production Track)         */
 /* ============================================================================ */
 
-const CoverLeftGatewayStack = () => (
-  <Ink width={710} height={630} style={{ display: 'block' }} wobble={1.3}>
-    {/* Card 1: Google OAuth + Customer Checkout */}
-    <rect x="4" y="6" width="702" height="196" rx="18" fill="#FFFFFF" stroke="#FFFFFF" strokeWidth={2} />
-    <rect x="26" y="24" width="236" height="34" rx="17" fill={TINT_BLUE} stroke="none" />
-    <circle cx="46" cy="41" r="9" fill="#2B6CB0" stroke="none" />
-    <path d="M64 41h176" stroke="#2B6CB0" strokeWidth={2.6} />
+const CoverReleaseSpecCard = () => (
+  <div
+    style={{
+      ...abs(1210, 178, 590, 412),
+      borderRadius: 24,
+      background: INK_HEX,
+      color: '#FFFFFF',
+      padding: '28px 32px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      boxShadow: `10px 10px 0 ${YELLOW}`,
+    }}
+  >
+    <div style={{ ...row, justifyContent: 'space-between' }}>
+      <span
+        style={{
+          fontFamily: MONO,
+          fontSize: 16,
+          fontWeight: 780,
+          color: '#7CE8E4',
+          letterSpacing: '0.04em',
+        }}
+      >
+        URBANSTORE · RELEASE v1.0
+      </span>
+      <span
+        style={{
+          ...row,
+          gap: 8,
+          fontFamily: MONO,
+          fontSize: 15,
+          fontWeight: 760,
+          color: YELLOW,
+        }}
+      >
+        <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#2F7A43' }} />
+        PRODUCTION READY
+      </span>
+    </div>
 
-    <rect x="536" y="24" width="146" height="34" rx="17" fill={TINT_TEAL} stroke="none" />
-    <path d="M558 41l7 7 15-15" stroke={TEAL_HEX} strokeWidth={2.8} />
-    <path d="M592 41h68" stroke={TEAL_HEX} strokeWidth={2.4} />
+    <div>
+      <div style={{ fontSize: 17, color: '#B8B7B2', fontWeight: 600, marginBottom: 4 }}>
+        Status Pembayaran &amp; Kualitas Aplikasi
+      </div>
+      <div style={{ ...headline(32), color: '#FFFFFF', lineHeight: 1.15 }}>
+        Checkout Otomatis &amp; Kode Teruji Menuju Live
+      </div>
+    </div>
 
-    <rect x="26" y="76" width="420" height="44" rx="10" fill={TINT_NEUTRAL} stroke="none" />
-    <path d="M44 98h250" stroke={INK_HEX} strokeWidth={2.8} />
-    <path d="M324 98h96" stroke={CORAL_HEX} strokeWidth={2.8} />
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+      <div
+        style={{
+          ...row,
+          justifyContent: 'space-between',
+          borderRadius: 12,
+          background: 'rgba(255,255,255,0.08)',
+          padding: '12px 16px',
+        }}
+      >
+        <span style={{ fontFamily: MONO, fontSize: 15, fontWeight: 780, color: '#93C5FD' }}>
+          AUTH
+        </span>
+        <span style={{ fontSize: 18, fontWeight: 650, color: '#FFFFFF' }}>
+          Google OAuth 2.0 + Proteksi /admin
+        </span>
+      </div>
 
-    <rect x="26" y="134" width="420" height="44" rx="10" fill={TINT_NEUTRAL} stroke="none" />
-    <path d="M44 156h210" stroke={INK_HEX} strokeWidth={2.4} />
+      <div
+        style={{
+          ...row,
+          justifyContent: 'space-between',
+          borderRadius: 12,
+          background: 'rgba(255,255,255,0.08)',
+          padding: '12px 16px',
+        }}
+      >
+        <span style={{ fontFamily: MONO, fontSize: 15, fontWeight: 780, color: '#7CE8E4' }}>
+          PAY
+        </span>
+        <span style={{ fontSize: 18, fontWeight: 650, color: '#FFFFFF' }}>
+          Mayar.id QRIS / VA + Webhook Lunas
+        </span>
+      </div>
 
-    <rect x="466" y="76" width="216" height="102" rx="14" fill={TEAL_HEX} stroke="none" />
-    <path d="M498 118h152" stroke="#FFFFFF" strokeWidth={3.4} />
-    <path d="M524 140h100" stroke="#D4F2F0" strokeWidth={2.4} />
+      <div
+        style={{
+          ...row,
+          justifyContent: 'space-between',
+          borderRadius: 12,
+          background: 'rgba(255,255,255,0.08)',
+          padding: '12px 16px',
+        }}
+      >
+        <span style={{ fontFamily: MONO, fontSize: 15, fontWeight: 780, color: YELLOW }}>
+          AUDIT
+        </span>
+        <span style={{ fontSize: 18, fontWeight: 650, color: '#FFFFFF' }}>
+          E2E Flow + AI Skill Code Quality
+        </span>
+      </div>
+    </div>
+  </div>
+);
 
-    {/* Connector: Webhook POST /api/webhook/mayar -> 200 OK */}
-    <path d="M355 206v72" stroke="#7CE8E4" strokeWidth={3.2} strokeDasharray="6 5" />
-    <polygon points="348,274 362,274 355,286" fill="#7CE8E4" stroke="none" />
-    <rect x="220" y="226" width="270" height="34" rx="17" fill={INK_HEX} stroke="#7CE8E4" strokeWidth={2.2} />
-    <circle cx="242" cy="243" r="5" fill="#7CE8E4" stroke="none" />
-    <path d="M258 243h208" stroke="#7CE8E4" strokeWidth={2.4} />
-
-    {/* Card 2: Mayar.id Instant Invoice + QRIS + LUNAS */}
-    <rect x="4" y="292" width="702" height="204" rx="18" fill={TINT_YELLOW} stroke={YELLOW} strokeWidth={2} />
-    <rect x="26" y="314" width="144" height="156" rx="12" fill="#FFFFFF" stroke={INK_HEX} strokeWidth={2.4} />
-    <rect x="44" y="332" width="32" height="32" rx="4" fill={INK_HEX} stroke="none" />
-    <rect x="120" y="332" width="32" height="32" rx="4" fill={INK_HEX} stroke="none" />
-    <rect x="44" y="408" width="32" height="32" rx="4" fill={INK_HEX} stroke="none" />
-    <rect x="86" y="376" width="24" height="24" rx="3" fill={TEAL_HEX} stroke="none" />
-    <rect x="122" y="410" width="28" height="28" rx="3" fill={CORAL_HEX} stroke="none" />
-
-    <rect x="192" y="314" width="210" height="34" rx="17" fill="#FFFFFF" stroke="none" />
-    <path d="M214 331h164" stroke={INK_HEX} strokeWidth={2.8} />
-
-    <path d="M192 372h260M192 398h220M192 424h180" stroke={INK_HEX} strokeWidth={2.6} />
-
-    {/* Payment Channel Chips */}
-    <rect x="192" y="444" width="84" height="26" rx="8" fill="#FFFFFF" stroke="none" />
-    <rect x="286" y="444" width="84" height="26" rx="8" fill="#FFFFFF" stroke="none" />
-    <rect x="380" y="444" width="84" height="26" rx="8" fill="#FFFFFF" stroke="none" />
-
-    {/* Bold Status: PAID / LUNAS */}
-    <rect x="498" y="318" width="184" height="148" rx="14" fill={INK_HEX} stroke="none" />
-    <circle cx="590" cy="370" r="24" fill={TEAL_HEX} stroke="none" />
-    <path d="M579 370l8 8 16-16" stroke="#FFFFFF" strokeWidth={3.4} />
-    <path d="M534 416h112" stroke={YELLOW} strokeWidth={3.2} />
-    <path d="M550 438h80" stroke="#7CE8E4" strokeWidth={2.4} />
-
-    {/* Bottom Connector to E2E / Audit Bar */}
-    <path d="M355 498v32" stroke={YELLOW} strokeWidth={2.8} strokeDasharray="5 4" />
-
-    {/* Card 3: E2E & AI Skill Audit Telemetry Strip */}
-    <rect x="4" y="532" width="702" height="90" rx="16" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.28)" strokeWidth={2} />
-    <circle cx="38" cy="577" r="14" fill={CORAL_HEX} stroke="none" />
-    <path d="M32 577l4 4 9-9" stroke="#FFFFFF" strokeWidth={2.4} />
-    <path d="M68 567h220" stroke="#FFFFFF" strokeWidth={3.0} />
-    <path d="M68 589h160" stroke="#7CE8E4" strokeWidth={2.4} />
-
-    <rect x="476" y="553" width="206" height="48" rx="12" fill={YELLOW} stroke="none" />
-    <path d="M500 577h158" stroke={INK_HEX} strokeWidth={3.0} />
-  </Ink>
+const CoverStageTile = ({
+  num,
+  title,
+  desc,
+  tint,
+  accent,
+}: {
+  num: string;
+  title: string;
+  desc: string;
+  tint: string;
+  accent: string;
+}) => (
+  <div
+    style={{
+      borderRadius: 20,
+      background: tint,
+      border: `2px solid ${accent}`,
+      padding: '22px 26px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+    }}
+  >
+    <div style={{ fontFamily: MONO, fontSize: 17, fontWeight: 800, color: accent }}>{num}</div>
+    <div>
+      <div style={{ ...headline(28), marginBottom: 8 }}>{title}</div>
+      <div style={{ fontSize: 19, lineHeight: 1.4, color: BODY }}>{desc}</div>
+    </div>
+  </div>
 );
 
 const Slide01Cover: Page = () => {
   const live = useIsActivePage();
   return (
     <Frame hideFooter>
-      {/* LEFT DARK CHARCOAL SHOWCASE PANEL */}
+      {/* Top Swiss Editorial Header Bar */}
       <div
         style={{
-          ...abs(72, 64, 790, 952),
-          borderRadius: 28,
-          background: INK_HEX,
-          padding: '34px 40px',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          boxShadow: `12px 12px 0 ${TEAL_HEX}`,
-        }}
-      >
-        {/* Top Terminal Header inside Dark Panel */}
-        <div style={{ ...row, justifyContent: 'space-between' }}>
-          <div style={{ ...row, gap: 10 }}>
-            <span style={{ width: 12, height: 12, borderRadius: '50%', background: CORAL_HEX }} />
-            <span style={{ width: 12, height: 12, borderRadius: '50%', background: YELLOW }} />
-            <span style={{ width: 12, height: 12, borderRadius: '50%', background: TEAL_HEX }} />
-            <span
-              style={{
-                marginLeft: 10,
-                fontFamily: MONO,
-                fontSize: 16,
-                fontWeight: 700,
-                color: '#7CE8E4',
-                letterSpacing: '0.04em',
-              }}
-            >
-              URBANSTORE · PRODUCTION FLOW
-            </span>
-          </div>
-          <span
-            style={{
-              padding: '6px 14px',
-              borderRadius: 99,
-              background: 'rgba(248,218,126,0.16)',
-              color: YELLOW,
-              fontFamily: MONO,
-              fontSize: 15,
-              fontWeight: 700,
-            }}
-          >
-            REAL-TIME CHECKOUT
-          </span>
-        </div>
-
-        {/* Visual Pipeline Stack */}
-        <CoverLeftGatewayStack />
-
-        {/* Bottom Caption Row inside Dark Panel */}
-        <div
-          style={{
-            ...row,
-            justifyContent: 'space-between',
-            borderTop: '1px solid rgba(255,255,255,0.16)',
-            paddingTop: 18,
-          }}
-        >
-          <span style={{ fontFamily: MONO, fontSize: 16, color: '#D4F2F0', fontWeight: 600 }}>
-            Google OAuth -&gt; Mayar.id -&gt; Webhook 200 OK
-          </span>
-          <span
-            style={{
-              padding: '6px 14px',
-              borderRadius: 8,
-              background: CORAL_HEX,
-              color: '#FFFFFF',
-              fontFamily: MONO,
-              fontSize: 15,
-              fontWeight: 800,
-              transform: 'rotate(-2deg)',
-            }}
-          >
-            PRODUCTION READY
-          </span>
-        </div>
-      </div>
-
-      {/* RIGHT EDITORIAL HERO COLUMN */}
-      <div
-        style={{
-          ...abs(938, 92, 862, 46),
+          ...abs(X0, 72, W, 56),
           ...row,
           justifyContent: 'space-between',
+          borderBottom: `1.5px solid ${RULE}`,
+          paddingBottom: 14,
         }}
       >
-        <CodepolitanLogo height={38} />
+        <div style={{ ...row, gap: 16 }}>
+          <CodepolitanLogo height={36} />
+          <span style={{ color: RULE, fontSize: 22 }}>·</span>
+          <span style={{ fontSize: 20, fontWeight: 700, color: BODY }}>
+            Vibe Coding Bootcamp · Batch 4
+          </span>
+        </div>
         <span
           style={{
-            padding: '7px 18px',
+            padding: '6px 18px',
             borderRadius: 99,
             background: TINT_TEAL,
             color: TEAL_HEX,
             fontFamily: MONO,
             fontSize: 17,
-            fontWeight: 700,
+            fontWeight: 780,
           }}
         >
-          BATCH 4 · SESI 6
+          SESI 6 · FINALIZATION
         </span>
       </div>
 
-      <h1 style={{ ...abs(938, 198, 862), ...headline(90), lineHeight: 1.03 }}>
+      {/* Upper Left Editorial Display Hero */}
+      <h1 style={{ ...abs(X0, 174, 1020), ...headline(102), lineHeight: 1.02 }}>
         Payment Gateway
         <br />
         &amp; Code Quality.
       </h1>
 
-      <UnderlineDoodle x={938} y={396} w={560} color={TEAL_HEX} live={live} delay={0.35} />
-      <Ink width={42} height={42} style={abs(1736, 200)} wobble={1.2}>
-        <Sparkle x={21} y={21} s={1.1} fill={YELLOW} />
+      <UnderlineDoodle x={X0} y={388} w={620} color={TEAL_HEX} live={live} delay={0.35} />
+      <Ink width={44} height={44} style={abs(1082, 184)} wobble={1.2}>
+        <Sparkle x={22} y={22} s={1.15} fill={CORAL_HEX} />
       </Ink>
 
       <p
         style={{
-          ...abs(938, 444, 862),
+          ...abs(X0, 434, 980),
           margin: 0,
-          fontSize: 36,
+          fontSize: 38,
           fontFamily: SERIF,
           fontStyle: 'italic',
-          lineHeight: 1.35,
+          lineHeight: 1.32,
           color: INK,
         }}
       >
@@ -590,97 +586,79 @@ const Slide01Cover: Page = () => {
 
       <p
         style={{
-          ...abs(938, 526, 846),
+          ...abs(X0, 508, 960),
           margin: 0,
-          fontSize: 23,
-          lineHeight: 1.54,
+          fontSize: 24,
+          lineHeight: 1.5,
           color: BODY,
         }}
       >
-        Menyempurnakan <strong style={{ color: INK }}>UrbanStore</strong> dari Sesi 4–5 dengan{' '}
-        <strong style={{ color: INK }}>Google Authentication</strong>,{' '}
+        Menyempurnakan <strong style={{ color: INK }}>UrbanStore</strong> dengan{' '}
+        <strong style={{ color: INK }}>Google Login</strong>,{' '}
         <strong style={{ color: INK }}>Payment Gateway Mayar.id</strong> (webhook real-time),{' '}
         <strong style={{ color: INK }}>End-to-End Testing</strong>, dan{' '}
         <strong style={{ color: INK }}>AI Skill Audit</strong>.
       </p>
 
-      {/* 3 Structured Swiss Focus Strips */}
+      {/* Upper Right Dark Release Spec Card */}
+      <CoverReleaseSpecCard />
+
+      {/* Lower Band: 4-Column Horizontal Production Track */}
       <div
         style={{
-          ...abs(938, 686, 862, 214),
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
+          ...abs(X0, 646, W, 248),
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: 22,
         }}
       >
-        <div
-          style={{
-            ...row,
-            justifyContent: 'space-between',
-            padding: '14px 20px',
-            borderRadius: 14,
-            background: TINT_BLUE,
-            borderLeft: '6px solid #2B6CB0',
-          }}
-        >
-          <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 800, color: '#2B6CB0' }}>
-            01 · Google OAuth 2.0
-          </span>
-          <span style={{ fontSize: 18, fontWeight: 600, color: BODY }}>
-            Fast login &amp; proteksi route /admin
-          </span>
-        </div>
-
-        <div
-          style={{
-            ...row,
-            justifyContent: 'space-between',
-            padding: '14px 20px',
-            borderRadius: 14,
-            background: TINT_TEAL,
-            borderLeft: `6px solid ${TEAL_HEX}`,
-          }}
-        >
-          <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 800, color: TEAL_HEX }}>
-            02 · Mayar.id Real-Time
-          </span>
-          <span style={{ fontSize: 18, fontWeight: 600, color: BODY }}>
-            Payment link + webhook otomatis LUNAS
-          </span>
-        </div>
-
-        <div
-          style={{
-            ...row,
-            justifyContent: 'space-between',
-            padding: '14px 20px',
-            borderRadius: 14,
-            background: TINT_PINK,
-            borderLeft: `6px solid ${CORAL_HEX}`,
-          }}
-        >
-          <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 800, color: CORAL_HEX }}>
-            03 · E2E &amp; AI Skill Audit
-          </span>
-          <span style={{ fontSize: 18, fontWeight: 600, color: BODY }}>
-            Hardening UX, security &amp; production checklist
-          </span>
-        </div>
+        <CoverStageTile
+          num="01 · AUTH"
+          title="Google Login"
+          desc="Masuk 1-klik dengan Google OAuth & proteksi halaman /admin."
+          tint={TINT_BLUE}
+          accent="#2B6CB0"
+        />
+        <CoverStageTile
+          num="02 · PAYMENT"
+          title="Mayar.id Gateway"
+          desc="Checkout QRIS / VA & update status LUNAS otomatis via webhook."
+          tint={TINT_TEAL}
+          accent={TEAL_HEX}
+        />
+        <CoverStageTile
+          num="03 · TESTING"
+          title="End-to-End Flow"
+          desc="Uji alur belanja utuh dari login, checkout, hingga admin sync."
+          tint={TINT_YELLOW}
+          accent="#946200"
+        />
+        <CoverStageTile
+          num="04 · QUALITY"
+          title="AI Skill Audit"
+          desc="Perbaiki UX, keamanan, & refactor sampai siap production."
+          tint={TINT_PINK}
+          accent={CORAL_HEX}
+        />
       </div>
 
-      {/* Bottom Right Signature */}
+      {/* Bottom Swiss Editorial Rule Signature */}
       <div
         style={{
-          ...abs(938, 944, 862, 32),
+          ...abs(X0, 944, W, 44),
           ...row,
           justifyContent: 'space-between',
+          borderTop: `1.5px solid ${RULE}`,
+          paddingTop: 12,
           fontSize: 20,
           fontWeight: 650,
           color: SOFT,
         }}
       >
         <span>by CODEPOLITAN</span>
-        <span style={{ fontFamily: MONO, fontSize: 17 }}>UrbanStore Finalization</span>
+        <span style={{ fontFamily: MONO, fontSize: 17 }}>
+          UrbanStore · From MVP to Production Ready
+        </span>
       </div>
     </Frame>
   );
