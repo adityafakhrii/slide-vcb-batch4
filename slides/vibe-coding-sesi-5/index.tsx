@@ -548,31 +548,17 @@ const Slide01Cover: Page = () => {
         }}
       >
         <div>
-          <div style={{ ...row, justifyContent: 'space-between' }}>
-            <span
-              style={{
-                fontFamily: MONO,
-                fontSize: 15,
-                fontWeight: 800,
-                color: TEAL_HEX,
-                letterSpacing: '0.04em',
-              }}
-            >
-              01 · CUSTOMER SIDE
-            </span>
-            <span
-              style={{
-                padding: '4px 12px',
-                borderRadius: 99,
-                background: '#FFFFFF',
-                fontSize: 14,
-                fontWeight: 700,
-                color: INK,
-              }}
-            >
-              Floating Widget
-            </span>
-          </div>
+          <span
+            style={{
+              fontFamily: MONO,
+              fontSize: 15,
+              fontWeight: 800,
+              color: TEAL_HEX,
+              letterSpacing: '0.04em',
+            }}
+          >
+            01 · CUSTOMER SIDE
+          </span>
           <div style={{ marginTop: 10, fontSize: 27, fontWeight: 780, color: INK }}>
             Floating Chat Asisten CS
           </div>
@@ -636,31 +622,17 @@ const Slide01Cover: Page = () => {
         }}
       >
         <div>
-          <div style={{ ...row, justifyContent: 'space-between' }}>
-            <span
-              style={{
-                fontFamily: MONO,
-                fontSize: 15,
-                fontWeight: 800,
-                color: YELLOW,
-                letterSpacing: '0.04em',
-              }}
-            >
-              02 · ENGINE &amp; ROUTING
-            </span>
-            <span
-              style={{
-                padding: '4px 12px',
-                borderRadius: 99,
-                background: 'rgba(124,232,228,0.16)',
-                fontSize: 14,
-                fontWeight: 700,
-                color: '#7CE8E4',
-              }}
-            >
-              AI Studio Key
-            </span>
-          </div>
+          <span
+            style={{
+              fontFamily: MONO,
+              fontSize: 15,
+              fontWeight: 800,
+              color: YELLOW,
+              letterSpacing: '0.04em',
+            }}
+          >
+            02 · ENGINE &amp; ROUTING
+          </span>
           <div style={{ marginTop: 10, fontSize: 27, fontWeight: 780, color: '#FFFFFF' }}>
             Gemini API + 9Router
           </div>
@@ -723,31 +695,17 @@ const Slide01Cover: Page = () => {
         }}
       >
         <div>
-          <div style={{ ...row, justifyContent: 'space-between' }}>
-            <span
-              style={{
-                fontFamily: MONO,
-                fontSize: 15,
-                fontWeight: 800,
-                color: '#946200',
-                letterSpacing: '0.04em',
-              }}
-            >
-              03 · STORE ADMIN
-            </span>
-            <span
-              style={{
-                padding: '4px 12px',
-                borderRadius: 99,
-                background: '#FFFFFF',
-                fontSize: 14,
-                fontWeight: 700,
-                color: CORAL_HEX,
-              }}
-            >
-              AI Insights
-            </span>
-          </div>
+          <span
+            style={{
+              fontFamily: MONO,
+              fontSize: 15,
+              fontWeight: 800,
+              color: '#946200',
+              letterSpacing: '0.04em',
+            }}
+          >
+            03 · STORE ADMIN
+          </span>
           <div style={{ marginTop: 10, fontSize: 27, fontWeight: 780, color: INK }}>
             AI Strategist &amp; Copywriter
           </div>
@@ -1117,22 +1075,9 @@ const Slide03TwoSidedStudyCase: Page = () => {
         }}
       >
         <div>
-          <div style={{ ...row, justifyContent: 'space-between', marginBottom: 10 }}>
+          <div style={{ marginBottom: 10 }}>
             <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: TEAL_HEX }}>
               01 · SISI CUSTOMER (PEMBELI)
-            </span>
-            <span
-              style={{
-                padding: '5px 14px',
-                borderRadius: 99,
-                background: '#FFFFFF',
-                fontFamily: MONO,
-                fontSize: 16,
-                fontWeight: 700,
-                color: INK,
-              }}
-            >
-              Floating Chat Widget
             </span>
           </div>
 
@@ -1193,22 +1138,9 @@ const Slide03TwoSidedStudyCase: Page = () => {
         }}
       >
         <div>
-          <div style={{ ...row, justifyContent: 'space-between', marginBottom: 10 }}>
+          <div style={{ marginBottom: 10 }}>
             <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: '#946200' }}>
               02 · SISI STORE ADMIN (PENJUAL)
-            </span>
-            <span
-              style={{
-                padding: '5px 14px',
-                borderRadius: 99,
-                background: INK_HEX,
-                fontFamily: MONO,
-                fontSize: 16,
-                fontWeight: 700,
-                color: '#FFFFFF',
-              }}
-            >
-              Dashboard /admin
             </span>
           </div>
 
@@ -1842,21 +1774,9 @@ const Slide06ThreeAIFeatures: Page = () => {
           }}
         >
           <div>
-            <div style={{ ...row, justifyContent: 'space-between', marginBottom: 10 }}>
+            <div style={{ marginBottom: 10 }}>
               <span style={{ fontFamily: MONO, fontSize: 16, fontWeight: 780, color: TEAL_HEX }}>
                 01 · SISI CUSTOMER
-              </span>
-              <span
-                style={{
-                  padding: '4px 12px',
-                  borderRadius: 99,
-                  background: '#FFFFFF',
-                  fontFamily: MONO,
-                  fontSize: 14,
-                  fontWeight: 700,
-                }}
-              >
-                Floating Widget
               </span>
             </div>
             <h3 style={{ ...headline(28), marginBottom: 12 }}>Floating Chat Asisten CS</h3>
@@ -1886,21 +1806,9 @@ const Slide06ThreeAIFeatures: Page = () => {
           }}
         >
           <div>
-            <div style={{ ...row, justifyContent: 'space-between', marginBottom: 10 }}>
+            <div style={{ marginBottom: 10 }}>
               <span style={{ fontFamily: MONO, fontSize: 16, fontWeight: 780, color: '#946200' }}>
                 02 · SISI ADMIN
-              </span>
-              <span
-                style={{
-                  padding: '4px 12px',
-                  borderRadius: 99,
-                  background: '#FFFFFF',
-                  fontFamily: MONO,
-                  fontSize: 14,
-                  fontWeight: 700,
-                }}
-              >
-                Form Produk
               </span>
             </div>
             <h3 style={{ ...headline(28), marginBottom: 12 }}>AI Generate Deskripsi Produk</h3>
@@ -1930,21 +1838,9 @@ const Slide06ThreeAIFeatures: Page = () => {
           }}
         >
           <div>
-            <div style={{ ...row, justifyContent: 'space-between', marginBottom: 10 }}>
+            <div style={{ marginBottom: 10 }}>
               <span style={{ fontFamily: MONO, fontSize: 16, fontWeight: 780, color: CORAL_HEX }}>
                 03 · SISI ADMIN
-              </span>
-              <span
-                style={{
-                  padding: '4px 12px',
-                  borderRadius: 99,
-                  background: '#FFFFFF',
-                  fontFamily: MONO,
-                  fontSize: 14,
-                  fontWeight: 700,
-                }}
-              >
-                Order Dashboard
               </span>
             </div>
             <h3 style={{ ...headline(28), marginBottom: 12 }}>AI Analisis Penjualan</h3>

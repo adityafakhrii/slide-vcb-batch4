@@ -958,22 +958,9 @@ const Slide03UrbanStoreMVPScope: Page = () => {
         }}
       >
         <div>
-          <div style={{ ...row, justifyContent: 'space-between', marginBottom: 12 }}>
+          <div style={{ marginBottom: 12 }}>
             <span style={{ fontFamily: MONO, fontSize: 19, fontWeight: 780, color: TEAL_HEX }}>
               01 · STORE ADMIN (SISI PENJUAL)
-            </span>
-            <span
-              style={{
-                padding: '5px 14px',
-                borderRadius: 99,
-                background: '#FFFFFF',
-                fontFamily: MONO,
-                fontSize: 16,
-                fontWeight: 700,
-                color: INK,
-              }}
-            >
-              Route: /admin
             </span>
           </div>
 
@@ -1028,22 +1015,9 @@ const Slide03UrbanStoreMVPScope: Page = () => {
         }}
       >
         <div>
-          <div style={{ ...row, justifyContent: 'space-between', marginBottom: 12 }}>
+          <div style={{ marginBottom: 12 }}>
             <span style={{ fontFamily: MONO, fontSize: 19, fontWeight: 780, color: '#946200' }}>
               02 · CUSTOMER (SISI PEMBELI)
-            </span>
-            <span
-              style={{
-                padding: '5px 14px',
-                borderRadius: 99,
-                background: INK_HEX,
-                fontFamily: MONO,
-                fontSize: 16,
-                fontWeight: 700,
-                color: '#FFFFFF',
-              }}
-            >
-              Guest Checkout
             </span>
           </div>
 
@@ -1848,21 +1822,9 @@ const Slide07AuthAndRole: Page = () => {
           }}
         >
           <div>
-            <div style={{ ...row, justifyContent: 'space-between', marginBottom: 8 }}>
+            <div style={{ marginBottom: 8 }}>
               <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: TEAL_HEX }}>
                 ROLE 01 · STORE ADMIN
-              </span>
-              <span
-                style={{
-                  padding: '4px 12px',
-                  borderRadius: 99,
-                  background: '#FFFFFF',
-                  fontFamily: MONO,
-                  fontSize: 15,
-                  fontWeight: 700,
-                }}
-              >
-                Area Terproteksi (/admin)
               </span>
             </div>
             <h3 style={{ ...headline(32), marginBottom: 10 }}>Pengelola Toko</h3>
@@ -1889,22 +1851,9 @@ const Slide07AuthAndRole: Page = () => {
           }}
         >
           <div>
-            <div style={{ ...row, justifyContent: 'space-between', marginBottom: 8 }}>
+            <div style={{ marginBottom: 8 }}>
               <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: '#946200' }}>
                 ROLE 02 · CUSTOMER
-              </span>
-              <span
-                style={{
-                  padding: '4px 12px',
-                  borderRadius: 99,
-                  background: INK_HEX,
-                  color: '#FFFFFF',
-                  fontFamily: MONO,
-                  fontSize: 15,
-                  fontWeight: 700,
-                }}
-              >
-                Tanpa Wajib Login
               </span>
             </div>
             <h3 style={{ ...headline(32), marginBottom: 10 }}>Pembeli (Frictionless)</h3>
@@ -2047,26 +1996,11 @@ const Slide08AdminProductManagement: Page = () => {
         }}
       >
         <div>
-          <div style={{ ...row, justifyContent: 'space-between', marginBottom: 14 }}>
-            <div>
-              <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: TEAL_HEX }}>
-                ADMIN PRODUCT FORM
-              </div>
-              <h3 style={{ ...headline(34), marginTop: 4 }}>Form Tambah Produk Baru</h3>
+          <div style={{ marginBottom: 14 }}>
+            <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 780, color: TEAL_HEX }}>
+              ADMIN PRODUCT FORM
             </div>
-            <span
-              style={{
-                padding: '6px 14px',
-                borderRadius: 99,
-                background: TINT_TEAL,
-                color: TEAL_HEX,
-                fontFamily: MONO,
-                fontSize: 16,
-                fontWeight: 760,
-              }}
-            >
-              /admin/products
-            </span>
+            <h3 style={{ ...headline(34), marginTop: 4 }}>Form Tambah Produk Baru</h3>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 11 }}>
